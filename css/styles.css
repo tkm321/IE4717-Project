@@ -6,14 +6,15 @@ body {
 }
 
 #container {
-  width: 100%;
+  width: 80%;
   margin: auto;
 }
 
 #header {
   margin: auto;
   padding: 10px;
-  background-color: #333333;
+  /* background-color: #333333; */
+  background-image: url("/images/background2.jpg");
   color: white;
   height: 150px;
 }
@@ -40,6 +41,8 @@ div #logo img {
   width: 500px;
   height: 50px;
   border: none;
+  font-size: 20px;
+  border-radius: 5px;
 }
 
 #searchbar button {
@@ -47,6 +50,8 @@ div #logo img {
   height: 50px;
   cursor: pointer;
   border: none;
+  font-size: 20px;
+  border-radius: 5px;
 }
 
 div #topright {
@@ -59,6 +64,8 @@ div #topright {
   height: 50px;
   margin: 10px;
   cursor: pointer;
+  font-size: 16px;
+  border-radius: 20px;
 }
 
 .topbuttons:hover, .open-button:hover {
@@ -69,7 +76,6 @@ div #topright {
 
 /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button {
-  border: none;
   cursor: pointer;
   position: relative;
 }
@@ -88,6 +94,7 @@ div #topright {
   max-width: 300px;
   padding: 10px;
   background-color: white;
+  text-align: center;
 }
 
 /* Full-width input fields */
@@ -163,22 +170,31 @@ div #topright {
 
 .banner h1 {
   text-align: center;
-  background-color: #333333;
+  /* background-color: #333333; */  
+  background-image: url("/images/background2.jpg");
   color: white;
   margin-bottom: 0;
   padding: 30px;
 }
 
-.bannernew, .bannerbest, .bannerpromo {
+.bannerpromo, .bannerbest, .bannerbestdesc, .bannernew, .bannernewdesc {
   display: flex;
   flex-wrap: nowrap;
   background-color: #333333;
 }
 
 .bannernew div, .bannerbest div, .bannerpromo div {
-  background-color: grey;
+  background-color: lightgrey;
   width: 20%;
   aspect-ratio: 1/1;
+  margin: 0px 10px 10px 10px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.bannerbestdesc div, .bannernewdesc div {
+  background-color: lightgrey;
+  width: 20%;
   margin: 0px 10px 10px 10px;
   text-align: center;
   font-size: 30px;
@@ -190,7 +206,8 @@ div #topright {
 /* ---START OF FOOTER--- */
 
   #footer {
-    background-color: #333333;
+    /* background-color: #333333; */
+    background-image: url("/images/background2.jpg");
     color: white;
     text-align: center;
     margin: auto;
@@ -207,7 +224,7 @@ div #topright {
     list-style: none;
     text-decoration: none;
     color:white;
-    margin: 0px 20px 0px 20px;
+    margin: 0px 30px 0px 30px;
   }
 
   #sitemap a:hover {
