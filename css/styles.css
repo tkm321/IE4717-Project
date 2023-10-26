@@ -1,75 +1,227 @@
-  h1 {
-    font-family: Georgia, 'Times New Roman', Times, sans-serif, cursive;
-    font-size: 40px;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url("/images/background.jpg");
+}
+
+#container {
+  width: 100%;
+  margin: auto;
+}
+
+#header {
+  margin: auto;
+  padding: 10px;
+  background-color: #333333;
+  color: white;
+  height: 150px;
+}
+
+div #logo, #searchbar {
+  float: left;
+}
+
+div #logo img {
+  height: 150px;
+  width: 150px;
+}
+
+#searchbar, #topright {
+  margin-left: 30px;
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+#searchbar input[type="text"] {
+  padding-left: 10px;
+  width: 500px;
+  height: 50px;
+  border: none;
+}
+
+#searchbar button {
+  width: 100px;
+  height: 50px;
+  cursor: pointer;
+  border: none;
+}
+
+div #topright {
+  float: right;
+  margin-right: 30px;
+}
+
+#topright button {
+  width: 80px;
+  height: 50px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.topbuttons:hover, .open-button:hover {
+  background-color: #0CF1DE;
+}
+
+/* ---START OF LOGIN FORM--- */
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  border: 2px solid #f1f1f1;
+  /* box-shadow: 2px 2px 2px #d1d1d1; */
+  /* z-index: 9; */
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 10px 5px 10px 5px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+.form-container h1 {
+  color: black;
+}
+/* ---END OF LOGIN FORM--- */
+
+/* ---START OF NAVBAR--- */
+
+  #navbar {
+    margin-top: 20px;
+    text-align: center;
   }
 
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-  }
-  
-  nav ul {
+  #navbar a {
+    font-size: 20px;
+    font-weight: bold;
     list-style: none;
-    padding: 0;
-  }
-  
-  nav ul li {
-    display: inline;
-    margin-right: 20px;
-  }
-  
-  nav a {
-    color: #ffffff;
     text-decoration: none;
-  }
-  
-  .product-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .product {
-    width: 300px;
-    height: 300px;
-    margin-bottom: 40px;
-    padding: 20px;
-    border: 1px solid #dddddd;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .product img {
-    max-width: 100%;
-  }
-  
-  .buy-button {
-    background-color: #333333;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
-  
-  .buy-button:hover {
-    background-color: #555555;
+    color: black;
+    margin: 0px 20px 0px 20px;
   }
 
-  footer {
-    background-color: #333333;
-    color: #ffffff;
-    max-width: 1200px;
-    margin: 0 auto;
+  #navbar a:hover {
+    color:#0CF1DE;
+    font-weight: bold;
   }
+
+  #navbar ul li {
+    display: inline;
+  }
+
+/* ---END OF NAVBAR--- */
+
+/* ---START OF BANNER--- */
+
+.banner h1 {
+  text-align: center;
+  background-color: #333333;
+  color: white;
+  margin-bottom: 0;
+  padding: 30px;
+}
+
+.bannernew, .bannerbest, .bannerpromo {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: #333333;
+}
+
+.bannernew div, .bannerbest div, .bannerpromo div {
+  background-color: grey;
+  width: 20%;
+  aspect-ratio: 1/1;
+  margin: 0px 10px 10px 10px;
+  text-align: center;
+  font-size: 30px;
+}
+
+/* ---END OF BANNER--- */
+
+
+/* ---START OF FOOTER--- */
+
+  #footer {
+    background-color: #333333;
+    color: white;
+    text-align: center;
+    margin: auto;
+  }
+
+  #sitemap {
+    padding: 20px 20px;
+    text-align: center;
+  }
+
+  #sitemap a {
+    font-size: 20px;
+    font-weight: bold;
+    list-style: none;
+    text-decoration: none;
+    color:white;
+    margin: 0px 20px 0px 20px;
+  }
+
+  #sitemap a:hover {
+    color:#0CF1DE;
+    font-weight: bold;
+  }
+
+  #sitemap ul li {
+    display: inline;
+  }
+
+  #footer p {
+    margin:0;
+    padding: 20px;
+  }
+
+/* ---END OF FOOTER--- */

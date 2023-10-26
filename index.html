@@ -5,40 +5,120 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
+  <script type="text/javascript" src="js/login.js"></script>
 </head>
 
+
 <body>
-  <header>
-    <div class="container">
+  <div id="container">
+    <!-- START OF HEADER -->
+    <div id="header">
         <div id="logo">
-            <img src="images/logo_transparent.png" width="200">
+            <a href="index.html"><img src="images/logo_transparent.png"></a>
+        </div>
+
+        <div id="searchbar">
+          <form action="#.php" method="get">
+            <input type="text" name="search" id="search" placeholder="Search...">
+            <button type="submit" class="topbuttons">Search</button>
+          </form>
+        </div>
+
+        <div id="topright">
+          <button class="open-button" onclick="openForm()">Login</button>
+          <div class="form-popup" id="loginForm">
+            <form action="#.php" class="form-container">
+              <h1>Member Login</h1>
+          
+              <label for="username"><b>Username</b></label>
+              <input type="text" placeholder="Enter Username" name="username" required>
+          
+              <label for="password"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" required>
+          
+              <button type="submit" class="btn">Login</button>
+              <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+          </div>
+
+          <a href="#.html"><button class="topbuttons">Wishlist</button></a>
+          <a href="#.html"><button class="topbuttons">Cart</button></a>
         </div>
         
-        <div id="menu">
-          <nav>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="products.html">Products</a></li>
-              <li><a href="aboutus.html">About Us</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </nav>
-        </div>
     </div>
-  </header>
+    <!-- START OF HEADER -->
 
-  <main class="container">
-    <section class="hero">
-      <h2>Welcome to NovaTech</h2>
-      <p>Discover the latest and greatest in consumer electronics and IT products.</p>
-      <a href="products.html" class="explore-button">Explore Products</a>
-    </section>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2023 NovaTech Pte Ltd. All rights reserved.</p>
+    <!-- START OF NAVBAR -->
+    <div id="navbar">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li> | 
+          <li><a href="#.html">Category 1</a></li> |
+          <li><a href="#.html">Category 2</a></li> |
+          <li><a href="#.html">Category 3</a></li> |
+          <li><a href="#.html">Category 4</a></li>
+          <!-- <li><a href="products.html">Products</a></li> |
+          <li><a href="aboutus.html">About Us</a></li> |
+          <li><a href="contact.html">Contact</a></li> -->
+        </ul>
+      </nav>
     </div>
-  </footer>
+    <!-- END OF NAVBAR -->
+  
 
-</body>
+    <!-- START OF BANNER -->
+
+    <div class="banner">
+      <h1>PROMOTION</h1>
+      <!-- <div class="bannerpromo"> -->
+        <img src="images/bannertest.webp" width="100%">
+      <!-- </div> -->
+    </div>
+    
+    <div class="banner">
+      <h1>BESTSELLERS</h1>
+      <div class="bannerbest">
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+        <div>Item 4</div>
+        <div>Item 5</div>
+      </div> 
+    </div>
+
+    <div class="banner">
+      <h1>NEW ARRIVALS</h1>
+      <div class="bannernew">
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+        <div>Item 4</div>
+        <div>Item 5</div>
+      </div>
+    </div>
+
+    <!-- END OF BANNER -->
+
+    <!-- START OF FOOTER -->
+    <div id="footer">
+      <footer>
+          <div id="sitemap">
+            <nav>
+              <ul>
+                <li><a href="#.html">Home</a></li>
+                <li><a href="#.html">All Products</a></li>
+                <li><a href="#.html">About Us</a></li>
+                <li><a href="#.html">Customer Service</a></li>
+                <!-- <li><a href="products.html">Products</a></li> |
+                <li><a href="aboutus.html">About Us</a></li> |
+                <li><a href="contact.html">Contact</a></li> -->
+              </ul>
+            </nav>
+          </div>
+          <p>&copy; 2023 NovaTech Pte Ltd. All rights reserved.</p>
+      </footer>
+    </div>
+    <!-- END OF FOOTER -->
+  </div>
 </html>

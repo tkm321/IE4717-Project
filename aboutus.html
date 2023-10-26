@@ -4,24 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TechStore - Your Ultimate Electronics Store</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
 </head>
 
 <body>
-  <header>
-    <nav>
-      <div class="container">
-        <h1>TechStore</h1>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="aboutus.html">About Us</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+  <div id="container">
+    <div id="header">
+        <div style="float:left">
+            <a href="index.html"><img src="images/logo_transparent.png" id="logo"></a>
+         </div>
+        
+        <div id="navbar">
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="aboutus.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+    </div>
 
   <main class="container">
     <section class="about">
@@ -39,5 +43,6 @@
   </footer>
 
   <script src="scripts.js"></script>
+  </div>
 </body>
 </html>
