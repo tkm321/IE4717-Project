@@ -3,7 +3,7 @@
 <head>
   <title>NovaTech - Your Ultimate Electronics Store</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/contactformstyles.css">
   <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
   <script type="text/javascript" src="js/login.js"></script>
 </head>
@@ -68,24 +68,25 @@
   <main class="container">
     <section class="contact">
       <h2>Contact Us</h2>
-      <p>If you have any questions or inquiries, please don't hesitate to get in touch with us.</p>
-      <form class="contact-form">
+      <p>If you have any questions or inquiries, please do not hesitate to get in touch with us.</p>
+      <form class="contactform">
         <div>
           <label for="name">Name:</label>    
-          <input type="text" id="name" name="name" required> <br>
+          <input type="text" id="name" name="name" placeholder="Enter your name here" required><br><br>
         </div>
 
         <div>
           <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required> <br>
+          <input type="email" id="email" name="email" placeholder="Enter your email here" required><br><br>
         </div>
    
         <div>
           <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
+          <textarea id="message" name="message" rows="10" cols="150" placeholder="Enter your message here" required></textarea>
         </div>
-
-        <button type="submit" class="submit-button">Send Message</button>
+        
+        <button type="reset" class="resetbutton">Clear</button>
+        <button type="submit" class="submitbutton">Send Message</button>
       </form>
     </section>
   </main>

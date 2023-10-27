@@ -250,3 +250,25 @@ div #topright {
   }
 /* ---END OF FOOTER--- */
 
+.contactform label {
+  float: left;
+  display: block; 
+  text-align: right;
+  width: 120px;
+  padding: 10px 10px 0px 0px;
+  font-weight: bold;
+}
+
+.contactform #name, #email {
+  width: 400px;
+}
+
+.contactform #name, #email, #message {
+  padding:10px;
+  border-radius: 10px;
+}
+
+.contactform button {
+  margin: 30px 0px 30px 0px;
+  padding: 10px;
+}
