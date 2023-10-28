@@ -2,8 +2,8 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-image: url("/IE4717/F38-DG16-Project/IE4717-Project/images/background.jpg");
-  background-image: url("/images/background.jpg");
+  /* background-image: url("/IE4717/F38-DG16-Project/IE4717-Project/images/background.jpg");
+  background-image: url("/images/background.jpg"); */
 }
 
 #container {
@@ -14,9 +14,9 @@ body {
 #header {
   margin: auto;
   padding: 10px;
-  /* background-color: #333333; */
-  background-image: url("/IE4717/F38-DG16-Project/IE4717-Project/images/background2.jpg");
-  background-image: url("/images/background2.jpg");
+  background-color: #333333;
+  /* background-image: url("/IE4717/F38-DG16-Project/IE4717-Project/images/background2.jpg");
+  background-image: url("/images/background2.jpg"); */
   color: white;
   height: 150px;
 }
@@ -112,7 +112,7 @@ div #topright {
   padding: 10px 5px 10px 5px;
   margin: 5px 0 22px 0;
   border: none;
-  background: #f1f1f1;
+  background-color: #f1f1f1;
 }
 
 /* When the inputs get focus, do something */
@@ -178,9 +178,9 @@ div #topright {
 /* ---START OF BANNER--- */
 .banner h1 {
   text-align: center;
-  /* background-color: #333333; */  
-  background-image: url("/IE4717/F38-DG16-Project/IE4717-Project/images/background2.jpg");
-  background-image: url("/images/background2.jpg");
+  background-color: #333333;  
+  /* background-image: url("/IE4717/F38-DG16-Project/IE4717-Project/images/background2.jpg");
+  background-image: url("/images/background2.jpg"); */
   color: white;
   margin-bottom: 0;
   padding: 30px;
@@ -213,9 +213,9 @@ div #topright {
 
 /* ---START OF FOOTER--- */
   #footer {
-    /* background-color: #333333; */
-    background-image: url("/IE4717/F38-DG16-Project/IE4717-Project/images/background2.jpg");
-    background-image: url("/images/background2.jpg");
+    background-color: #333333;
+    /* background-image: url("/IE4717/F38-DG16-Project/IE4717-Project/images/background2.jpg");
+    background-image: url("/images/background2.jpg"); */
     color: white;
     text-align: center;
     margin: auto;
