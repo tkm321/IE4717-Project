@@ -1,18 +1,61 @@
+/* Styles for .product_name */
+.ITEM_PAGE #productid_1 .product_name {
+    padding: 5px;
+    margin-left: 10px;
+    font-size: 24px;
+}
 
-    /* Styles for .product_name */
-    .ITEM_PAGE #productid_1 .product_name {
-        color: blue;
-        font-size: 24px;
-    }
+/* Styles for .product_content */
+.ITEM_PAGE #productid_1 .product_content {
+    display: flex;
+    align-items: center; /* Center vertically within the container */
+}
+/* Styles for .slideshow-button-left */
+.slideshow-button-left {
+    margin-right: -40px; /* Adjust the negative margin as needed */
+	z-index: 1;
+}
 
-    /* Styles for .product_img */
-    .ITEM_PAGE #productid_1 .product_img img {
-        width: 100%; /* This will make the image fill its container */
-        max-width: 100%; /* Ensure the image doesn't exceed its container width */
-    }
+/* Styles for .prev (left button) */
+.prev {
+    background-color: #555;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-top-right-radius: 50%; /* Makes the top-right corner round */
+    border-bottom-right-radius: 50%; /* Makes the bottom-right corner round */
+}
 
-    /* Styles for .product_desc */
-    .ITEM_PAGE #productid_1 .product_desc {
-        background-color: #f0f0f0;
-        padding: 10px;
-    }
+/* Styles for .slideshow-button-right */
+.slideshow-button-right {
+    margin-left: -40px; /* Adjust the negative margin as needed */
+}
+
+/* Styles for .next (right button) */
+.next {
+    background-color: #555;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-top-left-radius: 50%; /* Makes the top-left corner round */
+    border-bottom-left-radius: 50%; /* Makes the bottom-left corner round */
+}
+
+/* Styles for .slideshow-container */
+.slideshow-container {
+    max-width: 80%; /* Adjust the width as needed to make the slideshow smaller */
+    margin: 0; /* Reset margin to eliminate any default whitespace */
+}
+
+/* Styles for the slideshow images */
+.mySlides img {
+    max-width: 100%; /* Set the maximum width for the images */
+}
+
+/* Styles for .product_desc */
+.ITEM_PAGE #productid_1 .product_desc {
+    padding: 10px;
+    flex: 1; /* Take up the remaining space on the right */
+}
