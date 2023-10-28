@@ -4,6 +4,7 @@
   <title>NovaTech - Your Ultimate Electronics Store</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/itemstyles.css">
   <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
   <script type="text/javascript" src="js/login.js"></script>
 </head>
@@ -47,10 +48,9 @@
         
     </div>
     <!-- END OF HEADER -->
-
+  
 	<!-- Main Body -->
 	<div class = "Content_Wrapper">
-	
 		<!-- START OF NAVBAR -->
 		<div id="navbar">
 		  <nav>
@@ -67,53 +67,23 @@
 		  </nav>
 		</div>
 		<!-- END OF NAVBAR -->
-  
-		<!-- START OF BANNER -->
-		<div class="banner">
-		  <h1>PROMOTION</h1>
-		  <!-- <div class="bannerpromo"> -->
-			<img src="images/blackfriday.jpg" width="100%">
-		  <!-- </div> -->
+		<!-- START OF ITEM PAGE -->
+		<div class = "ITEM_PAGE">
+			<div id="productid_1">
+				<div class = "product_name" id="product_name">
+					<h2 class = "product_name">Get from product id 1
+				</div>
+				<div class = "product_img" id ="product_img">
+					<img src="product_imgs/product_2/img_1.jpg">
+				</div>
+				<div class = "product_desc" id="product_desc">
+				
+				</div>
+			</div>
 		</div>
-		
-		<div class="banner">
-		  <h1>BESTSELLERS</h1>
-		  <div class="bannerbest">
-			<div><figure><img src="Product_imgs/Product_1/img_1.jpg" style="width: 100%"; >
-						<figcaption> MacBook 15</figcaption></div>
-			<div><img src="product_imgs/product_2/img_1.jpg" style="width: 100%";></div>
-			<div><img src="product_imgs/product_3/img_1.jpg" style="width: 100%";></div>
-			<div><img src="product_imgs/product_4/img_1.jpg" style="width: 100%";></div>
-			<div><img src="product_imgs/product_5/img_1.jpg" style="width: 100%";></div>
-		  </div>
-		  <div class="bannerbestdesc">
-			<div><p>Description 1</p></div>
-			<div><p>Description 2</p></div>
-			<div><p>Description 3</p></div>
-			<div><p>Description 4</p></div>
-			<div><p>Description 5</p></div>
-		  </div> 
-		</div>
-
-		<div class="banner">
-		  <h1>NEW ARRIVALS</h1>
-		  <div class="bannernew">
-			<div><img src="product_imgs/product_1"></div>
-			<div><img src="product_imgs/product_1"></div>
-			<div><img src="product_imgs/product_1"></div>
-			<div><img src="product_imgs/product_1"></div>
-			<div><img src="product_imgs/product_1"></div>
-		  </div>
-		  <div class="bannernewdesc">
-			<div><p>Description 1</p></div>
-			<div><p>Description 2</p></div>
-			<div><p>Description 3</p></div>
-			<div><p>Description 4</p></div>
-			<div><p>Description 5</p></div>
-		  </div> 
-		</div>
-		<!-- END OF BANNER -->
 	</div>	
+		
+		<!-- END OF ITEM PAGE -->
 	<!-- End of Main Body -->
     <!-- START OF FOOTER -->
     <div id="footer">
