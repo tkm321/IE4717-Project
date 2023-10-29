@@ -2,21 +2,21 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  /* background-image: url("localhost:8000/IE4717/F38-DG16-Project/IE4717-Project/images/background.jpg");
-  background-image: url("/images/background.jpg"); */
+  background-image: url("/IE4717/F38-DG16-Project/IE4717-Project/images/background.jpg");
+  background-image: url("/images/background.jpg");
 }
 
 #container {
   width: 80%;
   margin: auto;
-}
+  min-width:1200px;}
 
 #header {
   margin: auto;
   padding: 10px;
-  background-color: #333333;
-  /* background-image: url("/IE4717/F38-DG16-Project/IE4717-Project/images/background2.jpg");
-  background-image: url("/images/background2.jpg"); */
+  /* background-color: #333333; */
+  background-image: url("/IE4717/F38-DG16-Project/IE4717-Project/images/background2.jpg");
+  background-image: url("/images/background2.jpg");
   color: white;
   height: 150px;
 }
@@ -158,9 +158,9 @@ div #topright {
 
 /* ---START OF NAVBAR--- */
   #navbar {
-    text-align: center;
     margin-top: 20px;
-	  margin-bottom: 20px;
+    text-align: center;
+	margin-bottom: 20px;
   }
 
   #navbar a {
@@ -179,18 +179,55 @@ div #topright {
 
   #navbar ul li {
     display: inline;
-    margin: 0;
   }
 /* ---END OF NAVBAR--- */
 
+/* Product Container */
+.product-divider {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 -10px;
+}
 
+.product-container {
+  display: flex;
+  flex-direction: column; /* Stack the content vertically */
+  width: calc(33.33% - 20px);
+  margin: 0 10px 20px;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  position: relative; /* Add relative positioning */
+}
+
+.product-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+.price-container {
+  position: relative; /* Keep it relatively positioned within the product-container */
+  width: 100%; /* Make it full-width of the product-container */
+  padding: 5px 0; /* Add some padding */
+  margin-top: auto; /* Push the price-container to the bottom */
+  text-align: center;
+}
+
+.price-container p {
+  margin: 0; /* Remove default margin for the paragraph */
+}
+
+/* End of Product Container */
 
 /* ---START OF BANNER--- */
 .banner h1 {
   text-align: center;
-  background-color: #333333;  
-  /* background-image: url("/IE4717/F38-DG16-Project/IE4717-Project/images/background2.jpg");
-  background-image: url("/images/background2.jpg"); */
+  /* background-color: #333333; */  
+  background-image: url("/IE4717/F38-DG16-Project/IE4717-Project/images/background2.jpg");
+  background-image: url("/images/background2.jpg");
   color: white;
   margin-bottom: 0;
   padding: 30px;
@@ -223,9 +260,9 @@ div #topright {
 
 /* ---START OF FOOTER--- */
   #footer {
-    background-color: #333333;
-    /* background-image: url("/IE4717/F38-DG16-Project/IE4717-Project/images/background2.jpg");
-    background-image: url("/images/background2.jpg"); */
+    /* background-color: #333333; */
+    background-image: url("/IE4717/F38-DG16-Project/IE4717-Project/images/background2.jpg");
+    background-image: url("/images/background2.jpg");
     color: white;
     text-align: center;
     margin: auto;
