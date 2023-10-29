@@ -68,7 +68,13 @@
     <!-- END OF NAVBAR -->
 	<!-- Product display -->
 	<div class="product-divider">
-		<?php include("PHP/product_display.php"); ?>
+		<?php
+		  // Include the PHP file and execute the code within it
+		  $products = include("PHP/product_display.php");  
+
+		  
+		 ?>
+		
 	</div>
 
 <!-- End of Main Body -->
