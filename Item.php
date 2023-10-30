@@ -1,3 +1,7 @@
+<?php
+	include("PHP/item_desc.php");  
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +11,8 @@
   <link rel="stylesheet" href="css/itemstyles.css">
   <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
   <script type="text/javascript" src="js/login.js"></script>
+  <script type="text/javascript" src="js/slideshow.js"></script>
+  <script type="text/javascript" src="js/dropdown.js"></script>
 </head>
 
 
@@ -67,23 +73,109 @@
 		  </nav>
 		</div>
 		<!-- END OF NAVBAR -->
-		<!-- START OF ITEM PAGE -->
-		<div class = "ITEM_PAGE">
-			<div id="productid_1">
-				<div class = "product_name" id="product_name">
-					<h2 class = "product_name">Get from product id 1
+		
+		<!-- Product details -->
+		<div class="ITEM_PAGE">
+			<div id="productid_<?php echo $product['product_id']; ?>"></div>
+				<div class="product_name" id="product_name">
+					<h2 class="product_name"><?php echo $product['product_name']; ?></h2>
 				</div>
-				<div class = "product_img" id ="product_img">
-					<img src="product_imgs/product_2/img_1.jpg">
+			<div class="product_info">
+					
+				<div class="product_img" id="product_img">
+					<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+					<div class="slideshow-container">
+						
+						<?php
+						$image_folder = 'product_imgs/Product_' . $product['product_id'] . '/';
+						$image_files = glob($image_folder . 'img_*.jpg');
+
+						foreach ($image_files as $index => $image_path) {
+							$style = ($index === 0) ? 'style="display: block;"' : 'style="display: none;"';
+							echo '<div class="mySlides" ' . $style . '><img src="' . $image_path . '" alt="' . $product['product_name'] . '"></div>';
+						}
+						?>
+					</div>
+					<a class="next" onclick="plusSlides(1)">&#10095;</a>
+					
+					<!-- Thumbnail images -->
+					<div class="thumbnail-container">
+						<?php
+						foreach ($image_files as $index => $image_path) {
+							echo '<img class="thumbnail" src="' . $image_path . '" alt="' . $product['product_name'] . '" onclick="currentSlide(' . ($index + 1) . ')">';
+						}
+						?>
+					</div>	
+					
 				</div>
-				<div class = "product_desc" id="product_desc">
-				
+
+				<!-- Product Details -->
+				<div class="product_desc" id="product_desc">
+					<table id="table_product_desc">
+						<tr>
+							<td>Price:</td>
+							<td>$<?php echo $product['product_price']; ?></td>
+						</tr>
+						<tr>
+							<td>Review:</td>
+							<td>Review Taken from PHPMYADMIN(Add a Review Button)</td>
+						</tr>
+						<tr>
+							<td>Amount:</td>
+							<td>javascript</td>
+						</tr>
+						<tr>
+							<td>Add to Wishlist:</td>
+							<td>A Button</td>
+						</tr>
+						<tr>
+							<td>Add to Cart</td>
+							<td>A Button</td>
+						</tr>
+						<!-- Additional product details can be displayed here -->
+					</table>
 				</div>
 			</div>
+
+			<!-- Product Features -->
+			<div class="product-features-container">
+				<div class="product_features" id="product_features">
+				  <table>
+					  <tr>
+						<td>
+						  <button class="dropdown-btn" data-content="description">Description</button>
+						</td>
+						<td>
+						  <button class="dropdown-btn" data-content="specifications">Specifications</button>
+						</td>
+						<td>
+						  <button class="dropdown-btn" data-content="askus">Ask Us</button>
+						</td>
+						<td>
+						  <button class="dropdown-btn" data-content="delivery">Delivery & Pickup Information</button>
+						</td>
+					  </tr>
+					  <tr>
+						<td colspan="4">
+						  <div class="dropdown-content" id="description">
+							<p>This is the description content.</p>
+						  </div>
+						  <div class="dropdown-content" id="specifications">
+							<p>These are the specifications content.</p>
+						  </div>
+						  <div class="dropdown-content" id="askus">
+							<p>Ask us anything here.</p>
+						  </div>
+						  <div class="dropdown-content" id="delivery">
+							<p>All items available for online purchase are not guaranteed to be in stock at the time of order processing. If we are unable to fulfill your order, you will be offered an alternative or given a refund for the unavailable product.</p>
+						  </div>
+						</td>
+					  </tr>
+					</table>
+				</div>
+			</div>
+			
 		</div>
-	</div>	
-		
-		<!-- END OF ITEM PAGE -->
 	<!-- End of Main Body -->
     <!-- START OF FOOTER -->
     <div id="footer">
