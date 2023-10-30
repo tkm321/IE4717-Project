@@ -79,6 +79,15 @@ div #topright {
   transform: scale(1.1, 1.1);
 }
 
+/* ---START OF CONTENT WRAPPER--- */
+.Content_Wrapper {
+  margin: 0 auto;
+  max-width: 1200px; /* Adjust the maximum width as needed */
+  /*padding: 5px; /* Add padding around the content wrapper */
+}
+/* ---END OF CONTENT WRAPPER--- */
+
+
 /* ---START OF LOGIN FORM--- */
 /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button {
@@ -244,6 +253,7 @@ div #topright {
   }
 /* ---END OF FOOTER--- */
 
+/* ---START OF CONTACT FORM --- */
 .contactform label {
   float: left;
   display: block; 
@@ -280,8 +290,4 @@ div #topright {
 .contactform button:hover {
   transform: scale(1.05, 1.05);
 }
-
-.Content_Wrapper {
-  margin: auto;
-  max-width: 1200px;
-}
+/* ---END OF CONTACT FORM--- */

@@ -48,8 +48,8 @@
             </form>
           </div>
 
-          <a href="#.html"><button class="topbuttons">Wishlist</button></a>
-          <a href="#.html"><button class="topbuttons">Cart</button></a>
+          <a href="wishlist.html"><button class="topbuttons">Wishlist</button></a>
+          <a href="cart.html"><button class="topbuttons">Cart</button></a>
         </div>
         
     </div>

@@ -79,6 +79,10 @@ div #topright {
   transform: scale(1.1, 1.1);
 }
 
+#bodytext {
+  line-height: 2;
+}
+
 /* ---START OF LOGIN FORM--- */
 /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button {
@@ -145,6 +149,7 @@ div #topright {
 }
 /* ---END OF LOGIN FORM--- */
 
+
 /* ---START OF CONTENT WRAPPER--- */
 .Content_Wrapper {
   margin: 0 auto;
@@ -152,6 +157,7 @@ div #topright {
   /*padding: 5px; /* Add padding around the content wrapper */
 }
 /* ---END OF CONTENT WRAPPER--- */
+
 
 /* ---START OF NAVBAR--- */
   #navbar {
@@ -179,6 +185,7 @@ div #topright {
     display: inline;
   }
 /* ---END OF NAVBAR--- */
+
 
 /* Product Container */
 .product-divider {
@@ -223,8 +230,8 @@ div #topright {
 .price-container p {
   margin: 0; /* Remove default margin for the paragraph */
 }
-
 /* End of Product Container */
+
 
 /* ---START OF BANNER--- */
 .banner h1 {
@@ -299,6 +306,42 @@ div #topright {
   }
 /* ---END OF FOOTER--- */
 
-#bodytext {
-  line-height: 2;
+
+/* ---START OF CONTACT FORM --- */
+.contactform label {
+  float: left;
+  display: block; 
+  text-align: right;
+  width: 150px;
+  padding: 10px 10px 0px 0px;
+  font-weight: bold;
 }
+
+.contactform #name, #email, #contact {
+  width: 400px;
+  border:none;
+}
+
+.contactform #name, #email, #contact, #message {
+  padding:10px;
+  border-radius: 10px;
+  border:none;
+}
+
+.contactform button {
+  margin: 30px 0px 30px 0px;
+  padding: 10px;
+  border:none;
+  border-radius: 10px;
+  transition: all 0.3s;
+  font-size: 20px;
+}
+
+#submitbutton {
+  margin-left: 10px;
+} 
+
+.contactform button:hover {
+  transform: scale(1.05, 1.05);
+}
+/* ---END OF CONTACT FORM--- */
