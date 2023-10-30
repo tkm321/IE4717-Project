@@ -2,8 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  /* background-image: url("/IE4717/F38-DG16-Project/IE4717-Project/images/background.jpg");
-  background-image: url("/images/background.jpg"); */
+  background-image: url("../../IE4717-Project/images/background1.jpg");
 }
 
 #container {
@@ -14,9 +13,7 @@ body {
 #header {
   margin: auto;
   padding: 10px;
-  background-color: #333333;
-  /* background-image: url("/IE4717/F38-DG16-Project/IE4717-Project/images/background2.jpg");
-  background-image: url("/images/background2.jpg"); */
+  background-image: url("../../IE4717-Project/images/background2.jpg");
   color: white;
   height: 150px;
 }
@@ -165,8 +162,9 @@ div #topright {
   }
 
   #navbar a:hover {
-    color:#0CF1DE;
+    color:#AC001B;
     font-weight: bold;
+    text-decoration: underline;
   }
 
   #navbar ul li {
@@ -176,46 +174,42 @@ div #topright {
 
 
 /* ---START OF BANNER--- */
-.banner h1 {
-  text-align: center;
-  background-color: #333333;  
-  /* background-image: url("/IE4717/F38-DG16-Project/IE4717-Project/images/background2.jpg");
-  background-image: url("/images/background2.jpg"); */
-  color: white;
-  margin-bottom: 0;
-  padding: 30px;
-}
-
-.bannerpromo, .bannerbest, .bannerbestdesc, .bannernew, .bannernewdesc {
+#bannercontact {
+  margin-top:70px;
   display: flex;
-  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+#bannercontact div {
+  width: 30%;
+  text-align: center;
+  background-color: white;
+  border: solid 1px black;
+}
+
+#bannercontact figcaption {
+  padding:10px;
   background-color: #333333;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
 }
 
-.bannernew div, .bannerbest div, .bannerpromo div {
-  background-color: lightgrey;
-  width: 20%;
-  aspect-ratio: 1/1;
-  margin: 0px 10px 10px 10px;
-  text-align: center;
-  font-size: 30px;
+#bannercontact img {
+  padding: 20px;
 }
 
-.bannerbestdesc div, .bannernewdesc div {
-  background-color: lightgrey;
-  width: 20%;
-  margin: 0px 10px 10px 10px;
-  text-align: center;
-  font-size: 30px;
+#bannercontact a {
+  text-decoration: none;
+  color:black;
 }
 /* ---END OF BANNER--- */
 
 
 /* ---START OF FOOTER--- */
   #footer {
-    background-color: #333333;
-    /* background-image: url("/IE4717/F38-DG16-Project/IE4717-Project/images/background2.jpg");
-    background-image: url("/images/background2.jpg"); */
+    background-image: url("../../IE4717-Project/images/background2.jpg");
     color: white;
     text-align: center;
     margin: auto;
@@ -254,21 +248,40 @@ div #topright {
   float: left;
   display: block; 
   text-align: right;
-  width: 120px;
+  width: 150px;
   padding: 10px 10px 0px 0px;
   font-weight: bold;
 }
 
-.contactform #name, #email {
+.contactform #name, #email, #contact {
   width: 400px;
+  border:none;
 }
 
-.contactform #name, #email, #message {
+.contactform #name, #email, #contact, #message {
   padding:10px;
   border-radius: 10px;
+  border:none;
 }
 
 .contactform button {
   margin: 30px 0px 30px 0px;
   padding: 10px;
+  border:none;
+  border-radius: 10px;
+  transition: all 0.3s;
+  font-size: 20px;
+}
+
+#submitbutton {
+  margin-left: 10px;
+} 
+
+.contactform button:hover {
+  transform: scale(1.05, 1.05);
+}
+
+.Content_Wrapper {
+  margin: auto;
+  max-width: 1200px;
 }

@@ -3,7 +3,7 @@
 <head>
   <title>NovaTech - Your Ultimate Electronics Store</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="css/contactformstyles.css">
+  <link rel="stylesheet" href="css/contactstyles.css">
   <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
   <script type="text/javascript" src="js/login.js"></script>
 </head>
@@ -47,7 +47,8 @@
     </div>
     <!-- END OF HEADER -->
 
-
+    
+    <div class = "Content_Wrapper">
     <!-- START OF NAVBAR -->
     <div id="navbar">
       <nav>
@@ -65,31 +66,49 @@
     </div>
     <!-- END OF NAVBAR -->
 
-  <main class="container">
-    <section class="contact">
-      <h2>Contact Us</h2>
-      <p>If you have any questions or inquiries, please do not hesitate to get in touch with us.</p>
-      <form class="contactform">
-        <div>
-          <label for="name">Name:</label>    
-          <input type="text" id="name" name="name" placeholder="Enter your name here" required><br><br>
-        </div>
 
-        <div>
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" placeholder="Enter your email here" required><br><br>
+        <h2>Contact Us</h2>
+        <p style="font-size:18px">If you have any questions or inquiries, please do not hesitate to get in touch with us.</p><br>
+        <form class="contactform">
+          <div>
+            <label for="name">Name*:</label>    
+            <input type="text" id="name" name="name" placeholder="Enter your name here" required><br><br>
+          </div>
+  
+          <div>
+            <label for="email">Email*:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email here" required><br><br>
+          </div>
+  
+          <div>
+            <label for="contact">Contact Number*:</label>
+            <input type="text" id="contact" name="contact" placeholder="Enter your contact number here" required><br><br>
+          </div>
+     
+          <div>
+            <label for="message">Message*:</label>
+            <textarea id="message" name="message" rows="10" cols="135" placeholder="Enter your message here" required></textarea>
+          </div>
+          
+          <button type="reset" id="resetbutton" class="resetbutton">Clear</button>
+          <button type="submit" id="submitbutton" class="submitbutton">Send Message</button>
+        </form>
+
+        <div class="banner">
+          <div id="bannercontact">
+          <div>
+            <figcaption>Call Us</figcaption>
+            <a href="tel:6567671314"><img src="images/call_icon.png" style="width:100px;">
+            <p><b>+65-67671314</b><br><br>Mon - Fri: 10:00am - 10:00pm<br>Sat, Sun & Public Holidays: Closed</p></a>
+          </div>
+          <div>
+            <figcaption>Email Us</figcaption>
+            <a href="mailto:f32ee@localhost"><img src="images/email_icon.png" style="width:100px;">
+            <p><b>support@novatech.com.sg</b><br><br>We will be guaranteed to get back with yo<br>within 2 working days<br></p></a>
+          </div>
         </div>
-   
-        <div>
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="10" cols="150" placeholder="Enter your message here" required></textarea>
         </div>
-        
-        <button type="reset" class="resetbutton">Clear</button>
-        <button type="submit" class="submitbutton">Send Message</button>
-      </form>
-    </section>
-  </main>
+    </div>
 
   <!-- START OF FOOTER -->
   <div id="footer">

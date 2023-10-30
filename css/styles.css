@@ -2,8 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-image: url("/IE4717/F38-DG16-Project/IE4717-Project/images/background.jpg");
-  background-image: url("/images/background.jpg");
+  background-image: url("../../IE4717-Project/images/background1.jpg");
 }
 
 #container {
@@ -14,9 +13,7 @@ body {
 #header {
   margin: auto;
   padding: 10px;
-  /* background-color: #333333; */
-  background-image: url("/IE4717/F38-DG16-Project/IE4717-Project/images/background2.jpg");
-  background-image: url("/images/background2.jpg");
+  background-image: url("../../IE4717-Project/images/background2.jpg");
   color: white;
   height: 150px;
 }
@@ -152,7 +149,7 @@ div #topright {
 .Content_Wrapper {
   margin: 0 auto;
   max-width: 1200px; /* Adjust the maximum width as needed */
-  padding: 5px; /* Add padding around the content wrapper */
+  /*padding: 5px; /* Add padding around the content wrapper */
 }
 /* ---END OF CONTENT WRAPPER--- */
 
@@ -173,8 +170,9 @@ div #topright {
   }
 
   #navbar a:hover {
-    color:#0CF1DE;
+    color:#AC001B;
     font-weight: bold;
+    text-decoration: underline;
   }
 
   #navbar ul li {
@@ -232,8 +230,7 @@ div #topright {
 .banner h1 {
   text-align: center;
   /* background-color: #333333; */  
-  background-image: url("/IE4717/F38-DG16-Project/IE4717-Project/images/background2.jpg");
-  background-image: url("/images/background2.jpg");
+  background-image: url("../../IE4717-Project/images/background2.jpg");
   color: white;
   margin-bottom: 0;
   padding: 30px;
@@ -267,8 +264,7 @@ div #topright {
 /* ---START OF FOOTER--- */
   #footer {
     /* background-color: #333333; */
-    background-image: url("/IE4717/F38-DG16-Project/IE4717-Project/images/background2.jpg");
-    background-image: url("/images/background2.jpg");
+    background-image: url("../../IE4717-Project/images/background2.jpg");
     color: white;
     text-align: center;
     margin: auto;
@@ -302,3 +298,7 @@ div #topright {
     padding: 20px;
   }
 /* ---END OF FOOTER--- */
+
+#bodytext {
+  line-height: 2;
+}
