@@ -1,61 +1,140 @@
 /* Styles for .product_name */
-.ITEM_PAGE #productid_1 .product_name {
-    padding: 5px;
-    margin-left: 10px;
-    font-size: 24px;
+.product_name {
+    padding-left: 60px;
+    padding-top: 10px;
 }
 
-/* Styles for .product_content */
-.ITEM_PAGE #productid_1 .product_content {
+/* Styles for .product_info */
+.product_info {
+    display: flex; /* Use flexbox to create a horizontal layout */
+}
+
+/* Styles for .product_img */
+.product_img {
+    flex: 2; /* Take up all available horizontal space */
+    max-width: 70%;
+    max-height: auto;
+    text-align: center;
     display: flex;
-    align-items: center; /* Center vertically within the container */
-}
-/* Styles for .slideshow-button-left */
-.slideshow-button-left {
-    margin-right: -40px; /* Adjust the negative margin as needed */
-	z-index: 1;
-}
-
-/* Styles for .prev (left button) */
-.prev {
-    background-color: #555;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
-    border-top-right-radius: 50%; /* Makes the top-right corner round */
-    border-bottom-right-radius: 50%; /* Makes the bottom-right corner round */
-}
-
-/* Styles for .slideshow-button-right */
-.slideshow-button-right {
-    margin-left: -40px; /* Adjust the negative margin as needed */
-}
-
-/* Styles for .next (right button) */
-.next {
-    background-color: #555;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
-    border-top-left-radius: 50%; /* Makes the top-left corner round */
-    border-bottom-left-radius: 50%; /* Makes the bottom-left corner round */
+    flex-direction: column;
+    align-items: center;
+    position: relative;
 }
 
 /* Styles for .slideshow-container */
 .slideshow-container {
-    max-width: 80%; /* Adjust the width as needed to make the slideshow smaller */
-    margin: 0; /* Reset margin to eliminate any default whitespace */
+    max-width: 75%; 
+    margin: 0 auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+/* Style for the minimized thumbnails */
+.thumbnail-container {
+    display: flex;
+    overflow: hidden;
+    justify-content: center; /* Center thumbnails horizontally */
+    max-width: 400px;
+    width: 100%;
+}
+
+.thumbnail {
+    width: 125px; /* Adjust the width as needed */
+    height: auto;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+.thumbnail:hover {
+    opacity: 1;
 }
 
 /* Styles for the slideshow images */
 .mySlides img {
-    max-width: 100%; /* Set the maximum width for the images */
+    max-width: 100%;
+    height: auto; /* Adjust the height of the images to maintain aspect ratio */
+}
+
+.slideshow-button-left, .slideshow-button-right {
+    margin-right: -40px; /* Adjust the negative margin as needed */
+	z-index: 1;
+}
+/* Style for the < and > buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    background-color: #555;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.prev {
+    left: 30px;
+}
+
+.next {
+    right: 30px;
 }
 
 /* Styles for .product_desc */
-.ITEM_PAGE #productid_1 .product_desc {
-    padding: 10px;
-    flex: 1; /* Take up the remaining space on the right */
+.product_desc {
+    flex: 1; /* Take up 1/3 of the available horizontal space */
+    padding: 10px; /* Add padding as needed */
+    display: flex; /* Use flexbox to center content vertically */
+    flex-direction: column; /* Arrange content vertically */
+    justify-content: center; /* Center content vertically */
+}
+
+/* Styles for .product-features-container */
+.product-features-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px; /* Add margin as needed */
+}
+
+/* Styles for .product_features */
+#product_features {
+	padding-top: 10px;
+	text-align: center;
+}
+
+/* Styles for dropdown buttons */
+.product_features .dropdown-btn {
+  background-color: #3498DB;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  margin: 0 10px; /* 0 top/bottom margin, 5px left/right margin */
+  display: inline-block;
+  font-size: 18px; /* Adjust the font size as needed */
+}
+
+/* Styles for dropdown content (initially hidden) */
+.dropdown-content {
+  display: none;
+  background-color: #f9f9f9;
+  padding: 10px;
+  max-width: 625px;
+  text-align: left;
+  vertical-align: top;
+  margin: 0 auto; /* Center the content horizontally */
+}
+
+/* Hover effect for dropdown buttons */
+.dropdown-btn:hover {
+  background-color: #555;
+}
+
+/* Show dropdown content when the button is clicked */
+.dropdown-btn.active + .dropdown-content {
+  display: inline-block;
 }
