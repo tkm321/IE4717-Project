@@ -138,3 +138,111 @@
 .dropdown-btn.active + .dropdown-content {
   display: inline-block;
 }
+
+.quantity-input {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.styled-input {
+    width: 70%; /* Adjust the width to your desired size */
+    text-align: center; /* Center the text inside the input */
+    padding: 5px 0; /* Add some padding to vertically center the text */
+}
+.styled-input::-webkit-inner-spin-button,
+.styled-input::-webkit-outer-spin-button {
+    appearance: none; /* Remove the up and down arrows in webkit browsers */
+}
+
+.quantity-input button {
+    width: 30px;
+    height: 30px;
+    background-color: #eee;
+    border: none;
+    cursor: pointer;
+}
+
+.quantity-input button {
+    margin: 0 5px;
+}
+
+#wishlistButton,
+#cartButton {
+    font-size: 16px; /* Adjust the font size to your preference */
+	font-weight: bold;
+    width: 100%; /* Set a fixed width for both buttons */
+    padding: 10px; /* Adjust the padding for height and spacing */
+    background-color: #008CBA; /* Button background color */
+    color: white; /* Text color */
+    border: none; /* Remove the button border */
+    cursor: pointer;
+}
+
+#wishlistButton:hover,
+#cartButton:hover {
+    background-color: #005F77; /* Button background color on hover */
+}
+
+.product-table {
+    border: 1px solid #ccc; /* Add a border to the entire table */
+}
+
+.product-table tr {
+    border: 1px solid #ccc; /* Add borders to each table row */
+}
+
+.product-table td {
+    padding: 10px;
+    border: 1px solid #ccc; /* Add borders to each table cell */
+	vertical-align: middle;
+}
+
+.price-cell {
+    font-size: 30px; /* Adjust the font size to make the text bigger */
+	font-weight: bold;
+    color: red; /* Set the text color to red */
+    display: flex; /* Use flexbox to control the layout */
+    align-items: baseline; /* Align text baselines (top of text) */
+	border: none;
+}
+
+.cents {
+    font-size: 12px; /* Adjust the font size for cents to make it smaller */
+    margin-left: 0px; /* Negative margin to avoid spacing */
+}
+
+/* Styles for star ratings */
+.star-filled,
+.star-half,
+.star-empty {
+    font-size: 24px; /* Adjust the font size to make the stars bigger */
+}
+.star-filled {
+    color: orange; /* Set the color of filled stars to yellow */
+}
+
+.star-half {
+    color: yellow; /* Set the color of half-filled stars to yellow */
+    width: 0.5em; /* Adjust the width to control how much of the star is filled */
+}
+
+.star-empty {
+    color: #ccc; /* Set the color of empty stars to gray (or any color you prefer) */
+}
+
+.review-cell {
+    font-size: 20px;
+}
+.add-review-link {
+    text-decoration: none; /* Remove the default underline */
+    color: #008CBA; /* Set the link color to your preferred color */
+    cursor: pointer;
+	font-size: 16px;
+	text-align: right;
+	margin-left: 10px;
+}
+
+.add-review-link:hover {
+    text-decoration: underline; /* Underline the link when hovered */
+}

@@ -12,7 +12,7 @@
   <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
   <script type="text/javascript" src="js/login.js"></script>
   <script type="text/javascript" src="js/slideshow.js"></script>
-  <script type="text/javascript" src="js/dropdown.js"></script>
+  <script type="text/javascript" src="js/item_script.js"></script>
 </head>
 
 
@@ -111,26 +111,57 @@
 
 				<!-- Product Details -->
 				<div class="product_desc" id="product_desc">
-					<table id="table_product_desc">
+					<table id="table_product_desc" class="product-table">
 						<tr>
-							<td>Price:</td>
-							<td>$<?php echo $product['product_price']; ?></td>
+							<td class="price-cell">
+								S$<?php
+								$price = number_format($product['product_price'], 2); // Format the price with two decimal places
+								$price_parts = explode('.', $price); // Split the price into dollars and cents
+								echo '<span class="dollars">' . $price_parts[0] . '</span>'; // Display dollars
+								echo '<span class="cents">' . $price_parts[1] . '</span>'; // Display cents
+								?>
+							</td>
 						</tr>
 						<tr>
-							<td>Review:</td>
-							<td>Review Taken from PHPMYADMIN(Add a Review Button)</td>
+							<td class="review-cell">
+									<?php
+										$reviewValue = $review; 
+										echo 'Review : ' . $review . ' ';
+
+										// Calculate the number of filled stars based on the review value
+										$numFilledStars = floor($reviewValue); // Number of filled stars
+
+										// Calculate the number of half-filled stars based on the review value
+										$hasHalfStar = ($reviewValue - $numFilledStars) >= 0.5;
+
+										// Add filled, half-filled, and empty stars based on the range
+										for ($i = 1; $i <= 5; $i++) {
+											if ($i <= $numFilledStars) {
+												echo '<span class="star-filled">★</span>';
+											} elseif ($i == $numFilledStars + 1 && $hasHalfStar) {
+												echo '<span class="star-half">★</span>';
+											} else {
+												echo '<span class="star-empty">☆</span>';
+											}
+										}
+									?>
+									<a href="#" class="add-review-link">Add a Review</a>
+							</td>
 						</tr>
 						<tr>
-							<td>Amount:</td>
-							<td>javascript</td>
+							<td>
+								<div class="quantity-input">
+									<button id="decrement">-</button>
+									<input type="number" name="qty" id="qty" value="0" min="0" class="styled-input">
+									<button id="increment">+</button>
+								</div>
+							</td>
 						</tr>
 						<tr>
-							<td>Add to Wishlist:</td>
-							<td>A Button</td>
+							<td><button id="wishlistButton">Add to Wishlist</button></td>
 						</tr>
 						<tr>
-							<td>Add to Cart</td>
-							<td>A Button</td>
+							<td><button id="cartButton">Add to Cart</button></td>
 						</tr>
 						<!-- Additional product details can be displayed here -->
 					</table>
@@ -164,7 +195,31 @@
 							<p>These are the specifications content.</p>
 						  </div>
 						  <div class="dropdown-content" id="askus">
-							<p>Ask us anything here.</p>
+							<p>
+								Ask us anything here.<br>
+								<table>
+									<tr>
+										<td> Product </td>
+										<td> <?php echo $product['product_name']; ?> </td>
+									</tr>
+									<tr>
+										<td> Name </td>
+										<td> "type name"</td>
+									</tr>
+									<tr>
+										<td> Email </td>
+										<td> "type email" </td>
+									</tr>
+									<tr>
+										<td> Phone Number </td>
+										<td> "type number" </td>
+									</tr>
+									<tr>
+										<td> Message </td>
+										<td> "type message" </td>
+									</tr>
+								</table>
+							</p>
 						  </div>
 						  <div class="dropdown-content" id="delivery">
 							<p>All items available for online purchase are not guaranteed to be in stock at the time of order processing. If we are unable to fulfill your order, you will be offered an alternative or given a refund for the unavailable product.</p>

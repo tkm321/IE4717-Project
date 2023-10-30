@@ -25,6 +25,17 @@ if (isset($_GET['product_id'])) {
     } else {
         echo "Product not found.";
     }
+	// Fetch the review for the product
+	$productId = $product['product_id'];
+	$sql = "SELECT reviews FROM reviews WHERE product_id = $productId";
+	$result = mysqli_query($conn, $sql);
+
+	if ($result) {
+		$row = mysqli_fetch_assoc($result);
+		$review = $row['reviews'];
+	} else {
+		$review = "No reviews available"; // Display a message if there are no reviews
+	}
 
     // Close the database connection
     $conn->close();

@@ -19,3 +19,19 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const decrementButton = document.getElementById("decrement");
+    const incrementButton = document.getElementById("increment");
+    const qtyInput = document.getElementById("qty");
+
+    decrementButton.addEventListener("click", () => {
+        if (parseInt(qtyInput.value) > 0) {
+            qtyInput.value = parseInt(qtyInput.value) - 1;
+        }
+    });
+
+    incrementButton.addEventListener("click", () => {
+        qtyInput.value = parseInt(qtyInput.value) + 1;
+    });
+});

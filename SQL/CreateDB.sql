@@ -46,9 +46,8 @@ CREATE TABLE IF NOT EXISTS total_sales (
 DROP TABLE IF EXISTS reviews;
 CREATE TABLE IF NOT EXISTS reviews (
   product_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  reviews DECIMAL,
+  reviews_total INT,
+  reviews_qty INT,
+  reviews DECIMAL(2, 1) GENERATED ALWAYS AS (IF(reviews_qty > 0, reviews_total / reviews_qty, 0)) STORED,
   FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
-
-
-
