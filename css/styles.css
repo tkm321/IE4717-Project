@@ -207,6 +207,12 @@ div #topright {
   max-width: 100%;
   height: auto;
 }
+.product-container h2 {
+  background-color: lightgrey; /* Set the background color to grey */
+  padding: 10px; /* Add some padding to the header */
+  margin: 0; /* Remove the default margin */
+  border-radius: 15px; /* Add rounded corners */
+}
 
 .price-container {
   position: relative; /* Keep it relatively positioned within the product-container */
