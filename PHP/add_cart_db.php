@@ -20,20 +20,24 @@ if (isset($_GET['action'])) {
     // Capture the quantity from the form
     $quantity = isset($_GET['qty']) ? $_GET['qty'] : 0;
 
+    // If quantity is 0, set it to 1, as we want the buyer to be able to add one item if never stated
+    if ($quantity == 0) {
+        $quantity = 1;
+    }
+
     if ($action === "wishlist") {
-        // Add to wishlist logic here, regardless of quantity
+        // For "Add to Wishlist," set the quantity to 1, as we don't care about qty for wishlist
+        $quantity = 1;
+        // Add to wishlist logic here, using $quantity
         // For example, you can insert the product into the wishlist table
         // and display a message or perform any necessary actions
-        echo "Product added to wishlist.";
+        echo "Product added to wishlist with quantity: " . $quantity;
     } elseif ($action === "cart") {
-        // Add to cart logic here, but only if quantity is greater than 0
-        if ($quantity > 0) {
-            // Insert the product into the cart table and perform other cart-related actions
-            echo "Product added to cart with quantity: " . $quantity;
-        } else {
-            // Handle the case where quantity is 0 for cart (e.g., display an error message)
-            echo "Quantity must be greater than 0 to add to cart.";
-        }
+        // For "Add to Cart," the quantity will be the entered quantity (with 0 turned into 1)
+        // Add to cart logic here, using $quantity
+        // For example, you can insert the product into the cart table
+        // and display a message or perform any necessary actions
+        echo "Product added to cart with quantity: " . $quantity;
     } else {
         echo "Invalid action!";
     }
@@ -41,3 +45,8 @@ if (isset($_GET['action'])) {
     echo "Action not specified!";
 }
 ?>
+
+
+
+
+
