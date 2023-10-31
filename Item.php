@@ -48,8 +48,8 @@
             </form>
           </div>
 
-          <a href="wishlist.html"><button class="topbuttons">Wishlist</button></a>
-          <a href="cart.html"><button class="topbuttons">Cart</button></a>
+          <a href="#.html"><button class="topbuttons">Wishlist</button></a>
+          <a href="#.html"><button class="topbuttons">Cart</button></a>
         </div>
         
     </div>
@@ -111,6 +111,7 @@
 
 				<!-- Product Details -->
 				<div class="product_desc" id="product_desc">
+					<form id="actionForm" action="php/add_cart_db.php" method="get">
 					<table id="table_product_desc" class="product-table">
 						<tr>
 							<td class="price-cell">
@@ -151,20 +152,25 @@
 						<tr>
 							<td>
 								<div class="quantity-input">
-									<button id="decrement">-</button>
-									<input type="number" name="qty" id="qty" value="0" min="0" class="styled-input">
-									<button id="increment">+</button>
+									        <button type="button" id="decrement">-</button>
+											<input type="number" name="qty" id="qty" value="0" min="0" class="styled-input" onkeypress="return event.keyCode != 13;">
+											<button type="button" id="increment">+</button>
 								</div>
 							</td>
 						</tr>
 						<tr>
-							<td><button id="wishlistButton">Add to Wishlist</button></td>
+							<td>
+								<button type="submit" name="action" value="wishlist" class="addcart-button">Add to Wishlist</button>
+							</td>
 						</tr>
 						<tr>
-							<td><button id="cartButton">Add to Cart</button></td>
+							<td>
+								<button type="submit" name="action" value="cart" class="addcart-button">Add to Cart</button>
+							</td>
 						</tr>
 						<!-- Additional product details can be displayed here -->
 					</table>
+					</form>
 				</div>
 			</div>
 

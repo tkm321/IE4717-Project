@@ -167,23 +167,6 @@
     margin: 0 5px;
 }
 
-#wishlistButton,
-#cartButton {
-    font-size: 16px; /* Adjust the font size to your preference */
-	font-weight: bold;
-    width: 100%; /* Set a fixed width for both buttons */
-    padding: 10px; /* Adjust the padding for height and spacing */
-    background-color: #008CBA; /* Button background color */
-    color: white; /* Text color */
-    border: none; /* Remove the button border */
-    cursor: pointer;
-}
-
-#wishlistButton:hover,
-#cartButton:hover {
-    background-color: #005F77; /* Button background color on hover */
-}
-
 .product-table {
     border: 1px solid #ccc; /* Add a border to the entire table */
 }
@@ -245,4 +228,21 @@
 
 .add-review-link:hover {
     text-decoration: underline; /* Underline the link when hovered */
+}
+
+/* Style for the "Add to Cart" input with class addcart-button */
+.addcart-button {
+	font-size: 16px; /* Adjust the font size to your preference */
+	font-weight: bold;
+	width: 100%; /* Set a fixed width for both buttons */
+	padding: 10px; /* Adjust the padding for height and spacing */
+	background-color: #008CBA; /* Button background color */
+	color: white; /* Text color */
+	border: none; /* Remove the button border */
+	cursor: pointer;
+}
+
+/* Style for button hover state */
+.addcart-button:hover {
+	background-color: #005F77; /* Button background color on hover */
 }
