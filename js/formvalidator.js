@@ -51,7 +51,7 @@ function validateContact() {
     }
     else
     {
-        alert("Please enter a valid 8-digit Singapore phone number starting with 6, 8 or 9.");
+        alert("Please enter a valid 8-digit Singapore phone number starting with either 6, 8 or 9.");
         return false;
     }
 }
