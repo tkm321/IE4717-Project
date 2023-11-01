@@ -87,7 +87,7 @@
           <nav>
             <ul>
               <li><a href="index.html">Home</a></li>
-              <li><a href="products.html">All Products</a></li>
+              <li><a href="products.php">All Products</a></li>
               <li><a href="aboutus.html">About Us</a></li>
               <li><a href="contact.html">Contact Us</a></li>
               <!-- <li><a href="products.html">Products</a></li> |
