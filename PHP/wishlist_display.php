@@ -1,4 +1,5 @@
 <?php
+session_start(); // Start the session to store the scroll position
 
 $servername = "localhost";
 $username = "jwongso001";
@@ -10,21 +11,21 @@ chdir(__DIR__);
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
 if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+    die("Connection failed: " . $conn->connect_error);
 }
 
-// Query your database to fetch products
-$sql = "SELECT * FROM products"; 
+// Query your database to fetch products in the wishlist
+$sql = "SELECT p.* FROM products p
+        INNER JOIN wishlist w ON p.product_id = w.product_id";
 $result = $conn->query($sql);
 
 $products = []; // Initialize an array to store product data
 
 if ($result->num_rows > 0) {
-  while ($row = $result->fetch_assoc()) {
-    $products[] = $row; // Store product data in the array
-  }
+    while ($row = $result->fetch_assoc()) {
+        $products[] = $row; // Store product data in the array
+    }
 }
 
 foreach ($products as $product) {
@@ -73,8 +74,6 @@ foreach ($products as $product) {
     echo '</div>'; // Close the price-container div
     echo '</div>'; // Close the product-container div
 }
-		  
+
 $conn->close();
-
-
 ?>

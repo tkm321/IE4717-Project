@@ -1,6 +1,5 @@
 <?php
-	include("PHP/item_desc.php");  
-	include("PHP/product_add_db.php");  
+	include("PHP/item_desc.php");   
 ?>
 
 <!DOCTYPE html>
@@ -112,7 +111,7 @@
 
 				<!-- Product Details -->
 				<div class="product_desc" id="product_desc">
-					<form id="actionForm" action="php/add_cart_db.php" method="get">
+					<form id="actionForm" action="php/item_add_db.php" method="get">
 					<input type="hidden" name="product_id" value="<?php echo $product['product_id']; ?>">
 					<table id="table_product_desc" class="product-table">
 						<tr>

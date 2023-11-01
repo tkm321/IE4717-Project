@@ -125,9 +125,21 @@ $conn->close();
     // Display the message in a JavaScript alert
     alert('<?php echo $message; ?>');
 
-    // Navigate back to the previous page and refresh it
-    setTimeout(function () {
-        window.history.back();
-        location.reload();
-    }, 0); // Refresh after 0 second (adjust the delay as needed)
+    // Function to determine the previous page and redirect accordingly
+    function redirectBasedOnReferer() {
+        if (document.referrer.includes('wishlist.php')) {
+            // Redirect to the wishlist page
+            window.location.href = '../wishlist.php';
+        } else if (document.referrer.includes('products.php')) {
+            // Redirect to the products page
+            window.location.href = '../products.php';
+        } else {
+            // If the referrer is unknown, go back to the previous page with a random parameter
+            window.history.back();
+            location.href = location.href + '?rand=' + Math.random();
+        }
+    }
+
+    // Call the redirect function after a delay (0 seconds)
+    setTimeout(redirectBasedOnReferer, 0);
 </script>
