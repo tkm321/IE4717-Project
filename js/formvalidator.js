@@ -1,74 +1,124 @@
-// CONTACT FORM START
 function validateName() {
-    var namefield = document.getElementById("name").value;
-    var namepattern = /^[a-zA-Z]+(\s+[a-zA-Z]+)*$/;
-    
-    if (namepattern.test(namefield))
-    {
-      return true;
-    }
-    else if (namefield = null || namefield == "")
-    {
-      return false;
-    }
-    else
-    {
-      alert("Please ensure your name is in the following format:\n- Your name should contain only word characters and spaces.\n- There should not be any extra white spaces at the front or back of your name or by itself.");
-      return false;
-    }
+  var namefield = document.getElementById("name").value;
+  var namepattern = /^[a-zA-Z]+(\s+[a-zA-Z]+)*$/;
+  
+  if (namepattern.test(namefield))
+  {
+    return true;
+  }
+  else if (namefield = null || namefield == "")
+  {
+    return false;
+  }
+  else
+  {
+    alert("Please ensure your name is in the following format:\n- Your name should contain only word characters and spaces.\n- There should not be any extra white spaces at the front or back of your name or by itself.");
+    return false;
+  }
 }
 
 function validateEmail() {
-    var emailfield = document.getElementById("email").value;
-    var emailpattern = /^[\w.-]+@([a-zA-Z]+\.){1,3}[a-zA-Z]{2,3}$/;
+  var emailfield = document.getElementById("email").value;
+  var emailpattern = /^[\w.-]+@([a-zA-Z]+\.){1,3}[a-zA-Z]{2,3}$/;
 
-    if (emailpattern.test(emailfield))
-    {
+  if (emailpattern.test(emailfield))
+  {
     return true;
-    }
-    else if (emailfield = null || emailfield == "")
-    {
+  }
+  else if (emailfield = null || emailfield == "")
+  {
     return false;
-    }
-    else
-    {
-    alert("Invalid email format.\nPlease ensure your email is in the following format:\n<Username that contains only word characters, hyphen(-) and period(.)>@<Domain name that contains only two to four address extensions with each extension separated by a period(.) with last extension having 2-3 characters>\n\nEXAMPLES:\nAllowed: sam-95@gmail.com, tom.ng@ntu.edu.sg, jean@send.q.com.sg\nNot allowed: john@sg, mr+tan@edu.com.g, lisa@my.edu.roam.org.sg");
+  }
+  else
+  {
+  alert("Invalid email format.\nPlease ensure your email is in the following format:\n<Username that contains only word characters, hyphen(-) and period(.)>@<Domain name that contains only two to four address extensions with each extension separated by a period(.) with last extension having 2-3 characters>\n\nEXAMPLES:\nAllowed: sam-95@gmail.com, tom.ng@ntu.edu.sg, jean@send.q.com.sg\nNot allowed: john@sg, mr+tan@edu.com.g, lisa@my.edu.roam.org.sg");
     return false;
-    }
+  }
 }
 
 function validateContact() {
-    var contactfield = document.getElementById("contact").value;
-    var contactpattern = /^(6|8|9)[0-9]{7}$/;
+  var contactfield = document.getElementById("contact").value;
+  var contactpattern = /^(6|8|9)[0-9]{7}$/;
 
-    if (contactpattern.test(contactfield))
-    {
-        return true;
-    }
-    else if (contactfield = null || contactfield == "")
-    {
-        return false;
-    }
-    else
-    {
-        alert("Please enter a valid 8-digit Singapore phone number starting with either 6, 8 or 9.");
-        return false;
-    }
+  if (contactpattern.test(contactfield))
+  {
+    return true;
+  }
+  else if (contactfield = null || contactfield == "")
+  {
+    return false;
+  }
+  else
+  {
+    alert("Please enter a valid 8-digit Singapore phone number starting with either 6, 8 or 9.");
+    return false;
+  }
 }
 
-function validateForm() {
-    var confirmName = validateName();
-    var confirmEmail = validateEmail();
-    var confirmContact = validateContact();
-    
-    if (confirmName && confirmEmail && confirmContact)
-    {
-      alert("Form successfully submitted!");
-      return true;
-    }
-    else
-    {
-      return false;
-    }
+function validateContactForm() {
+  var confirmName = validateName();
+  var confirmEmail = validateEmail();
+  var confirmContact = validateContact();
+  
+  if (confirmName && confirmEmail && confirmContact)
+  {
+    alert("Form successfully submitted!");
+    return true;
   }
-// CONTACT FORM END
+  else
+  {
+    return false;
+  }
+}
+
+function validatePassword() {
+  var passwordfield = document.getElementById("password").value;
+  var passwordpattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+  
+  if (passwordpattern.test(passwordfield))
+  {
+    return true;
+  }
+  else if (passwordfield = null || passwordfield == "")
+  {
+    return false;
+  }
+  else
+  {
+    alert("Password should contain a minimum of eight characters, at least one uppercase letter, one lowercase letter, and one number.");
+    return false;
+  }
+}
+
+function validatePasswordSame() {
+  var passwordfield = document.getElementById("password").value;
+  var confirmpasswordfield = document.getElementById("confirmpassword").value;
+
+  if (passwordfield == confirmpasswordfield)
+  {
+    return true; 
+  }
+  else
+  { 
+    alert("Passwords do not match.");
+    return false;
+  } 
+}
+
+function validateRegisterForm() {
+  var confirmName = validateName();
+  var confirmEmail = validateEmail();
+  var confirmContact = validateContact();
+  var confirmPassword = validatePassword();
+  var confirmPasswordSame = validatePasswordSame();
+  
+  if (confirmName && confirmEmail && confirmContact && confirmPassword && confirmPasswordSame)
+  {
+    alert("Account registration successful. Welcome to NovaTech!");
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+}
