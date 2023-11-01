@@ -66,15 +66,15 @@
         </div>
     <!-- END OF NAVBAR -->        
 	
-	<div class="page-header">
-		<h2>Shopping Cart</h2>
-	</div>	
-	<div class="shopping-cart">	
-		<?php
-			// Include the cart_display.php file to display the shopping cart
-			include 'php/cart_display.php';
-		?>
-	</div>
+		<div class="page-header">
+			<h2>Shopping Cart</h2>
+		</div>	
+		<div class="shopping-cart">	
+			<?php
+				// Include the cart_display.php file to display the shopping cart
+				include 'php/cart_display.php';
+			?>
+		</div>
 	</div>
 	
   <!-- START OF FOOTER -->
