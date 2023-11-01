@@ -206,6 +206,7 @@ div #topright {
   border: 1px solid #ddd;
   border-radius: 5px;
   position: relative; /* Add relative positioning */
+  background-color: white;
 }
 
 .product-container img {
@@ -225,10 +226,40 @@ div #topright {
   padding: 5px 0; /* Add some padding */
   margin-top: auto; /* Push the price-container to the bottom */
   text-align: center;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .price-container p {
   margin: 0; /* Remove default margin for the paragraph */
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Ensure buttons take up the full width */
+    margin-top: 10px; /* Add some space between price and buttons */
+}
+
+.add-action {
+    flex: 1; /* Distribute available space evenly between buttons */
+    padding: 10px;
+    width: 175px; /* Set a fixed width for both buttons */
+    font-size: 16px; /* Adjust the font size to your preference */
+    font-weight: bold;
+    background-color: #008CBA; /* Button background color */
+    color: white; /* Text color */
+    border: none; /* Remove the button border */
+    cursor: pointer;
+    margin: 2px; /* Adjust this value to bring the buttons closer together */
+}
+
+.add-action:hover {
+    background-color: #005F77; /* Button background color on hover */
+}
+
+/* Apply display: inline-block to form elements */
+.add-action form {
+    display: inline-block;
 }
 /* End of Product Container */
 

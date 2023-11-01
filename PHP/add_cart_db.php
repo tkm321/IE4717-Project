@@ -119,4 +119,6 @@ $jsAlert = "<script>
 </script>";
 
 echo $jsAlert;
+
+$conn->close();
 ?>

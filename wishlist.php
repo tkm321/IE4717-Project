@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +7,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
   <script type="text/javascript" src="js/login.js"></script>
+  
 </head>
 
 <body>
@@ -40,38 +42,43 @@
             </form>
           </div>
 
-          <a href="wishlist.html"><button class="topbuttons">Wishlist</button></a>
-          <a href="cart.html"><button class="topbuttons">Cart</button></a>
+          <a href="wishlist.php"><button class="topbuttons">Wishlist</button></a>
+          <a href="cart.php"><button class="topbuttons">Cart</button></a>
         </div>
         
     </div>
     <!-- END OF HEADER -->
 
-    
-    <div class = "Content_Wrapper">
+	<!-- Main Body -->
+	<div class = "Content_Wrapper">
     <!-- START OF NAVBAR -->
-        <div id="navbar">
-        <nav>
-            <ul>
-            <li><a href="index.html">Home</a></li> | 
-            <li><a href="#.html">Category 1</a></li> |
-            <li><a href="#.html">Category 2</a></li> |
-            <li><a href="#.html">Category 3</a></li> |
-            <li><a href="#.html">Category 4</a></li>
-            <!-- <li><a href="products.html">Products</a></li> |
-            <li><a href="aboutus.html">About Us</a></li> |
-            <li><a href="contact.html">Contact</a></li> -->
-            </ul>
-        </nav>
-        </div>
-    <!-- END OF NAVBAR -->
-
-
-        <h2>Wishlist</h2>
-        
-            
+    <div id="navbar">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li> | 
+          <li><a href="#.html">Category 1</a></li> |
+          <li><a href="#.html">Category 2</a></li> |
+          <li><a href="#.html">Category 3</a></li> |
+          <li><a href="#.html">Category 4</a></li>
+          <!-- <li><a href="products.html">Products</a></li> |
+          <li><a href="aboutus.html">About Us</a></li> |
+          <li><a href="contact.html">Contact</a></li> -->
+        </ul>
+      </nav>
     </div>
+    <!-- END OF NAVBAR -->
+	<!-- Product display -->
+	<div class="product-divider">
+		<?php
+		  // Include the PHP file and execute the code within it
+		  $products = include("PHP/wishlist_display.php");  
 
+		  
+		 ?>
+		
+	</div>
+
+<!-- End of Main Body -->
   <!-- START OF FOOTER -->
   <div id="footer">
     <footer>
@@ -94,6 +101,6 @@
   <!-- END OF FOOTER -->
 
   <script src="scripts.js"></script>
-</div>
+  </div>
 </body>
 </html>

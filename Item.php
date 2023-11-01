@@ -1,5 +1,6 @@
 <?php
 	include("PHP/item_desc.php");  
+	include("PHP/product_add_db.php");  
 ?>
 
 <!DOCTYPE html>
