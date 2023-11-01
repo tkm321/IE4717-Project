@@ -56,16 +56,12 @@
     <!-- START OF NAVBAR -->
         <div id="navbar">
         <nav>
-            <ul>
-            <li><a href="index.html">Home</a></li> | 
-            <li><a href="#.html">Category 1</a></li> |
-            <li><a href="#.html">Category 2</a></li> |
-            <li><a href="#.html">Category 3</a></li> |
-            <li><a href="#.html">Category 4</a></li>
-            <!-- <li><a href="products.html">Products</a></li> |
+          <ul>
+            <li><a href="index.html">Home</a></li> |
+            <li><a href="products.php">Products</a></li> |
             <li><a href="aboutus.html">About Us</a></li> |
-            <li><a href="contact.html">Contact</a></li> -->
-            </ul>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
         </nav>
         </div>
     <!-- END OF NAVBAR -->        
@@ -91,9 +87,6 @@
               <li><a href="products.php">All Products</a></li>
               <li><a href="aboutus.html">About Us</a></li>
               <li><a href="contact.html">Contact Us</a></li>
-              <!-- <li><a href="products.html">Products</a></li> |
-              <li><a href="aboutus.html">About Us</a></li> |
-              <li><a href="contact.html">Contact</a></li> -->
             </ul>
           </nav>
         </div>
