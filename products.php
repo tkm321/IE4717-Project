@@ -31,11 +31,13 @@
             <form action="#.php" class="form-container">
               <h1>Member Login</h1>
           
-              <label for="username"><b>Username</b></label>
-              <input type="text" placeholder="Enter Username" name="username" required>
+              <!-- <label for="email"><b>Email</b></label> -->
+              <input type="text" placeholder="Enter Email" name="email" required>
           
-              <label for="password"><b>Password</b></label>
-              <input type="password" placeholder="Enter Password" name="psw" required>
+              <!-- <label for="password"><b>Password</b></label> -->
+              <input type="password" placeholder="Enter Password" name="password" required>
+              
+              <p>No account yet? <a href="register.html">Register here!</a></p>
           
               <button type="submit" class="btn">Login</button>
               <button type="button" class="btn cancel" onclick="closeForm()">Close</button>

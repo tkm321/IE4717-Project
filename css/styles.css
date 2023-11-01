@@ -154,7 +154,7 @@ div #topright {
 .Content_Wrapper {
   margin: 0 auto;
   max-width: 1200px; /* Adjust the maximum width as needed */
-  
+  /*padding: 5px; /* Add padding around the content wrapper */
 }
 /* ---END OF CONTENT WRAPPER--- */
 

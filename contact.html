@@ -30,12 +30,14 @@
             <form action="#.php" class="form-container">
               <h1>Member Login</h1>
           
-              <label for="username"><b>Username</b></label>
-              <input type="text" placeholder="Enter Username" name="username" required>
+              <!-- <label for="email"><b>Email</b></label> -->
+              <input type="text" placeholder="Enter Email" name="email" required>
           
-              <label for="password"><b>Password</b></label>
-              <input type="password" placeholder="Enter Password" name="psw" required>
+              <!-- <label for="password"><b>Password</b></label> -->
+              <input type="password" placeholder="Enter Password" name="password" required>
 
+			        <p>No account yet? <a href="register.html">Register here!</a></p>
+          
               <button type="submit" class="btn">Login</button>
               <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
             </form>
@@ -51,19 +53,20 @@
     
     <div class = "Content_Wrapper">
     <!-- START OF NAVBAR -->
-    <div id="navbar">
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li> | 
-          <li><a href="products.php">Products</a></li> |
-          <li><a href="aboutus.html">About Us</a></li> |
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-      </nav>
-    </div>
+      <div id="navbar">
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li> | 
+            <li><a href="products.php">Products</a></li> |
+            <li><a href="aboutus.html">About Us</a></li> |
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
     <!-- END OF NAVBAR -->
 
 
+      <div>
         <h2>Contact Us</h2>
         <p style="font-size:18px">If you have any questions or inquiries, please do not hesitate to get in touch with us.</p><br>
         <form method="post" action="#.php" name="contactform" class="contactform" id="contactform">
@@ -71,28 +74,29 @@
             <label for="name">Name*:</label>    
             <input type="text" id="name" name="name" placeholder="Enter your name here" onchange="validateName(event)" required><br><br>
           </div>
-  
+        
           <div>
             <label for="email">Email*:</label>
             <input type="email" id="email" name="email" placeholder="Enter your email here" onchange="validateEmail(event)" required><br><br>
           </div>
-  
+        
           <div>
             <label for="contact">Contact Number*:</label>
             <input type="text" id="contact" name="contact" placeholder="Enter your contact number here" onchange="validateContact(event)" required><br><br>
           </div>
-     
+        
           <div>
             <label for="message">Message*:</label>
-            <textarea id="message" name="message" rows="10" cols="135" placeholder="Enter your message here" required></textarea>
+            <textarea id="message" name="message" rows="10" cols="100" placeholder="Enter your message here" required></textarea>
           </div>
           
           <button type="reset" id="resetbutton" class="resetbutton">Clear</button>
           <button type="submit" id="submitbutton" class="submitbutton">Send Message</button>
         </form>
-
-        <div class="banner">
-          <div id="bannercontact">
+      </div>
+        
+      <div class="banner">
+        <div id="bannercontact">
           <div>
             <figcaption>Call Us</figcaption>
             <a href="tel:6567671314"><img src="images/call_icon.png" style="width:100px;">
@@ -104,13 +108,13 @@
             <p><b>support@novatech.com.sg</b><br><br>We will be guaranteed to get back with yo<br>within 2 working days<br></p></a>
           </div>
         </div>
-        </div>
+      </div>
     </div>
 
 	<script type="text/javascript">
 		var contactform = document.getElementById("contactform");
 		contactform.addEventListener('submit', (event) => {
-			if (!validateForm()) event.preventDefault()
+			if (!validateContactForm()) event.preventDefault()
 		})
 	</script>
 	

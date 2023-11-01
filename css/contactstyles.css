@@ -110,6 +110,7 @@ div #topright {
   padding: 10px;
   background-color: white;
   text-align: center;
+  color: black;
 }
 
 /* Full-width input fields */
@@ -272,6 +273,7 @@ div #topright {
   padding:10px;
   border-radius: 10px;
   border:none;
+  font-size: 14px;
 }
 
 .contactform button {
@@ -289,5 +291,6 @@ div #topright {
 
 .contactform button:hover {
   transform: scale(1.05, 1.05);
+  background-color: lightgrey;
 }
 /* ---END OF CONTACT FORM--- */
