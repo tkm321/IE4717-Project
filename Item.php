@@ -178,6 +178,7 @@
 			</div>
 			
 		</div>
+	</div>
 	<!-- End of Main Body -->
     <!-- START OF FOOTER -->
     <div id="footer">

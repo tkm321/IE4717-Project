@@ -8,21 +8,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const quantityInputs = document.querySelectorAll('.product-quantity');
     const totalPrices = document.querySelectorAll('.cart-totalprice');
 
-	selectAllButton.addEventListener('click', function () {
-		event.preventDefault();
-		const areAllChecked = [...productCheckboxes].every(checkbox => checkbox.checked);
-		
-		productCheckboxes.forEach(function (checkbox) {
-			checkbox.checked = !areAllChecked;
-		});
-	});
+    selectAllButton.addEventListener('click', function () {
+        event.preventDefault();
+        const areAllChecked = [...productCheckboxes].every(checkbox => checkbox.checked);
 
-
-
-    checkoutButton.addEventListener('click', function () {
-        // Handle the checkout logic here
-        // You can submit the form with AJAX or perform other actions
-        document.getElementById('cart-form').submit();
+        productCheckboxes.forEach(function (checkbox) {
+            checkbox.checked = !areAllChecked;
+        });
     });
 
     // Function to update the quantity and total price
@@ -70,34 +62,15 @@ document.addEventListener('DOMContentLoaded', function () {
             updateQuantityAndTotal(quantityInput, totalPrices[index], 0);
         });
     });
-	
-	checkoutButton.addEventListener('click', function () {
-        // Handle the checkout logic here
-        // You can submit the form with AJAX or perform other actions
-        // For now, let's redirect to checkout_order.php
-        window.location.href = 'PHP/checkout_order.php';
-    });
-	
-	    function confirmRemove(productId) {
-        const confirmation = confirm("Are you sure you want to remove 1 item?");
-        if (confirmation) {
-            // Proceed with the removal action (you can implement this)
-            // For example, you can send an AJAX request to remove the item from the cart
-        }
-    }
 
-    function confirmRemoveAll() {
-        const confirmation = confirm("Are you sure you want to remove all?");
-        if (confirmation) {
-            // Proceed with the removal of all items action (you can implement this)
-            // For example, you can send an AJAX request to clear the entire cart
-        }
-    }
-
-    function confirmCheckout() {
-        const confirmation = confirm("Checking out now. Are you sure?");
-        if (confirmation) {
-            // If confirmed, the form will be submitted, and you'll go to checkout_order.php
-        }
-    }
+    // Code to handle removing items
+    const removeButtons = document.querySelectorAll('.remove-button');
+	removeButtons.forEach((button) => {
+		button.addEventListener('click', function (event) {
+			event.preventDefault();
+			const productId = button.getAttribute('data-product-id');
+			// Redirect to remove_cart.php with the productId
+			window.location.href = 'php/remove_cart.php?product_id=' + productId;
+		});
+	});
 });

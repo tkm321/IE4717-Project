@@ -35,15 +35,15 @@ if (mysqli_num_rows($result) > 0) {
           </tr>';
 
     while ($row = mysqli_fetch_assoc($result)) {
-		$product_id = $row['product_id'];
-		$product_name = $row['product_name'];
-		$unit_price = $row['product_price'];
-		$formatted_price = "$" . number_format($unit_price, 2);
-		$quantity = 1;
-		$total_price = number_format($unit_price * $quantity, 2);
-		$product_image_url = "Product_imgs/Product_" . $product_id . "/img_1.jpg";
+        $product_id = $row['product_id'];
+        $product_name = $row['product_name'];
+        $unit_price = $row['product_price'];
+        $formatted_price = "$" . number_format($unit_price, 2);
+        $quantity = 1;
+        $total_price = number_format($unit_price * $quantity, 2);
+        $product_image_url = "Product_imgs/Product_" . $product_id . "/img_1.jpg";
 
-		echo "<tr>";
+        echo "<tr>";
 		echo "<td class='cart-checkbox'><input type='checkbox' name='product_ids[]' class='product-checkbox' value='$product_id' data-product-id='$product_id'></td>";
 		echo "<td class='product-name-cell'>
 				<a href='item.php?product_id=$product_id'>$product_name</a> <br> 
@@ -57,21 +57,21 @@ if (mysqli_num_rows($result) > 0) {
 		</td>";
 		echo "<td class='cart-totalprice'><span id='total-price-for-product-$product_id'>$total_price</span></td>";
 		echo "<td class='cart-action'>
-				<button class='remove-button' data-product-id='$product_id' onclick='confirmRemove($product_id)'>Remove</button>
-			</td>";
+				<button type='submit' class='remove-button' data-product-id='$product_id'>Remove</button>
+			 </td>";
 		echo "</tr>";
-	}
+    }
 
     echo '</table>';
     echo '<div class="cart-bottom">'; // Remove the padding-bottom
     echo '<div class="checkout-total">';
     echo '<span class="total-items">Items: <span id="total-items-count">0</span></span>';
-	echo "<span class='checkout-totalprice'>Total Price: <span id='checkout-price-for-all'></span></span>";
-    echo '<button class="checkout-button" id="checkout-button" type="submit" name="submit" 
-    onclick="return confirmCheckout()">Checkout</button>';
+    echo "<span class='checkout-totalprice'>Total Price: <span id='checkout-price-for-all'></span></span>";
+    echo '<button class="checkout-button" id="checkout-button" type="submit" name="submit">Checkout</button>';
     echo '</div>';
     echo '</div>';
     echo '</form>';
+	echo '</div>';
     
 
 } else {
