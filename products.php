@@ -67,6 +67,9 @@
       </nav>
     </div>
     <!-- END OF NAVBAR -->
+	<div class="page-header">
+		<h2>All Products</h2>
+	</div>
 	<!-- Product display -->
 	<div class="product-divider">
 		<?php

@@ -186,6 +186,10 @@ div #topright {
   }
 /* ---END OF NAVBAR--- */
 
+/* Page-header */
+.page-header {
+    text-align: center;
+}
 
 /* Product Container */
 .product-divider {

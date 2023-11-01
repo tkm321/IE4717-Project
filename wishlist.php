@@ -68,6 +68,9 @@
     </div>
     <!-- END OF NAVBAR -->
 	<!-- Product display -->
+	<div class="page-header">
+		<h2>Wishlist</h2>
+	</div>
 	<div class="product-divider">
 		<?php
 		  // Include the PHP file and execute the code within it
