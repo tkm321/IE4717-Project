@@ -36,6 +36,23 @@ if (isset($_GET['product_id'])) {
 	} else {
 		$review = "No reviews available"; // Display a message if there are no reviews
 	}
+	
+	// Check if the product is in the wishlist
+    $product_id = $product['product_id'];
+    $isInWishlist = false;
+
+    // Query the wishlist table to check if the product is already in the wishlist
+    $wishlistCheckStmt = $conn->prepare("SELECT COUNT(*) FROM wishlist WHERE product_id = ?");
+    $wishlistCheckStmt->bind_param("i", $product_id);
+    $wishlistCheckStmt->execute();
+    $wishlistCheckStmt->bind_result($wishlistCount);
+    $wishlistCheckStmt->fetch();
+    $wishlistCheckStmt->close();
+
+    if ($wishlistCount > 0) {
+        $isInWishlist = true;
+    }
+
 
     // Close the database connection
     $conn->close();

@@ -112,6 +112,7 @@
 				<!-- Product Details -->
 				<div class="product_desc" id="product_desc">
 					<form id="actionForm" action="php/add_cart_db.php" method="get">
+					<input type="hidden" name="product_id" value="<?php echo $product['product_id']; ?>">
 					<table id="table_product_desc" class="product-table">
 						<tr>
 							<td class="price-cell">
@@ -160,7 +161,13 @@
 						</tr>
 						<tr>
 							<td>
-								<button type="submit" name="action" value="wishlist" class="addcart-button">Add to Wishlist</button>
+								<?php
+									if ($isInWishlist) {
+										echo '<button type="submit" name="action" value="remove_wishlist" class="addcart-button">Remove from Wishlist</button>';
+									} else {
+										echo '<button type="submit" name="action" value="add_wishlist" class="addcart-button">Add to Wishlist</button>';
+									}
+								?>
 							</td>
 						</tr>
 						<tr>
