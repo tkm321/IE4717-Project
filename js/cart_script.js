@@ -70,4 +70,13 @@ document.addEventListener('DOMContentLoaded', function () {
             updateQuantityAndTotal(quantityInput, totalPrices[index], 0);
         });
     });
+	
+	checkoutButton.addEventListener('click', function () {
+        // Handle the checkout logic here
+        // You can submit the form with AJAX or perform other actions
+        // For now, let's redirect to checkout_order.php
+        window.location.href = 'PHP/checkout_order.php';
+    });
+	
+	
 });

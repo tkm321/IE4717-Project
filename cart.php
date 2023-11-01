@@ -8,6 +8,7 @@
   <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
   <script type="text/javascript" src="js/login.js"></script>
   <script type="text/javascript" src="js/cart_script.js"></script>
+  <script type="text/javascript" src="js/cart_confirmation.js"></script>
 </head>
 
 <body>

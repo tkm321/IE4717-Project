@@ -18,7 +18,12 @@ $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
     echo '<div class="shopping-cart">';
-
+	echo '<div class="cart-controls">';
+	echo '<button class="select-all-button" id="select-all-button">Select All</button>';
+	echo '<button class="remove-all-button" name="remove_all" 
+        onclick="confirmRemoveAll()">Remove All</button>';
+	echo '</div>';
+    echo '<form method="post" action="PHP/checkout_order.php" onsubmit="return confirmCheckout()">';
     echo '<table id="product-cart">';
     echo '<tr>
             <th></th>
@@ -51,18 +56,22 @@ if (mysqli_num_rows($result) > 0) {
             <button class='increment-button' data-product-id='$product_id'>+</button>
         </td>";
         echo "<td class='cart-totalprice'>$$total_price</td>";
-        echo "<td class='cart-action'><button class='remove-button' data-product-id='$product_id'>Remove</button></td>";
+        echo "<td class='cart-action'>
+				<button class='remove-button' data-product-id='$product_id'
+				onclick='confirmRemove($product_id)'>Remove</button>
+			</td>";
         echo "</tr>";
     }
 
     echo '</table>';
-	
-    echo '<div class="cart-controls">';
-    echo '<button class="select-all-button" id="select-all-button">Select All</button>';
-    echo '<button class="remove-all-button" name="remove_all">Remove All</button>';
-    echo '<span class="total-items">Total(_ items): $$$ </span>';
-    echo '<button class="checkout-button" id="checkout-button" type="button">Checkout</button>';
-    echo '</div>';
+    echo '<div class = checkout-total>';
+	echo '<span class="total-items">Total(_ items): $$$ </span>';
+    echo '<button class="checkout-button" id="checkout-button" type="submit" name="submit" 
+    onclick="return confirmCheckout()">Checkout</button>';
+	echo '</div>';
+    echo '</form>';
+    
+
 } else {
     // Display "Empty" message with a sad face
     echo '<div class="empty-cart">';

@@ -93,3 +93,25 @@ body {
 .total-items {
 	font-size: 18px; /* Increase font size for the total items text */
 }
+
+.cart-controls {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	align-items: center;
+}
+
+.cart-controls button {
+	font-size: 18px; /* Increase font size for buttons */
+	padding: 10px 20px; /* Increase padding for buttons */
+}
+
+.total-items {
+	font-size: 18px; /* Increase font size for the total items text */
+}
+.checkout-total {
+    float: right; /* Move it to the right */
+    font-size: 18px; /* Set the font size to your desired value */
+	padding: 10px;
+}
