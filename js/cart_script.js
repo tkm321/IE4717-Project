@@ -78,5 +78,26 @@ document.addEventListener('DOMContentLoaded', function () {
         window.location.href = 'PHP/checkout_order.php';
     });
 	
-	
+	    function confirmRemove(productId) {
+        const confirmation = confirm("Are you sure you want to remove 1 item?");
+        if (confirmation) {
+            // Proceed with the removal action (you can implement this)
+            // For example, you can send an AJAX request to remove the item from the cart
+        }
+    }
+
+    function confirmRemoveAll() {
+        const confirmation = confirm("Are you sure you want to remove all?");
+        if (confirmation) {
+            // Proceed with the removal of all items action (you can implement this)
+            // For example, you can send an AJAX request to clear the entire cart
+        }
+    }
+
+    function confirmCheckout() {
+        const confirmation = confirm("Checking out now. Are you sure?");
+        if (confirmation) {
+            // If confirmed, the form will be submitted, and you'll go to checkout_order.php
+        }
+    }
 });
