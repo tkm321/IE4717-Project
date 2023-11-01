@@ -65,7 +65,7 @@ if (mysqli_num_rows($result) > 0) {
     echo '</table>';
     echo '<div class="cart-bottom">'; // Remove the padding-bottom
     echo '<div class="checkout-total">';
-    echo '<span class="total-items">Items: <span id="total-items-count">0</span></span>';
+    echo '<span class="total-items">Items: <span id="total-items-count"></span></span>';
     echo "<span class='checkout-totalprice'>Total Price: <span id='checkout-price-for-all'></span></span>";
     echo '<button class="checkout-button" id="checkout-button" type="submit" name="submit">Checkout</button>';
     echo '</div>';
