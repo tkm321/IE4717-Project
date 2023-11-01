@@ -29,74 +29,64 @@ if (isset($_GET['action']) && isset($_GET['product_id'])) {
 
     if ($action === "cart") {
         // Check if the product is already in the cart
-        $checkStmt = $conn->prepare("SELECT qty FROM cart WHERE product_id = ?");
+        $checkStmt = $conn->prepare("SELECT product_id FROM cart WHERE product_id = ?");
         $checkStmt->bind_param("i", $product_id);
         $checkStmt->execute();
-        $checkStmt->bind_result($cartQty);
+        $checkStmt->bind_result($cartProductId);
         $checkStmt->fetch();
         $checkStmt->close();
 
-        if ($cartQty !== null) {
-            // Product is already in the cart, update the quantity
-            $newQuantity = $cartQty + 1;
-            $updateStmt = $conn->prepare("UPDATE cart SET qty = ? WHERE product_id = ?");
-            $updateStmt->bind_param("ii", $newQuantity, $product_id);
-
-            if ($updateStmt->execute()) {
-                $message = $product_name . " added to cart. Quantity updated in the cart: " . $newQuantity;
-            } else {
-                $message = "Failed to update quantity in the cart.";
-            }
-
-            $updateStmt->close();
+        if ($cartProductId !== null) {
+            // Product is already in the cart
+            $message = $product_name . " is already in your cart.";
         } else {
             // Product is not in the cart, add it
-            $stmt = $conn->prepare("INSERT INTO cart (product_id, qty) VALUES (?, 1)");
+            $stmt = $conn->prepare("INSERT INTO cart (product_id) VALUES (?)");
             $stmt->bind_param("i", $product_id);
 
             if ($stmt->execute()) {
-                $message = $product_name . " added to cart. Quantity updated in the cart.";
+                $message = "Added " . $product_name . " to your cart.";
             } else {
-                $message = "Failed to add product to cart.";
+                $message = "Failed to add product to your cart.";
             }
 
             $stmt->close();
         }
     } elseif ($action === "add_wishlist") {
         // Check if the product is already in the wishlist
-        $checkStmt = $conn->prepare("SELECT qty FROM wishlist WHERE product_id = ?");
+        $checkStmt = $conn->prepare("SELECT product_id FROM wishlist WHERE product_id = ?");
         $checkStmt->bind_param("i", $product_id);
         $checkStmt->execute();
-        $checkStmt->bind_result($wishlistQty);
+        $checkStmt->bind_result($wishlistProductId);
         $checkStmt->fetch();
         $checkStmt->close();
 
-        if ($wishlistQty !== null) {
+        if ($wishlistProductId !== null) {
             // Product is already in the wishlist
             $message = $product_name . " is already in your wishlist.";
         } else {
             // Product is not in the wishlist, add it
-            $stmt = $conn->prepare("INSERT INTO wishlist (product_id, qty) VALUES (?, 1)");
+            $stmt = $conn->prepare("INSERT INTO wishlist (product_id) VALUES (?)");
             $stmt->bind_param("i", $product_id);
 
             if ($stmt->execute()) {
-                $message = "Added " . $product_name . " to wishlist.";
+                $message = "Added " . $product_name . " to your wishlist.";
             } else {
-                $message = "Failed to add product to wishlist.";
+                $message = "Failed to add product to your wishlist.";
             }
 
             $stmt->close();
         }
     } elseif ($action === "remove_wishlist") {
         // Check if the product is in the wishlist and remove it
-        $checkStmt = $conn->prepare("SELECT qty FROM wishlist WHERE product_id = ?");
+        $checkStmt = $conn->prepare("SELECT product_id FROM wishlist WHERE product_id = ?");
         $checkStmt->bind_param("i", $product_id);
         $checkStmt->execute();
-        $checkStmt->bind_result($wishlistQty);
+        $checkStmt->bind_result($wishlistProductId);
         $checkStmt->fetch();
         $checkStmt->close();
 
-        if ($wishlistQty !== null) {
+        if ($wishlistProductId !== null) {
             // Product is in the wishlist, remove it
             $stmt = $conn->prepare("DELETE FROM wishlist WHERE product_id = ?");
             $stmt->bind_param("i", $product_id);
@@ -104,7 +94,7 @@ if (isset($_GET['action']) && isset($_GET['product_id'])) {
             if ($stmt->execute()) {
                 $message = $product_name . " has been removed from your wishlist.";
             } else {
-                $message = "Failed to remove product from wishlist.";
+                $message = "Failed to remove product from your wishlist.";
             }
 
             $stmt->close();
@@ -125,21 +115,22 @@ $conn->close();
     // Display the message in a JavaScript alert
     alert('<?php echo $message; ?>');
 
-    // Function to determine the previous page and redirect accordingly
-    function redirectBasedOnReferer() {
-        if (document.referrer.includes('wishlist.php')) {
-            // Redirect to the wishlist page
-            window.location.href = '../wishlist.php';
-        } else if (document.referrer.includes('products.php')) {
-            // Redirect to the products page
-            window.location.href = '../products.php';
-        } else {
-            // If the referrer is unknown, go back to the previous page with a random parameter
-            window.history.back();
-            location.href = location.href + '?rand=' + Math.random();
-        }
-    }
+	// Function to determine the previous page and redirect accordingly
+	function redirectBasedOnReferer() {
+		if (document.referrer.includes('wishlist.php')) {
+			// Redirect to the wishlist page
+			window.location.href = '../wishlist.php';
+		} else if (document.referrer.includes('products.php')) {
+			// Redirect to the products page
+			window.location.href = '../products.php';
+		} else if (document.referrer.includes('item.php?product_id=<?php echo $product_id; ?>')) {
+			// Redirect to the item page
+			window.location.href = '../item.php?product_id=<?php echo $product_id; ?>';
+		} else {
+			window.location.href = '../';
+		}
+	}
 
-    // Call the redirect function after a delay (0 seconds)
-    setTimeout(redirectBasedOnReferer, 0);
+	// Call the redirect function after a delay (0 seconds)
+	setTimeout(redirectBasedOnReferer, 0);
 </script>

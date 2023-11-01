@@ -111,7 +111,7 @@
 
 				<!-- Product Details -->
 				<div class="product_desc" id="product_desc">
-					<form id="actionForm" action="php/item_add_db.php" method="get">
+					<form id="actionForm" action="php/product_add_db.php" method="get">
 					<input type="hidden" name="product_id" value="<?php echo $product['product_id']; ?>">
 					<table id="table_product_desc" class="product-table">
 						<tr>
@@ -152,15 +152,6 @@
 						</tr>
 						<tr>
 							<td>
-								<div class="quantity-input">
-									        <button type="button" id="decrement">-</button>
-											<input type="number" name="qty" id="qty" value="0" min="0" class="styled-input" onkeypress="return event.keyCode != 13;">
-											<button type="button" id="increment">+</button>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td>
 								<?php
 									if ($isInWishlist) {
 										echo '<button type="submit" name="action" value="remove_wishlist" class="addcart-button">Remove from Wishlist</button>';
@@ -183,64 +174,7 @@
 
 			<!-- Product Features -->
 			<div class="product-features-container">
-				<div class="product_features" id="product_features">
-				  <table>
-					  <tr>
-						<td>
-						  <button class="dropdown-btn" data-content="description">Description</button>
-						</td>
-						<td>
-						  <button class="dropdown-btn" data-content="specifications">Specifications</button>
-						</td>
-						<td>
-						  <button class="dropdown-btn" data-content="askus">Ask Us</button>
-						</td>
-						<td>
-						  <button class="dropdown-btn" data-content="delivery">Delivery & Pickup Information</button>
-						</td>
-					  </tr>
-					  <tr>
-						<td colspan="4">
-						  <div class="dropdown-content" id="description">
-							<p>This is the description content.</p>
-						  </div>
-						  <div class="dropdown-content" id="specifications">
-							<p>These are the specifications content.</p>
-						  </div>
-						  <div class="dropdown-content" id="askus">
-							<p>
-								Ask us anything here.<br>
-								<table>
-									<tr>
-										<td> Product </td>
-										<td> <?php echo $product['product_name']; ?> </td>
-									</tr>
-									<tr>
-										<td> Name </td>
-										<td> "type name"</td>
-									</tr>
-									<tr>
-										<td> Email </td>
-										<td> "type email" </td>
-									</tr>
-									<tr>
-										<td> Phone Number </td>
-										<td> "type number" </td>
-									</tr>
-									<tr>
-										<td> Message </td>
-										<td> "type message" </td>
-									</tr>
-								</table>
-							</p>
-						  </div>
-						  <div class="dropdown-content" id="delivery">
-							<p>All items available for online purchase are not guaranteed to be in stock at the time of order processing. If we are unable to fulfill your order, you will be offered an alternative or given a refund for the unavailable product.</p>
-						  </div>
-						</td>
-					  </tr>
-					</table>
-				</div>
+				
 			</div>
 			
 		</div>

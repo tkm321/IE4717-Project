@@ -139,34 +139,6 @@
   display: inline-block;
 }
 
-.quantity-input {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-}
-
-.styled-input {
-    width: 70%; /* Adjust the width to your desired size */
-    text-align: center; /* Center the text inside the input */
-    padding: 5px 0; /* Add some padding to vertically center the text */
-}
-.styled-input::-webkit-inner-spin-button,
-.styled-input::-webkit-outer-spin-button {
-    appearance: none; /* Remove the up and down arrows in webkit browsers */
-}
-
-.quantity-input button {
-    width: 30px;
-    height: 30px;
-    background-color: #eee;
-    border: none;
-    cursor: pointer;
-}
-
-.quantity-input button {
-    margin: 0 5px;
-}
-
 .product-table {
     border: 1px solid #ccc; /* Add a border to the entire table */
 }

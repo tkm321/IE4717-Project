@@ -4,8 +4,10 @@
   <title>NovaTech - Your Ultimate Electronics Store</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/cartstyles.css">
   <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
   <script type="text/javascript" src="js/login.js"></script>
+  <script type="text/javascript" src="js/cart_script.js"></script>
 </head>
 
 <body>
@@ -40,8 +42,8 @@
             </form>
           </div>
 
-          <a href="wishlist.html"><button class="topbuttons">Wishlist</button></a>
-          <a href="cart.html"><button class="topbuttons">Cart</button></a>
+          <a href="wishlist.php"><button class="topbuttons">Wishlist</button></a>
+          <a href="cart.php"><button class="topbuttons">Cart</button></a>
         </div>
         
     </div>
@@ -64,12 +66,18 @@
             </ul>
         </nav>
         </div>
-    <!-- END OF NAVBAR -->
-
-        <h2>Shopping Cart</h2>
-        
-            
+    <!-- END OF NAVBAR -->        
     </div>
+	
+	<div class="page-header">
+		<h2>Shopping Cart</h2>
+	</div>	
+	<div class="shopping-cart">	
+		<?php
+			// Include the cart_display.php file to display the shopping cart
+			include 'php/cart_display.php';
+		?>
+	</div>
 
   <!-- START OF FOOTER -->
   <div id="footer">
@@ -92,7 +100,6 @@
   </div>
   <!-- END OF FOOTER -->
 
-  <script src="scripts.js"></script>
 </div>
 </body>
 </html>

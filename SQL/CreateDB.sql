@@ -5,7 +5,7 @@ USE novatech;
 DROP TABLE IF EXISTS products;
 CREATE TABLE IF NOT EXISTS products (
   product_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  product_name CHAR(50) NOT NULL,
+  product_name CHAR(100) NOT NULL,
   product_price DOUBLE NOT NULL,
   product_category INT NOT NULL,
   product_subcat CHAR(15) NOT NULL
@@ -22,14 +22,12 @@ CREATE TABLE IF NOT EXISTS orders (
 DROP TABLE IF EXISTS wishlist;
 CREATE TABLE IF NOT EXISTS wishlist (
   product_id INT UNSIGNED NOT NULL PRIMARY KEY,
-  qty INT,
   FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
 
 DROP TABLE IF EXISTS cart;
 CREATE TABLE IF NOT EXISTS cart (
   product_id INT UNSIGNED NOT NULL PRIMARY KEY,
-  qty INT,
   FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
 

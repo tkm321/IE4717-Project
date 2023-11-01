@@ -71,17 +71,15 @@
 	<div class="page-header">
 		<h2>Wishlist</h2>
 	</div>
-	<div class="product-divider">
-		<?php
-		  // Include the PHP file and execute the code within it
-		  $products = include("PHP/wishlist_display.php");  
+	
+	<?php
+	  // Include the PHP file and execute the code within it
+	  $products = include("PHP/wishlist_display.php");  
+	?>
 
-		  
-		 ?>
-		
+
 	</div>
-
-<!-- End of Main Body -->
+	<!-- End of Main Body -->
   <!-- START OF FOOTER -->
   <div id="footer">
     <footer>

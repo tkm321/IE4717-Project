@@ -380,3 +380,13 @@ div #topright {
   transform: scale(1.05, 1.05);
 }
 /* ---END OF CONTACT FORM--- */
+
+.empty-wishlist {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.sad-face {
+    font-size: 48px;
+}

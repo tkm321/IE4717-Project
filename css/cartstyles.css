@@ -1,0 +1,95 @@
+table#product-cart {
+    border-collapse: collapse;
+    width: 100%;
+    border: 2px solid #000;
+    margin-top: 20px; /* Add top margin for space above the table */
+    margin-bottom: 20px; /* Add bottom margin for space below the table */
+}
+
+table#product-cart th, table#product-cart td {
+    border: 1px solid #000;
+    padding: 8px;
+}
+
+table#product-cart th {
+    background-color: #f2f2f2;
+}
+
+/* Add margin to the body element for space above and below the table */
+body {
+    margin-bottom: 20px;
+}
+
+.item-image {
+    width: 150px; /* Adjust the width as needed */
+    height: 150px; /* Adjust the height as needed */
+}
+
+
+.styled-input {
+    width: 50%; /* Adjust the width to your desired size */
+    text-align: center; /* Center the text inside the input */
+    padding: 5px 0; /* Add some padding to vertically center the text */
+}
+.styled-input::-webkit-inner-spin-button,
+.styled-input::-webkit-outer-spin-button {
+    appearance: none; /* Remove the up and down arrows in webkit browsers */
+}
+
+.quantity-input button {
+    width: 30px;
+    height: 30px;
+    background-color: #eee;
+    border: none;
+    cursor: pointer;
+}
+
+.quantity-input button {
+    margin: 0 5px;
+}
+.quantity-input {
+	text-align: center;
+}
+.cart-checkbox {
+        text-align: center;
+}
+.cart-unitprice, .cart-totalprice {
+        text-align: center;
+        font-size: 18px; /* Adjust the font size as needed */
+}	
+.cart-action {
+        text-align: center;
+}
+
+
+.product-name-cell {
+    white-space: normal; /* Allow text to wrap */
+    word-wrap: break-word; /* Allow long words to break and wrap to the next line */
+}
+
+.empty-cart {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.sad-face {
+    font-size: 48px;
+}
+
+.cart-controls {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	align-items: center;
+}
+
+.cart-controls button {
+	font-size: 18px; /* Increase font size for buttons */
+	padding: 10px 20px; /* Increase padding for buttons */
+}
+
+.total-items {
+	font-size: 18px; /* Increase font size for the total items text */
+}
