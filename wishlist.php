@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,43 +40,38 @@
             </form>
           </div>
 
-          <a href="wishlist.php"><button class="topbuttons">Wishlist</button></a>
-          <a href="cart.php"><button class="topbuttons">Cart</button></a>
+          <a href="wishlist.html"><button class="topbuttons">Wishlist</button></a>
+          <a href="cart.html"><button class="topbuttons">Cart</button></a>
         </div>
         
     </div>
     <!-- END OF HEADER -->
 
-	<!-- Main Body -->
-	<div class = "Content_Wrapper">
+    
+    <div class = "Content_Wrapper">
     <!-- START OF NAVBAR -->
-    <div id="navbar">
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li> | 
-          <li><a href="#.html">Category 1</a></li> |
-          <li><a href="#.html">Category 2</a></li> |
-          <li><a href="#.html">Category 3</a></li> |
-          <li><a href="#.html">Category 4</a></li>
-          <!-- <li><a href="products.html">Products</a></li> |
-          <li><a href="aboutus.html">About Us</a></li> |
-          <li><a href="contact.html">Contact</a></li> -->
-        </ul>
-      </nav>
-    </div>
+        <div id="navbar">
+        <nav>
+            <ul>
+            <li><a href="index.html">Home</a></li> | 
+            <li><a href="#.html">Category 1</a></li> |
+            <li><a href="#.html">Category 2</a></li> |
+            <li><a href="#.html">Category 3</a></li> |
+            <li><a href="#.html">Category 4</a></li>
+            <!-- <li><a href="products.html">Products</a></li> |
+            <li><a href="aboutus.html">About Us</a></li> |
+            <li><a href="contact.html">Contact</a></li> -->
+            </ul>
+        </nav>
+        </div>
     <!-- END OF NAVBAR -->
-	<!-- Product display -->
-	<div class="product-divider">
-		<?php
-		  // Include the PHP file and execute the code within it
-		  $products = include("PHP/product_display.php");  
 
-		  
-		 ?>
-		
-	</div>
 
-<!-- End of Main Body -->
+        <h2>Wishlist</h2>
+        
+            
+    </div>
+
   <!-- START OF FOOTER -->
   <div id="footer">
     <footer>
@@ -100,6 +94,6 @@
   <!-- END OF FOOTER -->
 
   <script src="scripts.js"></script>
-  </div>
+</div>
 </body>
 </html>
