@@ -9,6 +9,7 @@
   <script type="text/javascript" src="js/login.js"></script>
   <script type="text/javascript" src="js/cart_script.js"></script>
   <script type="text/javascript" src="js/cart_confirmation.js"></script>
+  <script type="text/javascript" src="js/cart_total.js"></script>
 </head>
 
 <body>
@@ -68,7 +69,6 @@
         </nav>
         </div>
     <!-- END OF NAVBAR -->        
-    </div>
 	
 	<div class="page-header">
 		<h2>Shopping Cart</h2>
@@ -79,10 +79,11 @@
 			include 'php/cart_display.php';
 		?>
 	</div>
-
+	</div>
+	
   <!-- START OF FOOTER -->
-  <div id="footer">
-    <footer>
+	<div id="footer">
+	<footer>
         <div id="sitemap">
           <nav>
             <ul>

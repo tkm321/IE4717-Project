@@ -110,8 +110,45 @@ body {
 .total-items {
 	font-size: 18px; /* Increase font size for the total items text */
 }
+
 .checkout-total {
-    float: right; /* Move it to the right */
-    font-size: 18px; /* Set the font size to your desired value */
-	padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px; /* Add your desired bottom padding */
+}
+
+.total-items {
+    font-size: 20px; /* Increase font size for better visibility */
+}
+
+.checkout-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+	font-size: 24px;
+	width:150px;
+	
+}
+
+.checkout-button:hover {
+    background-color: #45a049; /* Change the color on hover */
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.product-name-cell a {
+    color: black; /* Set the default color to black */
+    text-decoration: none; /* Remove the default underline */
+    transition: color 0.3s; /* Add a smooth color transition on hover */
+	font-weight: bold;
+}
+
+.product-name-cell a:hover {
+    color: red; /* Change the color to dark red on hover */
+	text-decoration: underline;
 }
