@@ -51,10 +51,10 @@ if (mysqli_num_rows($result) > 0) {
 			</td>";
 		echo "<td class='cart-unitprice'>$formatted_price</td>";
 		echo "<td class='quantity-input'>
-			<button class='decrement-button' data-product-id='$product_id'>-</button>
-			<input type='number' name='quantity' class='styled-input product-quantity' value='$quantity' data-product-id='$product_id' data-unit-price='$unit_price'>
-			<button class='increment-button' data-product-id='$product_id'>+</button>
-		</td>";
+				<button class='decrement-button' data-product-id='$product_id'>-</button>
+				<input type='number' name='quantity[]' class='styled-input product-quantity' value='$quantity' data-product-id='$product_id' data-unit-price='$unit_price'>
+				<button class='increment-button' data-product-id='$product_id'>+</button>
+			</td>";
 		echo "<td class='cart-totalprice'><span id='total-price-for-product-$product_id'>$total_price</span></td>";
 		echo "<td class='cart-action'>
 				<button type='submit' class='remove-button' data-product-id='$product_id'>Remove</button>
