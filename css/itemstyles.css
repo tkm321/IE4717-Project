@@ -35,7 +35,7 @@
     display: flex;
     overflow: hidden;
     justify-content: center; /* Center thumbnails horizontally */
-    max-width: 400px;
+    /* max-width: 600px; */
     width: 100%;
 }
 
