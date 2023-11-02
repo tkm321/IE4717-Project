@@ -172,6 +172,40 @@
 
 			<!-- Product Features -->
 			<div class="product-features-container">
+				<div class="product_features" id="product_features">
+				  <table>
+					  <tr>
+						<td>
+						  <button class="dropdown-btn" data-content="description">Description</button>
+						</td>
+						<td>
+						  <button class="dropdown-btn" data-content="specifications">Specifications</button>
+						</td>
+						<td>
+						  <button class="dropdown-btn" data-content="askus">Ask Us</button>
+						</td>
+						<td>
+						  <button class="dropdown-btn" data-content="delivery">Delivery & Pickup Information</button>
+						</td>
+					  </tr>
+					  <tr>
+						<td colspan="4">
+						  <div class="dropdown-content" id="description">
+							<p>This is the description content.</p>
+						  </div>
+						  <div class="dropdown-content" id="specifications">
+							<p>These are the specifications content.</p>
+						  </div>
+						  <div class="dropdown-content" id="askus">
+							<p>Ask us anything here.</p>
+						  </div>
+						  <div class="dropdown-content" id="delivery">
+							<p>All items available for online purchase are not guaranteed to be in stock at the time of order processing. If we are unable to fulfill your order, you will be offered an alternative or given a refund for the unavailable product.</p>
+						  </div>
+						</td>
+					  </tr>
+					</table>
+				</div>
 				
 			</div>
 			
