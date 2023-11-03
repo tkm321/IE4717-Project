@@ -6,6 +6,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script type="text/javascript" src="js/login.js"></script>
   
 </head>
@@ -19,9 +20,9 @@
         </div>
 
         <div id="searchbar">
-          <form action="#.php" method="get">
-            <input type="text" name="search" id="search" placeholder="Search...">
-            <button type="submit" class="topbuttons">Search</button>
+          <form action="searchresult.php" method="post">
+            <input type="text" name="searchterm" id="searchterm" placeholder="Find a product..." required>
+            <button type="submit" id="searchbuttons">Search <i class="fa fa-search"></i></button>
           </form>
         </div>
 

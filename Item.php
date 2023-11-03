@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/itemstyles.css">
   <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script type="text/javascript" src="js/login.js"></script>
   <script type="text/javascript" src="js/slideshow.js"></script>
   <script type="text/javascript" src="js/item_script.js"></script>
@@ -24,10 +25,10 @@
             <a href="index.html"><img src="images/logo.png"></a>
         </div>
 
-        <div id="searchbar">
-          <form action="#.php" method="get">
-            <input type="text" name="search" id="search" placeholder="Search...">
-            <button type="submit" id="searchbuttons">Search</button>
+		<div id="searchbar">
+          <form action="searchresult.php" method="post">
+            <input type="text" name="searchterm" id="searchterm" placeholder="Find a product..." required>
+            <button type="submit" id="searchbuttons">Search <i class="fa fa-search"></i></button>
           </form>
         </div>
 

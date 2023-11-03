@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +8,7 @@
   <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script type="text/javascript" src="js/login.js"></script>
+  
 </head>
 
 <body>
@@ -50,26 +52,33 @@
     </div>
     <!-- END OF HEADER -->
 
-    
-    <div class = "Content_Wrapper">
+	<!-- Main Body -->
+	<div class = "Content_Wrapper">
     <!-- START OF NAVBAR -->
-        <div id="navbar">
-        <nav>
-            <ul>
-              <li><a href="index.html">Home</a></li> | 
-              <li><a href="products.php">Products</a></li> |
-              <li><a href="aboutus.html">About Us</a></li> |
-              <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-        </div>
-    <!-- END OF NAVBAR -->
-
-        <h2>Checkout</h2>
-        
-            
+    <div id="navbar">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li> | 
+          <li><a href="products.php">Products</a></li> |
+          <li><a href="aboutus.html">About Us</a></li> |
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
     </div>
-
+    <!-- END OF NAVBAR -->
+    <div class="page-header">
+      <h2>Search Results</h2>
+    </div>
+	  <!-- Product display -->
+    <div class="product-divider">
+      <?php
+        // Include the PHP file and execute the code within it
+        $products = include("PHP/searchresult_display.php");  
+      ?>
+    </div>
+  </div>
+  <!-- End of Main Body -->
+  
   <!-- START OF FOOTER -->
   <div id="footer">
     <footer>
@@ -89,6 +98,6 @@
   <!-- END OF FOOTER -->
 
   <script src="scripts.js"></script>
-</div>
+  </div>
 </body>
 </html>

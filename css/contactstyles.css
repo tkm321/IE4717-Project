@@ -37,7 +37,7 @@ div #logo img {
 
 #searchbar input[type="text"] {
   padding-left: 10px;
-  width: 500px;
+  width: 530px;
   height: 50px;
   border: none;
   font-size: 20px;
@@ -45,7 +45,7 @@ div #logo img {
 }
 
 #searchbar button {
-  width: 100px;
+  width: 150px;
   height: 50px;
   cursor: pointer;
   border: none;

@@ -6,6 +6,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script type="text/javascript" src="js/login.js"></script>
   
 </head>
@@ -19,9 +20,9 @@
         </div>
 
         <div id="searchbar">
-          <form action="#.php" method="get">
-            <input type="text" name="search" id="search" placeholder="Search...">
-            <button type="submit" class="topbuttons">Search</button>
+          <form action="searchresult.php" method="post">
+            <input type="text" name="searchterm" id="searchterm" placeholder="Find a product..." required>
+            <button type="submit" id="searchbuttons">Search <i class="fa fa-search"></i></button>
           </form>
         </div>
 
@@ -47,7 +48,6 @@
           <a href="wishlist.php"><button class="topbuttons">Wishlist</button></a>
           <a href="cart.php"><button class="topbuttons">Cart</button></a>
         </div>
-        
     </div>
     <!-- END OF HEADER -->
 
@@ -65,19 +65,20 @@
       </nav>
     </div>
     <!-- END OF NAVBAR -->
-	<div class="page-header">
-		<h2>All Products</h2>
-	</div>
-	<!-- Product display -->
-	<div class="product-divider">
-		<?php
-		  // Include the PHP file and execute the code within it
-		  $products = include("PHP/product_display.php");  
-		 ?>
-<!-- End of Main Body -->
-	</div>
-  <!-- START OF FOOTER -->
+    <div class="page-header">
+      <h2>All Products</h2>
+    </div>
+	  <!-- Product display -->
+    <div class="product-divider">
+      <?php
+        // Include the PHP file and execute the code within it
+        $products = include("PHP/product_display.php");  
+      ?>
+    </div>
+  </div>
+  <!-- End of Main Body -->
   
+  <!-- START OF FOOTER -->
   <div id="footer">
     <footer>
         <div id="sitemap">
@@ -94,7 +95,6 @@
     </footer>
   </div>
   <!-- END OF FOOTER -->
-
   <script src="scripts.js"></script>
   </div>
 </body>
