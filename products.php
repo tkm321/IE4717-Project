@@ -73,39 +73,7 @@
 		<?php
 		  // Include the PHP file and execute the code within it
 		  $products = include("PHP/product_display.php");  
-
-		  
 		 ?>
-		
-	</div>
-		<!-- START OF NAVBAR -->
-		<div id="navbar">
-		  <nav>
-			<ul>
-			  <li><a href="index.html">Home</a></li> | 
-			  <li><a href="#.html">Category 1</a></li> |
-			  <li><a href="#.html">Category 2</a></li> |
-			  <li><a href="#.html">Category 3</a></li> |
-			  <li><a href="#.html">Category 4</a></li>
-			  <!-- <li><a href="products.html">Products</a></li> |
-			  <li><a href="aboutus.html">About Us</a></li> |
-			  <li><a href="contact.html">Contact</a></li> -->
-			</ul>
-		  </nav>
-		</div>
-		<!-- END OF NAVBAR -->
-		<div class="page-header">
-			<h2>All Products</h2>
-		</div>
-		<!-- Product display -->
-		<div class="product-divider">
-			<?php
-			  // Include the PHP file and execute the code within it
-			  $products = include("PHP/product_display.php");  
-			 ?>
-			
-		</div>
-
 <!-- End of Main Body -->
 	</div>
   <!-- START OF FOOTER -->
@@ -116,7 +84,7 @@
           <nav>
             <ul>
               <li><a href="index.html">Home</a></li>
-              <li><a href="products.html">All Products</a></li>
+              <li><a href="products.php">Products</a></li>
               <li><a href="aboutus.html">About Us</a></li>
               <li><a href="contact.html">Contact Us</a></li>
             </ul>
