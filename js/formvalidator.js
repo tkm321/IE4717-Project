@@ -73,7 +73,7 @@ function validateContactForm() {
 
 function validatePassword() {
   var passwordfield = document.getElementById("password").value;
-  var passwordpattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+  var passwordpattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?!.*\s).{8,}$/;
   
   if (passwordpattern.test(passwordfield))
   {
@@ -85,7 +85,7 @@ function validatePassword() {
   }
   else
   {
-    alert("Password should contain a minimum of eight characters, at least one uppercase letter, one lowercase letter, and one number.");
+    alert("Please ensure your password meets the following requirements:\n- Minimum of eight characters \n- At least one uppercase letter\n- At least one lowercase letter\n- At least one number\n- Does not contain white spaces");
     return false;
   }
 }
@@ -97,6 +97,10 @@ function validatePasswordSame() {
   if (passwordfield == confirmpasswordfield)
   {
     return true; 
+  }
+  else if (confirmpasswordfield = null || confirmpasswordfield == "")
+  {
+    return false;
   }
   else
   { 
