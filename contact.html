@@ -111,13 +111,6 @@
         </div>
       </div>
     </div>
-
-	<script type="text/javascript">
-		var contactform = document.getElementById("contactform");
-		contactform.addEventListener('submit', (event) => {
-			if (!validateContactForm()) event.preventDefault()
-		})
-	</script>
 	
   <!-- START OF FOOTER -->
   <div id="footer">
@@ -137,7 +130,12 @@
   </div>
   <!-- END OF FOOTER -->
 
-  <script src="scripts.js"></script>
-</div>
+	<script type="text/javascript">
+		var contactform = document.getElementById("contactform");
+		contactform.addEventListener('submit', (event) => {
+			if (!validateContactForm()) event.preventDefault()
+		})
+	</script>
+  </div>
 </body>
 </html>

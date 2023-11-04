@@ -70,7 +70,7 @@
         <div class="form-wrapper">
             <h2>Account Registration</h2>
             <!-- <p style="font-size:18px">Be a member today</p><br> -->
-            <form method="post" action="#.php" name="registerform" class="registerform" id="registerform">
+            <form action="register_member.php" method="post" name="registerform" class="registerform" id="registerform">
               <div>
                 <label for="name">Name*:</label>    
                 <input type="text" id="name" name="name" placeholder="Name" onchange="validateName(event)" required><br><br>
@@ -101,13 +101,6 @@
         </div>
     </div>
     
-    <script type="text/javascript">
-        var registerform = document.getElementById("registerform");
-        registerform.addEventListener('submit', (event) => {
-            if (!validateRegisterForm()) event.preventDefault()
-        })
-    </script>
-
   <!-- START OF FOOTER -->
   <div id="footer">
     <footer>
@@ -125,8 +118,12 @@
     </footer>
   </div>
   <!-- END OF FOOTER -->
-
-  <script src="scripts.js"></script>
+  <script type="text/javascript">
+    var registerform = document.getElementById("registerform");
+    registerform.addEventListener('submit', (event) => {
+        if (!validateRegisterForm()) event.preventDefault()
+    })
+  </script>
   </div>
 </body>
 </html>
