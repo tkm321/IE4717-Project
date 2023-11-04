@@ -69,9 +69,9 @@ div #topright {
   height: 50px;
   margin: 10px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 18px;
   border-radius: 20px;
-  transition: all 0.3s;
+  transition: all 0.3s; 
 }
 
 .topbuttons:hover, .open-button:hover {
@@ -84,10 +84,18 @@ div #topright {
 }
 
 /* ---START OF LOGIN FORM--- */
-/* Button used to open the contact form - fixed at the bottom of the page */
+.form-background {
+  display: none; /* starts out with display of none so it can be changed to block on click */
+  position: fixed; /* stays on screen despite scroll */
+  width: 100%; /* covers entire width of screen */
+  height: 100%; /* covers entire height of screen */
+  z-index: 1; /* will be displayed behind background */
+}
+
+/* Button used to open the login form */
 .open-button {
   cursor: pointer;
-  position: relative;
+  /* position: relative; */
 }
 
 /* The popup form - hidden by default */
@@ -95,7 +103,6 @@ div #topright {
   display: none;
   position: fixed;
   border: 2px solid #f1f1f1;
-  /* box-shadow: 2px 2px 2px #d1d1d1; */
 }
 
 /* Add styles to the form container */
@@ -105,6 +112,7 @@ div #topright {
   background-color: white;
   text-align: center;
   color: black;
+  z-index: 9;
 }
 
 /* Full-width input fields */
@@ -197,6 +205,12 @@ div #topright {
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 0 -10px;
+}
+
+.product-divider h1 {
+  margin: 50px 0 50px 0;
+  text-align: center;
+  color: red;
 }
 
 .product-container {

@@ -26,28 +26,25 @@
         </div>
 
         <div id="topright">
-          <button class="open-button" onclick="openForm()">Login</button>
-          <div class="form-popup" id="loginForm">
-            <form action="#.php" class="form-container">
-              <h1>Member Login</h1>
-          
-              <!-- <label for="email"><b>Email</b></label> -->
-              <input type="text" placeholder="Enter Email" name="email" required>
-          
-              <!-- <label for="password"><b>Password</b></label> -->
-              <input type="password" placeholder="Enter Password" name="password" required>
+			<div id="form-bg" class="form-background" onclick="closeForm()"></div>
+			<button class="open-button" onclick="openForm()">Login</button>
+			<div class="form-popup" id="loginForm">
+				<form action="#.php" class="form-container">
+					<h1>Member Login</h1>
+			
+					<input type="text" placeholder="Enter Email" name="email" required>
+					<input type="password" placeholder="Enter Password" name="password" required>
 
-			  <p>No account yet? <a href="register.html">Register here!</a></p>
-          
-              <button type="submit" class="btn">Login</button>
-              <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-            </form>
-          </div>
+					<p>No account yet? <a href="register.html">Register here!</a></p>
+				
+					<button type="submit" class="btn">Login</button>
+					<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+				</form>
+			</div>
 
-          <a href="wishlist.php"><button class="topbuttons">Wishlist</button></a>
-          <a href="cart.php"><button class="topbuttons">Cart</button></a>
+			<a href="wishlist.php"><button class="topbuttons">Wishlist</button></a>
+			<a href="cart.php"><button class="topbuttons">Cart</button></a>
         </div>
-        
     </div>
     <!-- END OF HEADER -->
 
