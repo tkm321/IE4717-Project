@@ -16,6 +16,8 @@ $member_email = $_POST['email'];
 $member_contact = $_POST['contact'];
 $member_password = $_POST['password'];
 
+$member_password = md5($member_password);
+
 $sql = "INSERT INTO `members` (`member_name`, `member_email`, `member_contact`, `member_password`) VALUES ('$member_name','$member_email','$member_contact','$member_password')";
 $conn->query($sql);
 
