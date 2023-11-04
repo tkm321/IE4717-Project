@@ -70,29 +70,29 @@
         <div class="form-wrapper">
             <h2>Account Registration</h2>
             <!-- <p style="font-size:18px">Be a member today</p><br> -->
-            <form action="register_member.php" method="post" name="registerform" class="registerform" id="registerform">
+            <form action="php/register_member.php" method="post" name="registerform" class="registerform" id="registerform">
               <div>
-                <label for="name">Name*:</label>    
+                <label for="name">*Name:</label>    
                 <input type="text" id="name" name="name" placeholder="Name" onchange="validateName(event)" required><br><br>
               </div>
             
               <div>
-                <label for="email">Email*:</label>
+                <label for="email">*Email:</label>
                 <input type="email" id="email" name="email" placeholder="Email" onchange="validateEmail(event)" required><br><br>
               </div>
             
               <div>
-                <label for="contact">Contact Number*:</label>
+                <label for="contact">*Contact Number:</label>
                 <input type="text" id="contact" name="contact" placeholder="Contact Number" onchange="validateContact(event)" required><br><br>
               </div>
             
               <div>
-                <label for="password">Password*:</label>
+                <label for="password">*Password:</label>
                 <input type="password" id="password" name="password" placeholder="Password" onchange="validatePassword(event)" required><br><br>
               </div>
             
               <div>
-                <label for="confirmpassword">Confirm Password*:</label>
+                <label for="confirmpassword">*Confirm Password:</label>
                 <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" onchange="validatePasswordSame(event)" required><br><br>
               </div>
               
