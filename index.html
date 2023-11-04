@@ -29,11 +29,11 @@
 			<div id="form-bg" class="form-background" onclick="closeForm()"></div>
 			<button class="open-button" onclick="openForm()">Login</button>
 			<div class="form-popup" id="loginForm">
-				<form action="#.php" class="form-container">
+				<form action="php/login.php" method="post" class="form-container">
 					<h1>Member Login</h1>
 			
-					<input type="text" placeholder="Enter Email" name="email" required>
-					<input type="password" placeholder="Enter Password" name="password" required>
+					<input type="text" placeholder="Enter Email" name="loginemail" id="loginemail" required>
+					<input type="password" placeholder="Enter Password" name="loginpassword" id="loginpassword" required>
 
 					<p>No account yet? <a href="register.html">Register here!</a></p>
 				
