@@ -47,3 +47,12 @@ CREATE TABLE IF NOT EXISTS reviews (
   reviews DECIMAL(2, 1) GENERATED ALWAYS AS (IF(reviews_qty > 0, reviews_total / reviews_qty, 0)) STORED,
   FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
+
+DROP TABLE IF EXISTS members;
+CREATE TABLE IF NOT EXISTS members (
+  member_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  member_name CHAR(50) NOT NULL,
+  member_email CHAR(50) NOT NULL,
+  member_contact INT NOT NULL,
+  member_password CHAR(50) NOT NULL
+);
