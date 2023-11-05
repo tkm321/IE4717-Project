@@ -1,3 +1,16 @@
+<?php
+	session_start();
+
+	if (isset($_SESSION['valid_user']))
+	{
+		// show member page;
+	}
+	else
+	{
+		// show guest page;
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,45 +24,6 @@
 
 <body>
   <div id="container">
-
-	<div class="form-background" id="form-bg">
-		<div class="form-popup" id="loginForm">
-			<div id="close">
-				<span id="close-button">×</span>
-			</div>
-			<form action="php/login.php" method="post" class="form-container">
-				<h1>Member Login</h1>
-
-				<?php
-				
-				if (isset($_SESSION['valid_user'])) {
-					echo 'You are logged in as: '.$_SESSION['valid_user'].'<br />';
-					echo '<a href="logout.php">Log Out</a><br />';
-				}
-				else
-				{
-					if (isset($loginemail))
-					{
-						echo 'Invalid email or password. Please try again.<br />';
-					}
-					else
-					{
-						echo 'You are not logged in.<br />';
-					}
-				}
-
-				?>
-			
-				<input type="text" placeholder="Enter Email" name="loginemail" id="loginemail" required>
-				<input type="password" placeholder="Enter Password" name="loginpassword" id="loginpassword" required>
-			
-				<p>No account yet? <a href="register.html" id="signup">Click here to sign up!</a></p>
-			
-				<button type="submit" class="btn">LOG IN</button>
-			</form>
-		</div>
-	</div>
-
     <!-- START OF HEADER -->
     <div id="header">
         <div id="logo">
@@ -64,7 +38,7 @@
         </div>
 
         <div id="topright">			
-			<button class="open-button" id="open-button" onclick="openForm()">Login</button>
+			<a href="login.php"><button class="topbuttons" id="login-button">Login</button></a>
 			<a href="wishlist.php"><button class="topbuttons">Wishlist</button></a>
 			<a href="cart.php"><button class="topbuttons">Cart</button></a>
         </div>
@@ -98,15 +72,14 @@
 		<div class="banner">
 		  <h1>BESTSELLERS</h1>
 		  <div class="bannerbest">
-			<div><figure><img src="Product_imgs/Product_1/img_1.jpg" style="width: 100%"; >
-						<figcaption> MacBook 15</figcaption></div>
+			<div><img src="Product_imgs/Product_1/img_1.jpg" style="width: 100%";></div>
 			<div><img src="product_imgs/product_2/img_1.jpg" style="width: 100%";></div>
 			<div><img src="product_imgs/product_3/img_1.jpg" style="width: 100%";></div>
 			<div><img src="product_imgs/product_4/img_1.jpg" style="width: 100%";></div>
 			<div><img src="product_imgs/product_5/img_1.jpg" style="width: 100%";></div>
 		  </div>
 		  <div class="bannerbestdesc">
-			<div><p>Description 1</p></div>
+			<div><p>MacBook 15</p></div>
 			<div><p>Description 2</p></div>
 			<div><p>Description 3</p></div>
 			<div><p>Description 4</p></div>
