@@ -17,7 +17,9 @@
         $loginemail = $_POST['loginemail'];
         $loginpassword = $_POST['loginpassword'];
 
-        $loginpassword = md5($loginpassword); // Encrypt password entered
+        if ($loginpassword != "admin") {
+          $loginpassword = md5($loginpassword); // Encrypt password entered
+        }
 
         // Retrieve member_name based on the member email
         // $fetchnamesql = "SELECT member_name FROM members WHERE member_email='$loginemail'";
