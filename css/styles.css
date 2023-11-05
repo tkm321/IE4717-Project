@@ -14,12 +14,12 @@ body {
 
 #header {
   margin: auto;
-  padding: 10px;
+  width: 100%;
   background-image: url("../../IE4717-Project/images/headerfooter_bg.jpg");
   background-size: 100%;
   background-position: center;
   color: white;
-  height: 150px;
+  height: 200px;
 }
 
 div #logo, #searchbar {
@@ -27,8 +27,8 @@ div #logo, #searchbar {
 }
 
 div #logo img {
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 200px;
 }
 
 #searchbar, #topright {
@@ -228,6 +228,10 @@ div #topright {
 
   #navbar ul li {
     display: inline;
+  }
+
+  ul {
+    padding:0;
   }
 /* ---END OF NAVBAR--- */
 
