@@ -22,5 +22,5 @@ $sql = "INSERT INTO `members` (`member_name`, `member_email`, `member_contact`, 
 $conn->query($sql);
 
 $conn->close();
-header("Location: ../index.html");
+header("Location: ../index.php");
 ?>
