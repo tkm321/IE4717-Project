@@ -1,5 +1,5 @@
 <?php
-session_start(); // Start the session to store the scroll position
+// session_start(); // Start the session to store the scroll position
 
 $servername = "localhost";
 $username = "jwongso001";
