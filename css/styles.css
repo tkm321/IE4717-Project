@@ -3,6 +3,8 @@ body {
   margin: 0;
   padding: 0;
   background-image: url("../../IE4717-Project/images/background1.jpg");
+  background-size: 100%;
+  background-position: center;
 }
 
 #container {
@@ -13,7 +15,9 @@ body {
 #header {
   margin: auto;
   padding: 10px;
-  background-image: url("../../IE4717-Project/images/background2.jpg");
+  background-image: url("../../IE4717-Project/images/headerfooter_bg.jpg");
+  background-size: 100%;
+  background-position: center;
   color: white;
   height: 150px;
 }
@@ -65,8 +69,8 @@ div #topright {
 }
 
 #topright button {
-  width: 80px;
-  height: 50px;
+  width: 100px;
+  height: 60px;
   margin: 10px;
   cursor: pointer;
   font-size: 18px;
@@ -74,7 +78,11 @@ div #topright {
   transition: all 0.3s; 
 }
 
-.topbuttons:hover, .open-button:hover {
+#topright .open-button {
+  width: 150px;
+}
+
+.topbuttons:hover {
   background-color: #0CF1DE;
   transform: scale(1.1, 1.1);
 }
@@ -102,8 +110,14 @@ div #topright {
 
 /* Button used to open the login form */
 .open-button {
-  cursor: pointer;
   /* position: relative; */
+  background-color: #0CF1DE;
+  width:150px;
+}
+
+.open-button:hover {
+  background-color: white;
+  border: 10px solid #0CF1DE;
 }
 
 /* The popup form - hidden by default */
@@ -161,7 +175,7 @@ div #topright {
 } 
 
 /* Add some hover effects to buttons */
-.form-container .btn:hover, .open-button:hover {
+.form-container .btn:hover {
   opacity: 1;
 }
 
@@ -173,6 +187,10 @@ div #topright {
   text-decoration: none;
   font-weight: bold;
   color: navy;
+}
+
+#signup:hover {
+  text-decoration: underline;
 }
 /* ---END OF LOGIN FORM--- */
 
@@ -368,7 +386,9 @@ div #topright {
 
 /* ---START OF FOOTER--- */
   #footer {
-    background-image: url("../../IE4717-Project/images/background2.jpg");
+    background-image: url("../../IE4717-Project/images/headerfooter_bg.jpg");
+    background-size: 100%;
+    background-position: center;
     color: white;
     text-align: center;
     margin: auto;
