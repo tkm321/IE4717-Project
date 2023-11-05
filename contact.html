@@ -12,27 +12,8 @@
 
 <body>
   <div id="container">
-    
-    <div class="form-background" id="form-bg">
-      <div class="form-popup" id="loginForm">
-        <div id="close">
-          <span id="close-button">×</span>
-        </div>
-        <form action="php/login.php" method="post" class="form-container">
-          <h1>Member Login</h1>
-        
-          <input type="text" placeholder="Enter Email" name="loginemail" id="loginemail" required>
-          <input type="password" placeholder="Enter Password" name="loginpassword" id="loginpassword" required>
-        
-          <p>No account yet? <a href="register.html" id="signup">Click here to sign up!</a></p>
-        
-          <button type="submit" class="btn">LOG IN</button>
-        </form>
-      </div>
-    </div>
-  
-    <!-- START OF HEADER -->
-    <div id="header">
+      <!-- START OF HEADER -->
+      <div id="header">
         <div id="logo">
             <a href="index.php"><img src="images/logo.png"></a>
         </div>
@@ -45,7 +26,7 @@
         </div>
 
         <div id="topright">			
-          <button class="open-button" id="open-button" onclick="openForm()">Login</button>
+          <a href="login.php"><button class="topbuttons" id="login-button">Login</button></a>
           <a href="wishlist.php"><button class="topbuttons">Wishlist</button></a>
           <a href="cart.php"><button class="topbuttons">Cart</button></a>
         </div>
@@ -53,67 +34,68 @@
     <!-- END OF HEADER -->
     
     <div class = "Content_Wrapper">
-    <!-- START OF NAVBAR -->
-      <div id="navbar">
-        <nav>
-          <ul>
-            <li><a href="index.php">Home</a></li> | 
-            <li><a href="products.php">Products</a></li> |
-            <li><a href="aboutus.html">About Us</a></li> |
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-        </nav>
-      </div>
-    <!-- END OF NAVBAR -->
+        <!-- START OF NAVBAR -->
+        <div id="navbar">
+          <nav>
+            <ul>
+              <li><a href="index.php">Home</a></li> | 
+              <li><a href="products.php">Products</a></li> |
+              <li><a href="aboutus.html">About Us</a></li> |
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </nav>
+        </div>
+        <!-- END OF NAVBAR -->
 
-      
-    <div class="contactus">
-      <img src="images/contactus.png" width="80%" style="display:block; margin-left:auto; margin-right:auto; width:100%; margin-bottom: 50px;">
-    </div>
-    
-    <div>
-        <p style="font-size:18px">Need to get in touch with us, whether to inquire about our products, discuss our services, or simply provide a feedback, we love to hear from you.</p><br>
-        <form method="post" action="#.php" name="contactform" class="contactform" id="contactform">
-          <div>
-            <label for="name">*Name:</label>    
-            <input type="text" id="name" name="name" placeholder="Enter your name here" onchange="validateName(event)" required><br><br>
-          </div>
+        <!-- START OF CONTACT FORM -->
+        <div class="contactus">
+          <img src="images/contactus.png" width="80%" style="display:block; margin-left:auto; margin-right:auto; width:100%; margin-bottom: 50px;">
+        </div>
         
-          <div>
-            <label for="email">*Email:</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email here" onchange="validateEmail(event)" required><br><br>
-          </div>
-        
-          <div>
-            <label for="contact">*Contact Number:</label>
-            <input type="text" id="contact" name="contact" placeholder="Enter your contact number here" onchange="validateContact(event)" required><br><br>
-          </div>
-        
-          <div>
-            <label for="message">*Message:</label>
-            <textarea id="message" name="message" rows="10" cols="100" placeholder="Enter your message here" required></textarea>
-          </div>
+        <div class="contentform-wrapper">
+          <p style="font-size:18px">Need to get in touch with us, whether to inquire about our products, discuss our services, or simply provide a feedback, we love to hear from you.</p><br>
+          <form method="post" action="#.php" name="contactform" class="contactform" id="contactform">
+            <div>
+              <label for="name">*Name:</label>    
+              <input type="text" id="name" name="name" placeholder="Enter your name here" onchange="validateName(event)" required><br><br>
+            </div>
           
-          <button type="reset" id="resetbutton" class="resetbutton">Clear</button>
-          <button type="submit" id="submitbutton" class="submitbutton">Send Message</button>
-        </form>
-      </div>
-        
-      <div class="banner">
-        <div id="bannercontact">
-          <div>
-            <figcaption>Call Us</figcaption>
-            <a href="tel:6567671314"><img src="images/call_icon.png" style="width:100px;">
-            <p><b>+65-67671314</b><br><br>Mon - Fri: 10:00am - 10:00pm<br>Sat, Sun & Public Holidays: Closed</p></a>
-          </div>
-          <div>
-            <figcaption>Email Us</figcaption>
-            <a href="mailto:f32ee@localhost"><img src="images/email_icon.png" style="width:100px;">
-            <p><b>support@novatech.com.sg</b><br><br>We will be guaranteed to get back with yo<br>within 2 working days<br></p></a>
+            <div>
+              <label for="email">*Email:</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email here" onchange="validateEmail(event)" required><br><br>
+            </div>
+          
+            <div>
+              <label for="contact">*Contact Number:</label>
+              <input type="text" id="contact" name="contact" placeholder="Enter your contact number here" onchange="validateContact(event)" required><br><br>
+            </div>
+          
+            <div>
+              <label for="message">*Message:</label>
+              <textarea id="message" name="message" rows="10" cols="100" placeholder="Enter your message here" required></textarea>
+            </div>
+            
+            <button type="reset" id="resetbutton" class="resetbutton">Clear</button>
+            <button type="submit" id="submitbutton" class="submitbutton">Send Message</button>
+          </form>
+        </div>
+            
+        <div class="banner">
+          <div id="bannercontact">
+            <div>
+              <figcaption>Call Us</figcaption>
+              <a href="tel:6567671314"><img src="images/call_icon.png" style="width:100px;">
+              <p><b>+65-67671314</b><br><br>Mon - Fri: 10:00am - 10:00pm<br>Sat, Sun & Public Holidays: Closed</p></a>
+            </div>
+            <div>
+              <figcaption>Email Us</figcaption>
+              <a href="mailto:f32ee@localhost"><img src="images/email_icon.png" style="width:100px;">
+              <p><b>support@novatech.com.sg</b><br><br>We will be guaranteed to get back with yo<br>within 2 working days<br></p></a>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+        <!-- END OF CONTACT FORM -->
+  </div>
 	
   <!-- START OF FOOTER -->
   <div id="footer">

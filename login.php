@@ -4,19 +4,16 @@
   <title>NovaTech - Your Ultimate Electronics Store</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/cartstyles.css">
   <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script type="text/javascript" src="js/login.js"></script>
-  <script type="text/javascript" src="js/cart_script.js"></script>
-  <script type="text/javascript" src="js/cart_confirmation.js"></script>
-  <script type="text/javascript" src="js/cart_total.js"></script>
+  <script type="text/javascript" src="js/formvalidator.js"></script>
 </head>
 
 <body>
   <div id="container">
-      <!-- START OF HEADER -->
-      <div id="header">
+    <!-- START OF HEADER -->
+    <div id="header">
         <div id="logo">
             <a href="index.php"><img src="images/logo.png"></a>
         </div>
@@ -29,42 +26,46 @@
         </div>
 
         <div id="topright">			
-          <a href="login.php"><button class="topbuttons" id="login-button">Login</button></a>
+			    <a href="login.php"><button class="topbuttons" id="login-button">Login</button></a>
           <a href="wishlist.php"><button class="topbuttons">Wishlist</button></a>
           <a href="cart.php"><button class="topbuttons">Cart</button></a>
         </div>
     </div>
     <!-- END OF HEADER -->
-
     
     <div class = "Content_Wrapper">
     <!-- START OF NAVBAR -->
-        <div id="navbar">
-        <nav>
+      <div id="navbar">
+          <nav>
           <ul>
-            <li><a href="index.php">Home</a></li> |
-            <li><a href="products.php">Products</a></li> |
-            <li><a href="aboutus.html">About Us</a></li> |
-            <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="index.php">Home</a></li> | 
+              <li><a href="products.php">Products</a></li> |
+              <li><a href="aboutus.html">About Us</a></li> |
+              <li><a href="contact.html">Contact Us</a></li>
           </ul>
-        </nav>
-        </div>
-    <!-- END OF NAVBAR -->        
-	
-		<div class="page-header">
-			<h2>Shopping Cart</h2>
-		</div>	
-		<div class="shopping-cart">	
-			<?php
-				// Include the cart_display.php file to display the shopping cart
-				include 'php/cart_display.php';
-			?>
-		</div>
-	</div>
+          </nav>
+      </div>
+    <!-- END OF NAVBAR -->
+    
+    <div class = "loginform-wrapper">
+      <div class="loginform-container">
+        <form action="php/login.php" method="post" class="loginForm" id="loginForm">
+          <h1>Member Login</h1>
+          
+          <input type="text" placeholder="Enter Email" name="loginemail" id="loginemail" required>
+          <input type="password" placeholder="Enter Password" name="loginpassword" id="loginpassword" required>
+          
+          <p>No account yet? <a href="register.html" id="signup">Click here to sign up!</a></p>
+          
+          <button type="submit" class="btn">LOG IN</button>
+        </form>
+      </div>
+    </div>
+  </div>
 	
   <!-- START OF FOOTER -->
-	<div id="footer">
-	<footer>
+  <div id="footer">
+    <footer>
         <div id="sitemap">
           <nav>
             <ul>
@@ -80,7 +81,8 @@
   </div>
   <!-- END OF FOOTER -->
   
-  </div>
+	</script>
   <script src="js/login.js"></script>
+  </div>
 </body>
 </html>

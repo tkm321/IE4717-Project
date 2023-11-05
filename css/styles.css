@@ -92,64 +92,33 @@ div #topright {
 }
 
 /* ---START OF LOGIN FORM--- */
-.form-background {
-  display: none; /* starts out with display of none so it can be changed to block on click */
-  position: fixed; /* stays on screen despite scroll */
-  width: 100%; /* covers entire width of screen */
-  height: 100%; /* covers entire height of screen */
-  z-index: 1; /* will be displayed behind background */
-  background-color: rgba(0,0,0,0.6);
-}
-
-.form-background div {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-/* Button used to open the login form */
-.open-button {
-  /* position: relative; */
-  background-color: #0CF1DE;
-  width:150px;
-}
-
-.open-button:hover {
-  background-color: white;
-  border: 10px solid #0CF1DE;
-}
-
-/* The popup form - hidden by default */
-.form-popup {
-  display: none;
-  position: fixed;
-  border-radius: 10px;
-}
 
 /* Add styles to the form container */
-.form-container {
+.loginform-wrapper { 
+  width: 100%; 
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginform-container {
   width: 500px;
-  padding: 5px;
+  height: 400px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   background-color: white;
   text-align: center;
   color: black;
-  z-index: 9;
   border-radius: 10px;
 }
 
-#close-button {
-  position: absolute;
-  bottom:120px;
-  left:230px;
-  font-size: 30px;  
-  cursor: pointer;
-}
-
 /* Full-width input fields */
-.form-container input[type=text], .form-container input[type=password] {
-  width: 95%;
-  padding: 10px 5px 10px 5px;
+.loginform-container input[type=text], .loginform-container input[type=password] {
+  width: 80%;
+  height: 30px;
+  font-size: 18px;
+  padding: 10px 0px 10px 20px;
   margin: 10px 0 10px 0;
   border: none;
   background: #f1f1f1;
@@ -157,30 +126,36 @@ div #topright {
 }
 
 /* When the inputs get focus, do something */
-.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+.loginform-container input[type=text]:focus, .loginform-container input[type=password]:focus {
   background-color: #ddd;
   outline: none;
 }
 
 /* Set a style for the submit/login button */
-.form-container .btn {
+.loginform-container .btn {
   background-color: #0CF1DE;
-  font-size: 16px;
-  padding: 16px 20px;
+  font-size: 20px;
+  padding: 20px 0px 20px 0px;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 84%;
   opacity: 0.8;
   border-radius: 10px;
+  margin-top: 30px;
 } 
 
 /* Add some hover effects to buttons */
-.form-container .btn:hover {
+.loginform-container .btn:hover {
   opacity: 1;
 }
 
-.form-container h1 {
+.loginform-container h1 {
   color: black;
+  text-align: center;
+}
+
+.loginform-container  p {
+  margin-top: 30px;
 }
 
 #signup {
@@ -429,12 +404,18 @@ div #topright {
 
 
 /* ---START OF CONTACT FORM --- */
+.contactform-wrapper {
+  width: 100%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .contactform label {
   float: left;
-  display: block; 
   text-align: right;
   width: 150px;
-  padding: 10px 10px 0px 0px;
+  padding: 7px 10px 0px 0px; 
   font-weight: bold;
 }
 
@@ -500,7 +481,7 @@ div #topright {
   background-color: lightgrey;
 }
 
-.form-wrapper {
+.registerform-wrapper {
   padding: 50px;
 }
 /* ---END OF REGISTRATION FORM--- */
