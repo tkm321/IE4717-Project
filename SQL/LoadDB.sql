@@ -40,5 +40,5 @@ INSERT INTO reviews (product_id, reviews_total, reviews_qty) VALUES
     (11, 0, 0),
     (12, 0, 0);
     
-INSERT INTO members (member_id, member_email, member_password) VALUES
-    (0, 'admin', 'admin');
+INSERT INTO members (member_id, member_name, member_email, member_contact, member_password) VALUES
+    (0, 'admin', 'admin', 0, 'admin');
