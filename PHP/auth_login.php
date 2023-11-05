@@ -70,33 +70,3 @@
     //$stmt->close();
     // $conn->close();
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>NovaTech - Your Ultimate Electronics Store</title>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="icon" type="image/x-icon" href="../images/favicon/favicon.ico">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script type="text/javascript" src="../js/login.js"></script>
-</head>
-
-<body>
-<div class="form-background" id="form-bg" style="display: block;">
-		<div class="form-popup" id="loginForm" style="display: block;">
-			<div id="close">
-				<span id="close-button">×</span>
-			</div>
-			<form action="php/login.php" method="post" class="form-container">
-				<h1>Member Login</h1>
-                <div id="error-message" style="color: red;"><?php echo isset($errorMessage) ? $errorMessage : ''; ?></div>
-				<input type="text" placeholder="Enter Email" name="loginemail" id="loginemail" required>
-				<input type="password" placeholder="Enter Password" name="loginpassword" id="loginpassword" required>
-			
-				<p>No account yet? <a href="register.html" id="signup">Click here to sign up!</a></p>
-			
-				<button type="submit" class="btn">LOG IN</button>
-			</form>
-		</div>
-	</div>

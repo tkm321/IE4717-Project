@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="css/itemstyles.css">
   <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script type="text/javascript" src="js/login.js"></script>
   <script type="text/javascript" src="js/slideshow.js"></script>
   <script type="text/javascript" src="js/item_script.js"></script>
 </head>
@@ -215,6 +214,5 @@
     <!-- END OF FOOTER -->
 
   </div>
-  <script src="js/login.js"></script>
 </body>
 </html>

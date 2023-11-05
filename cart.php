@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="css/cartstyles.css">
   <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script type="text/javascript" src="js/login.js"></script>
   <script type="text/javascript" src="js/cart_script.js"></script>
   <script type="text/javascript" src="js/cart_confirmation.js"></script>
   <script type="text/javascript" src="js/cart_total.js"></script>
@@ -81,6 +80,5 @@
   <!-- END OF FOOTER -->
   
   </div>
-  <script src="js/login.js"></script>
 </body>
 </html>

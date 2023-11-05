@@ -6,7 +6,6 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
-  <script type="text/javascript" src="js/login.js"></script>
 </head>
 <body>
 
