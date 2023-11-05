@@ -31,9 +31,10 @@
     // if (password_verify($enteredemail, $storedPasswordHash)) {
     if ($enteredpassword == $storedPasswordHash) {
         echo "Login successful!";
-        // Perform any additional actions after a successful login
+        // log in user successfully and start session
     } else {
         echo "Incorrect email or password. Please try again.";
+        // prompt message for wrong username or password
     }
 
     // Close the database connection
