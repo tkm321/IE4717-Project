@@ -90,6 +90,14 @@ div #topright {
   width: 100%; /* covers entire width of screen */
   height: 100%; /* covers entire height of screen */
   z-index: 1; /* will be displayed behind background */
+  background-color: rgba(0,0,0,0.6);
+}
+
+.form-background div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* Button used to open the login form */
@@ -102,26 +110,36 @@ div #topright {
 .form-popup {
   display: none;
   position: fixed;
-  border: 2px solid #f1f1f1;
+  border-radius: 10px;
 }
 
 /* Add styles to the form container */
 .form-container {
-  max-width: 300px;
-  padding: 10px;
+  width: 500px;
+  padding: 5px;
   background-color: white;
   text-align: center;
   color: black;
   z-index: 9;
+  border-radius: 10px;
+}
+
+#close-button {
+  position: absolute;
+  bottom:120px;
+  left:230px;
+  font-size: 30px;  
+  cursor: pointer;
 }
 
 /* Full-width input fields */
 .form-container input[type=text], .form-container input[type=password] {
-  width: 100%;
+  width: 95%;
   padding: 10px 5px 10px 5px;
-  margin: 5px 0 22px 0;
+  margin: 10px 0 10px 0;
   border: none;
   background: #f1f1f1;
+  border-radius: 10px;
 }
 
 /* When the inputs get focus, do something */
@@ -132,20 +150,15 @@ div #topright {
 
 /* Set a style for the submit/login button */
 .form-container .btn {
-  background-color: #04AA6D;
-  color: white;
+  background-color: #0CF1DE;
+  font-size: 16px;
   padding: 16px 20px;
   border: none;
   cursor: pointer;
   width: 100%;
-  margin-bottom:10px;
   opacity: 0.8;
-}
-
-/* Add a red background color to the cancel button */
-.form-container .cancel {
-  background-color: red;
-}
+  border-radius: 10px;
+} 
 
 /* Add some hover effects to buttons */
 .form-container .btn:hover, .open-button:hover {
@@ -154,6 +167,12 @@ div #topright {
 
 .form-container h1 {
   color: black;
+}
+
+#signup {
+  text-decoration: none;
+  font-weight: bold;
+  color: navy;
 }
 /* ---END OF LOGIN FORM--- */
 
@@ -285,7 +304,6 @@ div #topright {
 /* ---START OF BANNER--- */
 .banner h1 {
   text-align: center;
-  /* background-color: #333333; */  
   background-image: url("../../IE4717-Project/images/background2.jpg");
   color: white;
   margin-bottom: 0;
@@ -314,12 +332,42 @@ div #topright {
   text-align: center;
   font-size: 30px;
 }
+
+#bannercontact {
+  margin-top:70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#bannercontact div {
+  width: 30%;
+  text-align: center;
+  background-color: white;
+  border: solid 1px black;
+}
+
+#bannercontact figcaption {
+  padding:10px;
+  background-color: #333333;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#bannercontact img {
+  padding: 20px;
+}
+
+#bannercontact a {
+  text-decoration: none;
+  color:black;
+}
 /* ---END OF BANNER--- */
 
 
 /* ---START OF FOOTER--- */
   #footer {
-    /* background-color: #333333; */
     background-image: url("../../IE4717-Project/images/background2.jpg");
     color: white;
     text-align: center;
@@ -375,6 +423,7 @@ div #topright {
   padding:10px;
   border-radius: 10px;
   border:none;
+  font-size: 14px;
 }
 
 .contactform button {
@@ -392,8 +441,45 @@ div #topright {
 
 .contactform button:hover {
   transform: scale(1.05, 1.05);
+  background-color: lightgrey;
 }
 /* ---END OF CONTACT FORM--- */
+
+/* ---START OF REGISTRATION FORM --- */
+.registerform label {
+  float: left;
+  text-align: right;
+  width: 200px;
+  padding: 10px 10px 0px 0px;
+  font-weight: bold;
+}
+
+.registerform #name, #email, #contact, #password, #confirmpassword {
+  PADDING: 10pX;
+  width: 400px;
+  border:none;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+#registerbutton {
+  margin: 30px 0px 30px 0px;
+  padding: 10px;
+  border:none;
+  border-radius: 10px;
+  transition: all 0.3s;
+  font-size: 20px;
+} 
+
+#registerform button:hover {
+  transform: scale(1.05, 1.05);
+  background-color: lightgrey;
+}
+
+.form-wrapper {
+  padding: 50px;
+}
+/* ---END OF REGISTRATION FORM--- */
 
 .empty-wishlist {
     text-align: center;

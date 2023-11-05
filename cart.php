@@ -15,6 +15,24 @@
 
 <body>
   <div id="container">
+    <div class="form-background" id="form-bg">
+      <div class="form-popup" id="loginForm">
+        <div id="close">
+          <span id="close-button">×</span>
+        </div>
+        <form action="php/login.php" method="post" class="form-container">
+          <h1>Member Login</h1>
+        
+          <input type="text" placeholder="Enter Email" name="loginemail" id="loginemail" required>
+          <input type="password" placeholder="Enter Password" name="loginpassword" id="loginpassword" required>
+        
+          <p>No account yet? <a href="register.html" id="signup">Click here to sign up!</a></p>
+        
+          <button type="submit" class="btn">LOG IN</button>
+        </form>
+      </div>
+    </div>
+
     <!-- START OF HEADER -->
     <div id="header">
         <div id="logo">
@@ -28,29 +46,11 @@
           </form>
         </div>
 
-        <div id="topright">
-          <button class="open-button" onclick="openForm()">Login</button>
-          <div class="form-popup" id="loginForm">
-            <form action="#.php" class="form-container">
-              <h1>Member Login</h1>
-          
-              <!-- <label for="email"><b>Email</b></label> -->
-              <input type="text" placeholder="Enter Email" name="email" required>
-          
-              <!-- <label for="password"><b>Password</b></label> -->
-              <input type="password" placeholder="Enter Password" name="password" required>
-
-			        <p>No account yet? <a href="register.html">Register here!</a></p>
-          
-              <button type="submit" class="btn">Login</button>
-              <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-            </form>
-          </div>
-
-          <a href="wishlist.php"><button class="topbuttons">Wishlist</button></a>
-          <a href="cart.php"><button class="topbuttons">Cart</button></a>
+        <div id="topright">			
+			<button class="open-button" id="open-button" onclick="openForm()">Login</button>
+			<a href="wishlist.php"><button class="topbuttons">Wishlist</button></a>
+			<a href="cart.php"><button class="topbuttons">Cart</button></a>
         </div>
-        
     </div>
     <!-- END OF HEADER -->
 
@@ -97,7 +97,8 @@
     </footer>
   </div>
   <!-- END OF FOOTER -->
-
-</div>
+  
+  </div>
+  <script src="js/login.js"></script>
 </body>
 </html>
