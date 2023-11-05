@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,8 +29,19 @@
           </form>
         </div>
 
-        <div id="topright">			
-			    <a href="login.php"><button class="topbuttons" id="login-button">Login</button></a>
+        <div id="topright">
+          <?php
+              if (isset($_SESSION['valid_user']))
+              {
+                  // echo 'Welcome '.$member_name.'!<br />';
+                  echo 'You are logged in as: <b>'.$_SESSION['valid_user'].'</b> <br />';
+                  echo '<a href="php/logout.php"><button class="topbuttons" id="login-button">Logout</button></a>';
+              }
+              else
+              {
+                  echo '<a href="login.php"><button class="topbuttons" id="login-button">Login</button></a>';
+              }
+          ?>
           <a href="wishlist.php"><button class="topbuttons">Wishlist</button></a>
           <a href="cart.php"><button class="topbuttons">Cart</button></a>
         </div>
@@ -40,8 +55,8 @@
           <ul>
               <li><a href="index.php">Home</a></li> | 
               <li><a href="products.php">Products</a></li> |
-              <li><a href="aboutus.html">About Us</a></li> |
-              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="aboutus.php">About Us</a></li> |
+              <li><a href="contact.php">Contact Us</a></li>
           </ul>
           </nav>
       </div>
@@ -49,14 +64,13 @@
     
     <div class = "loginform-wrapper">
       <div class="loginform-container">
-        <form action="php/login.php" method="post" class="loginForm" id="loginForm">
-          <h1>Member Login</h1>
-          
+        <form action="php/auth_login.php" method="post" class="loginForm" id="loginForm">
+          <h1>Member Login</h1>     
           <input type="text" placeholder="Enter Email" name="loginemail" id="loginemail" required>
           <input type="password" placeholder="Enter Password" name="loginpassword" id="loginpassword" required>
           
-          <p>No account yet? <a href="register.html" id="signup">Click here to sign up!</a></p>
-          
+          <p>No account yet? <a href="register.php" id="signup">Click here to sign up!</a></p>
+          <div id="error-message"></div>
           <button type="submit" class="btn">LOG IN</button>
         </form>
       </div>
@@ -71,8 +85,8 @@
             <ul>
               <li><a href="index.php">Home</a></li>
               <li><a href="products.php">Products</a></li>
-              <li><a href="aboutus.html">About Us</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="aboutus.php">About Us</a></li>
+              <li><a href="contact.php">Contact Us</a></li>
             </ul>
           </nav>
         </div>

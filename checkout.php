@@ -8,12 +8,8 @@
   <title>NovaTech - Your Ultimate Electronics Store</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/cartstyles.css">
   <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script type="text/javascript" src="js/cart_script.js"></script>
-  <script type="text/javascript" src="js/cart_confirmation.js"></script>
-  <script type="text/javascript" src="js/cart_total.js"></script>
 </head>
 
 <body>
@@ -49,49 +45,42 @@
         </div>
     </div>
     <!-- END OF HEADER -->
-
     
     <div class = "Content_Wrapper">
     <!-- START OF NAVBAR -->
         <div id="navbar">
         <nav>
-          <ul>
-            <li><a href="index.php">Home</a></li> |
-            <li><a href="products.php">Products</a></li> |
-            <li><a href="aboutus.php">About Us</a></li> |
-            <li><a href="contact.php">Contact Us</a></li>
-          </ul>
-        </nav>
-        </div>
-    <!-- END OF NAVBAR -->        
-	
-		<div class="page-header">
-			<h2>Shopping Cart</h2>
-		</div>	
-		<div class="shopping-cart">	
-			<?php
-				// Include the cart_display.php file to display the shopping cart
-				include 'php/cart_display.php';
-			?>
-		</div>
-	</div>
-	
-  <!-- START OF FOOTER -->
-	<div id="footer">
-	<footer>
-        <div id="sitemap">
-          <nav>
             <ul>
-              <li><a href="index.php">Home</a></li>
-              <li><a href="products.php">Products</a></li>
-              <li><a href="aboutus.php">About Us</a></li>
+              <li><a href="index.php">Home</a></li> | 
+              <li><a href="products.php">Products</a></li> |
+              <li><a href="aboutus.php">About Us</a></li> |
               <li><a href="contact.php">Contact Us</a></li>
             </ul>
-          </nav>
+        </nav>
         </div>
-        <p>&copy; 2023 NovaTech Pte Ltd. All Rights Reserved.</p>
-    </footer>
-  </div>
+    <!-- END OF NAVBAR -->
+
+        <h2>Checkout</h2>
+        
+            
+    </div>
+
+    <!-- START OF FOOTER -->
+    <div id="footer">
+      <footer>
+          <div id="sitemap">
+            <nav>
+              <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="products.php">Products</a></li>
+                <li><a href="aboutus.php">About Us</a></li>
+                <li><a href="contact.php">Contact Us</a></li>
+              </ul>
+            </nav>
+          </div>
+          <p>&copy; 2023 NovaTech Pte Ltd. All Rights Reserved.</p>
+      </footer>
+    </div>
   <!-- END OF FOOTER -->
   
   </div>

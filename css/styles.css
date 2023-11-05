@@ -66,6 +66,7 @@ div #logo img {
 div #topright {
   float: right;
   margin-right: 30px;
+  text-align: center;
 }
 
 #topright button {
@@ -76,10 +77,6 @@ div #topright {
   font-size: 18px;
   border-radius: 20px;
   transition: all 0.3s; 
-}
-
-#topright .open-button {
-  width: 150px;
 }
 
 .topbuttons:hover {
@@ -141,7 +138,7 @@ div #topright {
   width: 84%;
   opacity: 0.8;
   border-radius: 10px;
-  margin-top: 30px;
+  margin-top: 20px;
 } 
 
 /* Add some hover effects to buttons */
@@ -155,7 +152,7 @@ div #topright {
 }
 
 .loginform-container  p {
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 #signup {
@@ -166,6 +163,10 @@ div #topright {
 
 #signup:hover {
   text-decoration: underline;
+}
+
+#error-message {
+  color: red;
 }
 /* ---END OF LOGIN FORM--- */
 

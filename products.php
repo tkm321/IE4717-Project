@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +29,18 @@
         </div>
 
         <div id="topright">			
-          <a href="login.php"><button class="topbuttons" id="login-button">Login</button></a>
+          <?php
+              if (isset($_SESSION['valid_user']))
+              {
+                  // echo 'Welcome '.$member_name.'!<br />';
+                  echo 'You are logged in as: <b>'.$_SESSION['valid_user'].'</b> <br />';
+                  echo '<a href="php/logout.php"><button class="topbuttons" id="login-button">Logout</button></a>';
+              }
+              else
+              {
+                  echo '<a href="login.php"><button class="topbuttons" id="login-button">Login</button></a>';
+              }
+          ?>
           <a href="wishlist.php"><button class="topbuttons">Wishlist</button></a>
           <a href="cart.php"><button class="topbuttons">Cart</button></a>
         </div>
@@ -41,8 +55,8 @@
           <ul>
             <li><a href="index.php">Home</a></li> | 
             <li><a href="products.php">Products</a></li> |
-            <li><a href="aboutus.html">About Us</a></li> |
-            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="aboutus.php">About Us</a></li> |
+            <li><a href="contact.php">Contact Us</a></li>
           </ul>
         </nav>
       </div>
@@ -68,8 +82,8 @@
               <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="products.php">Products</a></li>
-                <li><a href="aboutus.html">About Us</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="aboutus.php">About Us</a></li>
+                <li><a href="contact.php">Contact Us</a></li>
               </ul>
             </nav>
           </div>
