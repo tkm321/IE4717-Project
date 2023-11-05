@@ -9,7 +9,6 @@
   <script type="text/javascript" src="js/login.js"></script>
 </head>
 
-
 <body>
   <div id="container">
 
@@ -20,6 +19,26 @@
 			</div>
 			<form action="php/login.php" method="post" class="form-container">
 				<h1>Member Login</h1>
+
+				<?php
+				
+				if (isset($_SESSION['valid_user'])) {
+					echo 'You are logged in as: '.$_SESSION['valid_user'].'<br />';
+					echo '<a href="logout.php">Log Out</a><br />';
+				}
+				else
+				{
+					if (isset($loginemail))
+					{
+						echo 'Invalid email or password. Please try again.<br />';
+					}
+					else
+					{
+						echo 'You are not logged in.<br />';
+					}
+				}
+
+				?>
 			
 				<input type="text" placeholder="Enter Email" name="loginemail" id="loginemail" required>
 				<input type="password" placeholder="Enter Password" name="loginpassword" id="loginpassword" required>
@@ -34,7 +53,7 @@
     <!-- START OF HEADER -->
     <div id="header">
         <div id="logo">
-            <a href="index.html"><img src="images/logo.png"></a>
+            <a href="index.php"><img src="images/logo.png"></a>
         </div>
 
         <div id="searchbar">
@@ -59,7 +78,7 @@
 		<div id="navbar">
 		  <nav>
 			<ul>
-			  <li><a href="index.html">Home</a></li> | 
+			  <li><a href="index.php">Home</a></li> | 
 			  <li><a href="products.php">Products</a></li> |
 			  <li><a href="aboutus.html">About Us</a></li> |
 			  <li><a href="contact.html">Contact Us</a></li>
@@ -122,7 +141,7 @@
           <div id="sitemap">
             <nav>
               <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="products.php">Products</a></li>
                 <li><a href="aboutus.html">About Us</a></li>
                 <li><a href="contact.html">Contact Us</a></li>

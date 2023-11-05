@@ -41,7 +41,7 @@
     <!-- START OF HEADER -->
     <div id="header">
         <div id="logo">
-            <a href="index.html"><img src="images/logo.png"></a>
+            <a href="index.php"><img src="images/logo.png"></a>
         </div>
 
         <div id="searchbar">
@@ -65,7 +65,7 @@
 		<div id="navbar">
 		  <nav>
 			<ul>
-			  <li><a href="index.html">Home</a></li> | 
+			  <li><a href="index.php">Home</a></li> | 
 			  <li><a href="products.php">Products</a></li> |
 			  <li><a href="aboutus.html">About Us</a></li> |
 			  <li><a href="contact.html">Contact Us</a></li>
@@ -221,7 +221,7 @@
           <div id="sitemap">
             <nav>
               <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="products.php">Products</a></li>
                 <li><a href="aboutus.html">About Us</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
