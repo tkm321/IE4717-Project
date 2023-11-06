@@ -107,13 +107,18 @@
 					<table id="table_product_desc" class="product-table">
 						<tr>
 							<td class="price-cell">
-								S$<?php
-								$price = number_format($product['product_price'], 2); // Format the price with two decimal places
-								$price_parts = explode('.', $price); // Split the price into dollars and cents
-								echo '<span class="dollars">' . $price_parts[0] . '</span>'; // Display dollars
-								echo '<span class="cents">' . $price_parts[1] . '</span>'; // Display cents
+								<?php
+								$discountedPrice = $product['product_price'] * (1 - $product['product_discount'] / 100);
+
+								if ($product['product_discount'] > 0) {
+									echo '<span style="color: red;">$' . number_format($discountedPrice, 2) . '</span>';
+									echo ' <span style="text-decoration: line-through; font-size: 80%; color: black;">$' . number_format($product['product_price'], 2) . '</span>';
+								} else {
+									echo '$' . number_format($product['product_price'], 2);
+								}
 								?>
 							</td>
+						</tr>
 						</tr>
 						<tr>
 							<td class="stock-cell">

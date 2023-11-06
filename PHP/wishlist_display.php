@@ -42,23 +42,32 @@ if (isset($_SESSION['valid_user'])) {
     if ($result->num_rows > 0) {
         echo '<div class="product-divider">';
         foreach ($result as $product) {
-            $image_path = 'Product_imgs/Product_' . $product["product_id"] . '/img_1.jpg';
-            echo '<div class="product-container">';
-            echo '<h2><a href="item.php?product_id=' . $product["product_id"] . '" style="color: darkblue; text-decoration: none;" onmouseover="this.style.textDecoration=\'underline\';" onmouseout="this.style.textDecoration=\'none\';">' . $product["product_name"] . '</a></h2>';
-            echo '<img src="' . $image_path . '" alt="' . $product["product_name"] . '">';
-            echo '<div class="price-container">';
-            echo '<p>Price: $' . $product["product_price"] . '</p>';
-            echo '<div class="button-container">';
-            echo '<form action="PHP/product_add_db.php" method="get">';
-            echo '<input type="hidden" name="action" value="cart">';
-            echo '<input type="hidden" name="product_id" value="' . $product["product_id"] . '">';
-            echo '<button class="add-action" type="submit">Add to Cart</button>';
-            echo '</form>';
-            echo '<form action="PHP/product_add_db.php" method="get">';
-            echo '<input type="hidden" name="action" value="add_wishlist">';
-            echo '<input type="hidden" name="product_id" value="' . $product["product_id"] . '">';
-            echo '<button class="add-action" type="submit">Add to Wishlist</button>';
-            echo '</form>';
+			$image_path = 'Product_imgs/Product_' . $product["product_id"] . '/img_1.jpg';
+			echo '<div class="product-container">';
+			echo '<h2><a href="item.php?product_id=' . $product["product_id"] . '" style="color: darkblue; text-decoration: none;" onmouseover="this.style.textDecoration=\'underline\';" onmouseout="this.style.textDecoration=\'none\';">' . $product["product_name"] . '</h2>';
+			echo '<img src="' . $image_path . '" alt="' . $product["product_name"] . '"></a>';
+			echo '<div class="price-container">';
+			
+			// Calculate the discounted price and the original price
+			$discountedPrice = $product["product_price"] * (1 - $product["product_discount"] / 100);
+			
+			// Display the prices based on the discount
+			echo '<p>';
+			if ($product["product_discount"] > 0) {
+				echo '<span style="color: red;">$' . number_format($discountedPrice, 2) . '</span> ';
+				echo '<span style="font-size: 80%; text-decoration: line-through;">$' . number_format($product["product_price"], 2) . '</span> ';
+				echo '<br><span style="color: red;">' . $product["product_discount"] . '% Off</span>';
+			} else {
+				echo 'Price: $' . number_format($product["product_price"], 2);
+			}
+			echo '</p>';
+			
+			echo '<div class="button-container">';
+			echo '<form action="PHP/product_add_db.php" method="get">';
+			echo '<input type="hidden" name="action" value="cart">';
+			echo '<input type="hidden" name="product_id" value="' . $product["product_id"] . '">';
+			echo '<button class="add-action" type="submit">Add to Cart</button>';
+			echo '</form>';
             echo '</div>'; // Close the button-container div
             echo '</div>'; // Close the price-container div
             echo '</div>'; // Close the product-container div
@@ -67,18 +76,16 @@ if (isset($_SESSION['valid_user'])) {
     } else {
         // Wishlist is empty, display a sad face and "Empty"
         echo '<div class="empty-wishlist">';
-		echo '<div class="sad-face">😢</div>';
+        echo '<div class="sad-face">😢</div>';
         echo 'Empty';
         echo '</div>';
-		
     }
 } else {
-    // User is not logged in, show an empty wishlist
+    // User is not logged in, show a message to log in
     echo '<div class="empty-wishlist">';
-	echo '<div class="sad-face">😢</div>';
-    echo 'You are not logged in.';
+    echo '<div class="sad-face">😢</div>';
+    echo 'You are not logged in. Please log in to view your wishlist.';
     echo '</div>';
-	
 }
 
 $conn->close();
