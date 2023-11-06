@@ -1,0 +1,47 @@
+.checkout-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkout-details-and-review {
+    display: flex;
+    flex-direction: row;
+}
+
+.checkout-details {
+    flex: 2;
+    /* Other styles for checkout-details */
+}
+
+.checkout-review-order {
+    flex: 1;
+    /* Other styles for checkout-review-order */
+}
+
+.checkout-payment {
+    padding-left: 20px; /* Add spacing as needed */
+}
+
+.checkout-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    width: 200px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.checkout-button:hover {
+    background-color: #0056b3;
+}
+
+.checkout-table {
+    border: 1px solid #000; /* Add a border around the table */
+    border-collapse: collapse; /* Collapse table borders into a single border line */
+    width: 100%; /* Ensure the table spans the entire container */
+}
+.checkout-table th, .checkout-table td {
+    padding: 8px; /* Add padding to cells for better spacing */
+}

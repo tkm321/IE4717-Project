@@ -26,10 +26,11 @@ if (isset($_SESSION['valid_user'])) {
     $memberIdStmt->fetch();
     $memberIdStmt->close();
 
-    // Query your database to fetch products in the wishlist
+    // Query your database to fetch products in the wishlist, ordered by product_id
     $sql = "SELECT p.* FROM products p
             INNER JOIN wishlist w ON p.product_id = w.product_id
-            WHERE w.member_id = ?";
+            WHERE w.member_id = ?
+            ORDER BY p.product_id"; // Add ORDER BY clause to order by product_id
     $wishlistStmt = $conn->prepare($sql);
     $wishlistStmt->bind_param("i", $member_id);
     $wishlistStmt->execute();

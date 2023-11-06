@@ -41,4 +41,6 @@ INSERT INTO reviews (product_id, reviews_total, reviews_qty) VALUES
     (12, 0, 0);
     
 INSERT INTO members (member_id, member_name, member_email, member_contact, member_password) VALUES
-    (0, 'admin', 'admin', 0, 'admin');
+    (0, 'admin', 'admin', 0, 'admin'),
+	(1, 'testone', 'test01@gmail.com', 88888888, '0ebfbadc8eb323262c3095350f44e9c7'),
+	(2, 'testtwo', 'test02@gmail.com', 88883333, 'e8f45e4474e9b49b903d903459074eeb');

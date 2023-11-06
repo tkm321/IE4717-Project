@@ -24,10 +24,16 @@ CREATE TABLE IF NOT EXISTS members (
 
 DROP TABLE IF EXISTS orders;
 CREATE TABLE IF NOT EXISTS orders (
+  batch_id INT UNSIGNED NOT NULL,
   order_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   member_id INT UNSIGNED NOT NULL,
   product_id INT UNSIGNED NOT NULL,
-  qty INT,
+  order_qty INT NOT NULL,
+  order_name VARCHAR(100) NOT NULL, 
+  order_email VARCHAR(100) NOT NULL,
+  order_contact VARCHAR(100) NOT NULL,
+  order_address VARCHAR(100) NOT NULL,
+  order_total_price DOUBLE,
   FOREIGN KEY (product_id) REFERENCES products(product_id),
   FOREIGN KEY (member_id) REFERENCES members(member_id)
 );

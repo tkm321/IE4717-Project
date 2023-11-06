@@ -29,7 +29,8 @@ if (isset($member_id)) {
     $sql = "SELECT c.product_id, p.product_name, p.product_price, p.product_stock
         FROM cart c
         JOIN products p ON c.product_id = p.product_id
-        WHERE c.member_id = $member_id"; // Add a WHERE clause to filter by member_id
+        WHERE c.member_id = $member_id
+        ORDER BY c.product_id"; // Add ORDER BY clause to order by product_id
 	$result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {
@@ -39,7 +40,7 @@ if (isset($member_id)) {
         echo '<button class="remove-all-button" name="remove_all" 
             onclick="confirmRemoveAll()">Remove All</button>';
         echo '</div>';
-        echo '<form method="post" action="PHP/checkout_order.php" >';
+        echo '<form method="post" action="checkout_order.php" >';
         echo '<table id="product-cart">';
         echo '<tr>
                 <th></th>
@@ -49,7 +50,6 @@ if (isset($member_id)) {
                 <th>Total Price</th>
                 <th>Action</th>
               </tr>';
-
         while ($row = mysqli_fetch_assoc($result)) {
             $product_id = $row['product_id'];
             $product_name = $row['product_name'];
@@ -60,17 +60,17 @@ if (isset($member_id)) {
             $product_image_url = "Product_imgs/Product_" . $product_id . "/img_1.jpg";
 
             echo "<tr>";
-            echo "<td class='cart-checkbox'><input type='checkbox' name='product_ids[]' class='product-checkbox' value='$product_id' data-product-id='$product_id'></td>";
+            echo "<td class='cart-checkbox'><input type='checkbox' name='product_ids[$product_id]' class='product-checkbox' value='$product_id' data-product-id='$product_id'></td>";
             echo "<td class='product-name-cell'>
                     <a href='item.php?product_id=$product_id'>$product_name</a> <br> 
                     <img src='$product_image_url' alt='$product_name' class='item-image'>
                 </td>";
             echo "<td class='cart-unitprice'>$formatted_price</td>";
-            echo "<td class='quantity-input'>
-                    <button class='decrement-button' data-product-id='$product_id'>-</button>
-                    <input type='number' name='quantity[]' class='styled-input product-quantity' value='$quantity' data-product-id='$product_id' data-unit-price='$unit_price' data-product-stock='{$row['product_stock']}'>
-                    <button class='increment-button' data-product-id='$product_id'>+</button>
-                </td>";
+                echo "<td class='quantity-input'>
+						<button class='decrement-button' data-product-id='$product_id'>-</button>
+						<input type='number' name='quantity[$product_id]' class='styled-input product-quantity' value='$quantity' data-product-id='$product_id' data-unit-price='$unit_price' data-product-stock='{$row['product_stock']}'>
+						<button class='increment-button' data-product-id='$product_id'>+</button>
+					</td>";
             echo "<td class='cart-totalprice'><span id='total-price-for-product-$product_id'>$total_price</span></td>";
             echo "<td class='cart-action'>
                     <button type='submit' class='remove-button' data-product-id='$product_id'>Remove</button>
