@@ -71,39 +71,36 @@
 		</div>
 		
 		<div class="banner">
-		  <h1>BESTSELLERS</h1>
-		  <div class="bannerbest">
-			<div><img src="Product_imgs/Product_1/img_1.jpg" style="width: 100%";></div>
-			<div><img src="product_imgs/product_2/img_1.jpg" style="width: 100%";></div>
-			<div><img src="product_imgs/product_3/img_1.jpg" style="width: 100%";></div>
-			<div><img src="product_imgs/product_4/img_1.jpg" style="width: 100%";></div>
-			<div><img src="product_imgs/product_5/img_1.jpg" style="width: 100%";></div>
-		  </div>
-		  <div class="bannerbestdesc">
-			<div><p>MacBook 15</p></div>
-			<div><p>Description 2</p></div>
-			<div><p>Description 3</p></div>
-			<div><p>Description 4</p></div>
-			<div><p>Description 5</p></div>
-		  </div> 
+		  <h1>PROMOTIONS</h1>
+				  <!-- Product display -->
+			  <div class="product-divider">
+				<?php
+				  // Include the PHP file and execute the code within it
+				  $products = include("PHP/product_promotion.php");  
+				?>
+			  </div>
 		</div>
 
 		<div class="banner">
 		  <h1>NEW ARRIVALS</h1>
-		  <div class="bannernew">
-			<div><img src="product_imgs/product_1"></div>
-			<div><img src="product_imgs/product_1"></div>
-			<div><img src="product_imgs/product_1"></div>
-			<div><img src="product_imgs/product_1"></div>
-			<div><img src="product_imgs/product_1"></div>
-		  </div>
-		  <div class="bannernewdesc">
-			<div><p>Description 1</p></div>
-			<div><p>Description 2</p></div>
-			<div><p>Description 3</p></div>
-			<div><p>Description 4</p></div>
-			<div><p>Description 5</p></div>
+		  <!-- Product display -->
+		  <div class="product-divider">
+			<?php
+			  // Include the PHP file and execute the code within it
+			  $products = include("PHP/product_new.php");  
+			?>
 		  </div> 
+		</div>
+		
+		<div class="banner">
+		  <h1>BEST SELLER (TBD)</h1>
+			<!-- Product display -->
+			  <div class="product-divider">
+					<?php
+					  // Include the PHP file and execute the code within it
+					  
+					?>
+			  </div>
 		</div>
 		<!-- END OF BANNER -->
 	</div>	
