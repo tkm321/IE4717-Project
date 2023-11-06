@@ -46,8 +46,8 @@ if (mysqli_num_rows($result) > 0) {
         echo "<tr>";
 		echo "<td class='cart-checkbox'><input type='checkbox' name='product_ids[]' class='product-checkbox' value='$product_id' data-product-id='$product_id'></td>";
 		echo "<td class='product-name-cell'>
-				<a href='item.php?product_id=$product_id'>$product_name</a> <br> 
-				<img src='$product_image_url' alt='$product_name' class='item-image'>
+				<a href='item.php?product_id=$product_id'>$product_name <br> 
+				<img src='$product_image_url' alt='$product_name' class='item-image'></a>
 			</td>";
 		echo "<td class='cart-unitprice'>$formatted_price</td>";
 		echo "<td class='quantity-input'>

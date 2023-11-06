@@ -50,8 +50,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
   foreach ($products as $product) {
       $image_path = 'Product_imgs/Product_' . $product["product_id"] . '/img_1.jpg';
       echo '<div class="product-container">';
-      echo '<h2><a href="item.php?product_id=' . $product["product_id"] . '" style="color: darkblue; text-decoration: none;" onmouseover="this.style.textDecoration=\'underline\';" onmouseout="this.style.textDecoration=\'none\';">' . $product["product_name"] . '</a></h2>';
-      echo '<img src="' . $image_path . '" alt="' . $product["product_name"] . '">';
+      echo '<h2><a href="item.php?product_id=' . $product["product_id"] . '" style="color: darkblue; text-decoration: none;" onmouseover="this.style.textDecoration=\'underline\';" onmouseout="this.style.textDecoration=\'none\';">' . $product["product_name"] . '</h2>';
+      echo '<img src="' . $image_path . '" alt="' . $product["product_name"] . '"></a>';
       echo '<div class="price-container">';
       echo '<p>Price: $' . $product["product_price"] . '</p>';
       echo '<div class="button-container">';
