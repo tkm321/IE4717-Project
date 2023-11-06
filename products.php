@@ -61,8 +61,8 @@
         </nav>
       </div>
       <!-- END OF NAVBAR -->
-      <div class="page-header">
-        <h2>All Products</h2>
+      <div class="banner">
+        <h1>OUR COLLECTIONS</h1>
       </div>
       <!-- Product display -->
       <div class="product-divider">
