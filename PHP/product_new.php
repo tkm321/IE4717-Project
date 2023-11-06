@@ -33,7 +33,21 @@ foreach ($products as $product) {
     echo '<h2><a href="item.php?product_id=' . $product["product_id"] . '" style="color: darkblue; text-decoration: none;" onmouseover="this.style.textDecoration=\'underline\';" onmouseout="this.style.textDecoration=\'none\';">' . $product["product_name"] . '</h2>';
     echo '<img src="' . $image_path . '" alt="' . $product["product_name"] . '"></a>';
     echo '<div class="price-container">';
-    echo '<p>Price: $' . $product["product_price"] . '</p>';
+    
+    // Calculate the discounted price and the original price
+    $discountedPrice = $product["product_price"] * (1 - $product["product_discount"] / 100);
+    
+    // Display the prices based on the discount
+    echo '<p>';
+    if ($product["product_discount"] > 0) {
+        echo '<span style="color: red;">$' . number_format($discountedPrice, 2) . '</span> ';
+        echo '<span style="font-size: 80%; text-decoration: line-through;">$' . number_format($product["product_price"], 2) . '</span> ';
+        echo '<br><span style="color: red;">' . $product["product_discount"] . '% Off</span>';
+    } else {
+        echo 'Price: $' . number_format($product["product_price"], 2);
+    }
+    echo '</p>';
+    
     echo '<div class="button-container">';
     echo '<form action="PHP/product_add_db.php" method="get">';
     echo '<input type="hidden" name="action" value="cart">';

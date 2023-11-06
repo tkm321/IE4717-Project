@@ -37,9 +37,16 @@ foreach ($products as $product) {
     // Calculate the discounted price and the original price
     $discountedPrice = $product["product_price"] * (1 - $product["product_discount"] / 100);
     
-    // Display the prices in the desired format
-    echo '<p><span style="color: red;">$' . number_format($discountedPrice, 2) . '</span> <span style="font-size: 80%; text-decoration: line-through;">$' . number_format($product["product_price"], 2) . '</span></p>';
-    echo '<p>Discount: ' . $product["product_discount"] . '%'. '</p>';
+    // Display the prices based on the discount
+    echo '<p>';
+    if ($product["product_discount"] > 0) {
+        echo '<span style="color: red;">$' . number_format($discountedPrice, 2) . '</span> ';
+        echo '<span style="font-size: 80%; text-decoration: line-through;">$' . number_format($product["product_price"], 2) . '</span> ';
+        echo '<br><span style="color: red;">' . $product["product_discount"] . '% Off</span>';
+    } else {
+        echo 'Price: $' . number_format($product["product_price"], 2);
+    }
+    echo '</p>';
     
     echo '<div class="button-container">';
     echo '<form action="PHP/product_add_db.php" method="get">';
