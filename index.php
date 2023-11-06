@@ -9,7 +9,8 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
-  <script src="https://kit.fontawesome.com/66341603a8.js" crossorigin="anonymous"></script>  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron">
+  <script src="https://kit.fontawesome.com/66341603a8.js" crossorigin="anonymous"></script> 
 </head>
 
 <body>
@@ -64,7 +65,7 @@
   
 		<!-- START OF BANNER -->
 		<div class="banner">
-		  <h1>PROMOTION</h1>
+		  <h1 id="welcometitle">WELCOME TO NOVATECH</h1>
 		  <!-- <div class="bannerpromo"> -->
 			<img src="images/blackfriday.jpg" width="100%">
 		  <!-- </div> -->

@@ -84,9 +84,26 @@ div #topright {
   transition: all 0.3s; 
 }
 
-.topbuttons:hover {
+#topright button:hover {
   background-color: #0CF1DE;
   transform: scale(1.1, 1.1);
+}
+
+button#login-button {  
+  background-color: green;
+  color: white;
+  width: 150px;
+}
+
+button#logout-button {
+  background-color: darkred;
+  color:white;
+  width: 150px;
+}
+
+button#login-button:hover, button#logout-button:hover {  
+  background-color: white;
+  color: black;
 }
 
 #bodytext {
@@ -310,9 +327,17 @@ div #topright {
 
 
 /* ---START OF BANNER--- */
+#welcometitle {
+  background-image: url("../../IE4717-Project/images/welcomebg.jpg");
+  background-size: cover;
+  font-family: 'Orbitron', serif;
+  letter-spacing: 10px;
+}
+
 .banner h1 {
   text-align: center;
   background-image: url("../../IE4717-Project/images/background2.jpg");
+  background-size: cover;
   color: white;
   margin-bottom: 0;
   padding: 30px;
