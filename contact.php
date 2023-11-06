@@ -68,7 +68,7 @@
         
         <div class="contentform-wrapper">
           <p style="font-size:18px">Need to get in touch with us, whether to inquire about our products, discuss our services, or simply provide a feedback, we love to hear from you.</p><br>
-          <form method="post" action="#.php" name="contactform" class="contactform" id="contactform">
+          <form method="post" action="php/enquiry_confirmation_email.php" name="contactform" class="contactform" id="contactform">
             <div>
               <label for="name">*Name:</label>    
               <input type="text" id="name" name="name" placeholder="Enter your name here" onchange="validateName(event)" required><br><br>
