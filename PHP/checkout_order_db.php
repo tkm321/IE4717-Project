@@ -61,21 +61,27 @@ if (isset($member_id)) {
             $insertOrderStmt->execute();
         }
 		
-		// Update product stock in the products table
+		// Update product stock in the products table and update the total_sales table
 		$updateStockStmt = $conn->prepare("UPDATE products SET product_stock = product_stock - ? WHERE product_id = ?");
+		$insertTotalSalesStmt = $conn->prepare("INSERT INTO total_sales (product_id, total_price, total_qty) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE total_price = total_price + VALUES(total_price), total_qty = total_qty + VALUES(total_qty)");
 
 		// Loop through the arrays and insert order details
 		for ($i = 0; $i < count($product_ids); $i++) {
 			$product_id = $product_ids[$i];
 			$quantity = $quantities[$i];
-
-			// Bind parameters and execute the update statement
+			$total_price = floatval(str_replace(['$', ','], '', $total_prices[$i])); // Convert to float
+			// Bind parameters and execute the update statement for product stock
 			$updateStockStmt->bind_param("ii", $quantity, $product_id);
 			$updateStockStmt->execute();
+			
+			// Bind parameters and execute the insert/update statement for total_sales
+			$insertTotalSalesStmt->bind_param("idd", $product_id, $total_price, $quantity);
+			$insertTotalSalesStmt->execute();
 		}
 
-		// Close the update statement
+		// Close the statements
 		$updateStockStmt->close();
+		$insertTotalSalesStmt->close();
 		
         // Close the insert statement
         $insertOrderStmt->close();

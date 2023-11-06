@@ -93,12 +93,12 @@
 		</div>
 		
 		<div class="banner">
-		  <h1>BEST SELLER (TBD)</h1>
+		  <h1>BEST SELLER </h1>
 			<!-- Product display -->
 			  <div class="product-divider">
 					<?php
 					  // Include the PHP file and execute the code within it
-					  
+					  $products = include("PHP/product_bestseller.php");
 					?>
 			  </div>
 		</div>
