@@ -75,7 +75,6 @@
     // $conn->close();
 ?>
 
-<!-- UNSUCCESSFUL LOGIN WILL LOAD THIS PAGE -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
