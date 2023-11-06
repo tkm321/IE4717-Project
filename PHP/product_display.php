@@ -44,30 +44,44 @@ foreach ($products as $product) {
     // Check if the product is in the wishlist
     $product_id = $product['product_id'];
     $isInWishlist = false;
+	
+	if (isset($_SESSION['valid_user'])) {
+    $valid_user = $_SESSION['valid_user'];
 
-    // Query the wishlist table to check if the product is already in the wishlist
-    $wishlistCheckStmt = $conn->prepare("SELECT COUNT(*) FROM wishlist WHERE product_id = ?");
-    $wishlistCheckStmt->bind_param("i", $product_id);
-    $wishlistCheckStmt->execute();
-    $wishlistCheckStmt->bind_result($wishlistCount);
-    $wishlistCheckStmt->fetch();
-    $wishlistCheckStmt->close();
+    // Retrieve the member_id from the database based on the member_email (assuming member_email is unique)
+    $memberEmail = $valid_user;
 
-    $isInWishlist = $wishlistCount > 0;
+    $memberIdStmt = $conn->prepare("SELECT member_id FROM members WHERE member_email = ?");
+    $memberIdStmt->bind_param("s", $memberEmail);
+    $memberIdStmt->execute();
+    $memberIdStmt->bind_result($member_id);
+    $memberIdStmt->fetch();
+    $memberIdStmt->close();
+	}
+	
+    // Query the wishlist table to check if the product is already in the user's wishlist
+	$wishlistCheckStmt = $conn->prepare("SELECT COUNT(*) FROM wishlist WHERE product_id = ? AND member_id = ?");
+	$wishlistCheckStmt->bind_param("ii", $product_id, $member_id);
+	$wishlistCheckStmt->execute();
+	$wishlistCheckStmt->bind_result($wishlistCount);
+	$wishlistCheckStmt->fetch();
+	$wishlistCheckStmt->close();
 
-    if ($isInWishlist) {
-        echo '<form action="PHP/product_add_db.php" method="get">';
-        echo '<input type="hidden" name="action" value="remove_wishlist">';
-        echo '<input type="hidden" name="product_id" value="' . $product["product_id"] . '">';
-        echo '<button class="add-action" type="submit">Remove Wishlist</button>';
-        echo '</form>';
-    } else {
-        echo '<form action="PHP/product_add_db.php" method="get">';
-        echo '<input type="hidden" name="action" value="add_wishlist">';
-        echo '<input type="hidden" name="product_id" value="' . $product["product_id"] . '">';
-        echo '<button class="add-action" type="submit">Add to Wishlist</button>';
-        echo '</form>';
-    }
+	$isInWishlist = $wishlistCount > 0;
+
+	if ($isInWishlist) {
+		echo '<form action="PHP/product_add_db.php" method="get">';
+		echo '<input type="hidden" name="action" value="remove_wishlist">';
+		echo '<input type="hidden" name="product_id" value="' . $product["product_id"] . '">';
+		echo '<button class="add-action" type="submit">Remove Wishlist</button>';
+		echo '</form>';
+	} else {
+		echo '<form action="PHP/product_add_db.php" method="get">';
+		echo '<input type="hidden" name="action" value="add_wishlist">';
+		echo '<input type="hidden" name="product_id" value="' . $product["product_id"] . '">';
+		echo '<button class="add-action" type="submit">Add to Wishlist</button>';
+		echo '</form>';
+	}
 
     echo '</div>'; // Close the button-container div
     echo '</div>'; // Close the price-container div

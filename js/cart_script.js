@@ -21,12 +21,16 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateQuantityAndTotal(quantityInput, totalElement, change) {
         const unitPrice = parseFloat(quantityInput.getAttribute('data-unit-price'));
         let quantity = parseInt(quantityInput.value, 10) || 0;
-
+		const stock = parseInt(quantityInput.getAttribute('data-product-stock'), 10) || 0;
+		
         quantity += change;
         if (quantity < 0) {
             quantity = 0;
         }
-
+		if (quantity > stock) {
+        quantity = stock;
+		}
+		
         quantityInput.value = quantity;
         const totalPrice = unitPrice * quantity;
 
