@@ -9,7 +9,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/66341603a8.js" crossorigin="anonymous"></script>  
   <script type="text/javascript" src="js/login.js"></script>
   <script type="text/javascript" src="js/formvalidator.js"></script>
 </head>
@@ -25,25 +25,25 @@
         <div id="searchbar">
           <form action="searchresult.php" method="post">
             <input type="text" name="searchterm" id="searchterm" placeholder="Find a product..." required>
-            <button type="submit" id="searchbuttons">Search <i class="fa fa-search"></i></button>
+            <button type="submit" id="searchbuttons">Search <i class="fa-solid fa-magnifying-glass"></i></button>
           </form>
         </div>
 
         <div id="topright">
           <?php
-              if (isset($_SESSION['valid_user']))
-              {
-                  // echo 'Welcome '.$member_name.'!<br />';
-                  echo 'You are logged in as: <b>'.$_SESSION['valid_user'].'</b> <br />';
-                  echo '<a href="php/logout.php"><button class="topbuttons" id="login-button">Logout</button></a>';
-              }
-              else
-              {
-                  echo '<a href="login.php"><button class="topbuttons" id="login-button">Login</button></a>';
-              }
+            if (isset($_SESSION['valid_user']))
+            {
+              // echo 'Welcome '.$member_name.'!<br />';
+              echo 'You are logged in as: <b>'.$_SESSION['valid_user'].'</b> <br />';
+              echo '<a href="php/logout.php"><button class="topbuttons" id="logout-button"><i class="fa-solid fa-door-open"></i><br>Logout</button></a>';
+            }
+            else
+            {
+              echo '<a href="login.php"><button class="topbuttons" id="login-button"><i class="fa-solid fa-right-to-bracket"></i><br>Login</button></a>';
+            }
           ?>
-          <a href="wishlist.php"><button class="topbuttons">Wishlist</button></a>
-          <a href="cart.php"><button class="topbuttons">Cart</button></a>
+          <a href="wishlist.php"><button class="topbuttons"><i class="fa-solid fa-heart"></i><br>Wishlist</button></a>
+          <a href="cart.php"><button class="topbuttons"><i class="fa-solid fa-cart-shopping"></i><br>Cart</button></a>
         </div>
     </div>
     <!-- END OF HEADER -->
