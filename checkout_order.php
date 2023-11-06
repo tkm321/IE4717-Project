@@ -35,7 +35,7 @@
               {
                 // echo 'Welcome '.$member_name.'!<br />';
                 echo 'You are logged in as: <b>'.$_SESSION['valid_user'].'</b> <br />';
-                echo '<a href="php/logout.php"><button class="topbuttons" id="login-button">Logout</button></a>';
+                echo '<a href="php/logout.php" onclick="return confirm(`Are you sure to logout?`);"><button class="topbuttons" id="logout-button"><i class="fa-solid fa-door-open"></i><br>Logout</button></a>';
               }
               else
               {
