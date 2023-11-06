@@ -232,6 +232,7 @@ div #topright {
 .product-divider h1 {
   margin: 50px 0 50px 0;
   text-align: center;
+  color: red;
 }
 
 .product-container {
