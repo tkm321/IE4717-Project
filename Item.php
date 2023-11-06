@@ -116,6 +116,13 @@
 							</td>
 						</tr>
 						<tr>
+							<td class="stock-cell">
+								<?php
+								echo  $product['product_stock'] . ' items available'; // Display product stock
+								?>
+							</td>
+						</tr>
+						<tr>
 							<td class="review-cell">
 									<?php
 										$reviewValue = $review; 
