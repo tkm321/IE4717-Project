@@ -99,7 +99,7 @@ if (isset($member_id)) {
 		// Close the delete statement
 		$removeFromCartStmt->close();
 
-        echo "Orders have been successfully placed.";
+        echo "Order have been successfully placed. A confirmation email has been sent to you.";
         // Display the order details in a table
         echo "<table>";
         echo "<tr><th>Product ID</th><th>Quantity</th><th>Total Price</th></tr>";
@@ -108,7 +108,36 @@ if (isset($member_id)) {
             echo "<tr><td>" . $product_ids[$i] . "</td><td>" . $quantities[$i] . "</td><td>" . number_format($total_price_float, 2) . "</td></tr>";
         }
         echo "</table>";
-		
+
+        $to      = 'f32ee@localhost';
+        $subject = 'Order Confirmation';
+        $message =
+        // START OF EMAIL MESSAGE STRUCTURE
+        'Dear ' . $name . ",\r\n\n" .
+
+        'Your order has been confirmed. Thank you for choosing NovaTech for your consumer electronics and IT product needs.' . "\r\n\n" .
+
+        'Order Details:' . "\r\n" .
+        'Product ID' . "\t\t" . "Quantity" . "\t\t" . "Price" . "\r\n\n" . // To implement multiple products in list if got time, else just remove this section.
+        // $product_ids . "\t\t" . $quantities . "\t\t" . $total_prices . "\r\n\n" .
+
+        'Your order will be processed within 3 working days and shipped with care.' . "\r\n\n" .
+
+        'If you have any questions about your order, shipment, or anything else, our dedicated customer support team is ready to assist you. Feel free to reach out via email at mailto:support@novatech.com.sg or by phone at tel:+6567671314.' . "\r\n\n" .
+        
+        'We value your trust and are committed to delivering high quality electronic products and exceptional service to your doorstep. Your satisfaction is our top priority.' . "\r\n\n" .
+
+        'Best Regards,' . "\r\n" .
+        'NovaTech Sales Team';
+        // END OF EMAIL MESSAGE STRUCTURE
+        
+        $headers = 'From: confirmorder@novatech.com.sg' . "\r\n" .
+            'Reply-To: confirmorder@novatech.com.sg' . "\r\n" .
+            'X-Mailer: PHP/' . phpversion();
+
+        mail($to, $subject, $message, $headers,'-ff32ee@localhost');
+
+
 
     } else {
         // No form submission
