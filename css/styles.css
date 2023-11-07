@@ -349,6 +349,7 @@ button#login-button:hover, button#logout-button:hover {
     border: none; /* Remove the button border */
     cursor: pointer;
     margin: 2px; /* Adjust this value to bring the buttons closer together */
+    border-radius: 10px;
 }
 
 .add-action:hover {
