@@ -1,10 +1,39 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
   background-image: url("../../IE4717-Project/images/background1.jpg");
   background-size: 100%;
   background-position: center;
+}
+
+/* FONT CUSTOMIZATION */
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 3px;
+}
+
+ul a {
+  font-family: 'Electrolize', sans-serif;
+  letter-spacing: 3px;
+}
+
+h4, h2, button, input, textarea {
+  font-family: 'Electrolize', sans-serif;
+  letter-spacing: 1px;
+}
+
+button.btn {
+  font-family: 'Orbitron', sans-serif;
+}
+/* FONT CUSTOMIZATION */
+
+#bodytext h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 36px;
+  letter-spacing: 3px;
+  text-align: center;
+  margin-top: 50px;
 }
 
 #container {
@@ -252,6 +281,13 @@ button#login-button:hover, button#logout-button:hover {
   color: red;
 }
 
+.product-divider h2 {
+  color: red;
+  margin-left: 40%;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
 .product-container {
   display: flex;
   flex-direction: column; /* Stack the content vertically */
@@ -330,8 +366,13 @@ button#login-button:hover, button#logout-button:hover {
 #welcometitle {
   background-image: url("../../IE4717-Project/images/welcomebg.jpg");
   background-size: cover;
-  font-family: 'Orbitron', serif;
-  letter-spacing: 10px;
+  background-position: center;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 30px;
 }
 
 .banner h1 {
@@ -474,6 +515,8 @@ button#login-button:hover, button#logout-button:hover {
   border-radius: 10px;
   transition: all 0.3s;
   font-size: 20px;
+  background-color: #008CBA;
+  color:white;
 }
 
 #submitbutton {
@@ -482,7 +525,7 @@ button#login-button:hover, button#logout-button:hover {
 
 .contactform button:hover {
   transform: scale(1.05, 1.05);
-  background-color: lightgrey;
+  background-color: #005F77;
 }
 /* ---END OF CONTACT FORM--- */
 
@@ -523,9 +566,10 @@ button#login-button:hover, button#logout-button:hover {
 /* ---END OF REGISTRATION FORM--- */
 
 .empty-wishlist {
-    text-align: center;
-    font-size: 24px;
-    margin-top: 20px;
+  text-align: center;
+  font-size: 24px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .sad-face {

@@ -10,14 +10,17 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/checkoutstyles.css">
   <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron"> <!-- Title font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Electrolize"> <!-- Subtitle font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"> <!-- Body font -->
+  <script src="https://kit.fontawesome.com/66341603a8.js" crossorigin="anonymous"></script> 
   <script type="text/javascript" src="js/formvalidator.js"></script>
 </head>
 
 <body>
   <div id="container">
-      <!-- START OF HEADER -->
-      <div id="header">
+    <!-- START OF HEADER -->
+    <div id="header">
         <div id="logo">
             <a href="index.php"><img src="images/logo.png"></a>
         </div>
@@ -25,39 +28,38 @@
         <div id="searchbar">
           <form action="searchresult.php" method="post">
             <input type="text" name="searchterm" id="searchterm" placeholder="Find a product..." required>
-            <button type="submit" id="searchbuttons">Search <i class="fa fa-search"></i></button>
+            <button type="submit" id="searchbuttons">Search <i class="fa-solid fa-magnifying-glass"></i></button>
           </form>
         </div>
 
-        <div id="topright">			
+        <div id="topright">
           <?php
-              if (isset($_SESSION['valid_user']))
-              {
-                // echo 'Welcome '.$member_name.'!<br />';
-                echo 'You are logged in as: <b>'.$_SESSION['valid_user'].'</b> <br />';
-                echo '<a href="php/logout.php" onclick="return confirm(`Are you sure to logout?`);"><button class="topbuttons" id="logout-button"><i class="fa-solid fa-door-open"></i><br>Logout</button></a>';
-              }
-              else
-              {
-                echo '<a href="login.php"><button class="topbuttons" id="login-button">Login</button></a>';
-              }
-         	?>
-          <a href="wishlist.php"><button class="topbuttons">Wishlist</button></a>
-          <a href="cart.php"><button class="topbuttons">Cart</button></a>
+            if (isset($_SESSION['valid_user']))
+            {
+              // echo 'Welcome '.$member_name.'!<br />';
+              echo 'You are logged in as: <b>'.$_SESSION['valid_user'].'</b> <br />';
+              echo '<a href="php/logout.php" onclick="return confirm(`Are you sure to logout?`);"><button class="topbuttons" id="logout-button"><i class="fa-solid fa-door-open"></i><br>Logout</button></a>';
+            }
+            else
+            {
+              echo '<a href="login.php"><button class="topbuttons" id="login-button"><i class="fa-solid fa-right-to-bracket"></i><br>Login</button></a>';
+            }
+          ?>
+          <a href="wishlist.php"><button class="topbuttons"><i class="fa-solid fa-heart"></i><br>Wishlist</button></a>
+          <a href="cart.php"><button class="topbuttons"><i class="fa-solid fa-cart-shopping"></i><br>Cart</button></a>
         </div>
     </div>
     <!-- END OF HEADER -->
-
     
     <div class = "Content_Wrapper">
     <!-- START OF NAVBAR -->
         <div id="navbar">
         <nav>
           <ul>
-            <li><a href="index.php">Home</a></li> |
-            <li><a href="products.php">Products</a></li> |
-            <li><a href="aboutus.php">About Us</a></li> |
-            <li><a href="contact.php">Contact Us</a></li>
+            <li><a href="index.php">HOME</a></li> |
+            <li><a href="products.php">PRODUCTS</a></li> |
+            <li><a href="aboutus.php">ABOUT US</a></li> |
+            <li><a href="contact.php">CONTACT US</a></li>
           </ul>
         </nav>
         </div>
@@ -119,10 +121,10 @@
         <div id="sitemap">
           <nav>
             <ul>
-              <li><a href="index.php">Home</a></li>
-              <li><a href="products.php">Products</a></li>
-              <li><a href="aboutus.php">About Us</a></li>
-              <li><a href="contact.php">Contact Us</a></li>
+              <li><a href="index.php">HOME</a></li>
+              <li><a href="products.php">PRODUCTS</a></li>
+              <li><a href="aboutus.php">ABOUT US</a></li>
+              <li><a href="contact.php">CONTACT US</a></li>
             </ul>
           </nav>
         </div>

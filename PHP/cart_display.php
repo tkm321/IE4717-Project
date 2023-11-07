@@ -123,7 +123,7 @@ if (isset($member_id)) {
     // User is not logged in, show a message that the cart is empty
     echo '<div class="empty-cart">';
     echo '<div class="sad-face">😢</div>';
-    echo 'You are not logged in. Please log in to view your cart.';
+    echo '<h4>You are not logged in. Please log in to view your cart.</h4>';
     echo '</div>';
 }
 

@@ -9,7 +9,9 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron"> <!-- Title font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Electrolize"> <!-- Subtitle font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"> <!-- Body font -->
   <script src="https://kit.fontawesome.com/66341603a8.js" crossorigin="anonymous"></script> 
 </head>
 
@@ -40,7 +42,7 @@
 				{
 					echo '<a href="login.php"><button class="topbuttons" id="login-button"><i class="fa-solid fa-right-to-bracket"></i><br>Login</button></a>';
 				}
-         	 ?>
+         	?>
 			<a href="wishlist.php"><button class="topbuttons"><i class="fa-solid fa-heart"></i><br>Wishlist</button></a>
 			<a href="cart.php"><button class="topbuttons"><i class="fa-solid fa-cart-shopping"></i><br>Cart</button></a>
         </div>
@@ -54,10 +56,10 @@
 		<div id="navbar">
 		  <nav>
 			<ul>
-			  <li><a href="index.php">Home</a></li> | 
-			  <li><a href="products.php">Products</a></li> |
-			  <li><a href="aboutus.php">About Us</a></li> |
-			  <li><a href="contact.php">Contact Us</a></li>
+			  <li><a href="index.php">HOME</a></li> | 
+			  <li><a href="products.php">PRODUCTS</a></li> |
+			  <li><a href="aboutus.php">ABOUT US</a></li> |
+			  <li><a href="contact.php">CONTACT US</a></li>
 			</ul>
 		  </nav>
 		</div>
@@ -113,10 +115,10 @@
           <div id="sitemap">
             <nav>
               <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="products.php">Products</a></li>
-                <li><a href="aboutus.php">About Us</a></li>
-                <li><a href="contact.php">Contact Us</a></li>
+                <li><a href="index.php">HOME</a></li>
+                <li><a href="products.php">PRODUCTS</a></li>
+                <li><a href="aboutus.php">ABOUT US</a></li>
+                <li><a href="contact.php">CONTACT US</a></li>
               </ul>
             </nav>
           </div>

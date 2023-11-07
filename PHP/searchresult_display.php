@@ -42,9 +42,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     }
   }
   else if ($result->num_rows == 0) {
-    echo '<div class="product-divider">';
-    echo '<h1>PRODUCT NOT FOUND</h1>';
-    echo '</div>';
+    echo '<h2>PRODUCT NOT FOUND</h2>';
   }
 
   foreach ($products as $product) {

@@ -84,7 +84,7 @@ if (isset($_SESSION['valid_user'])) {
     // User is not logged in, show a message to log in
     echo '<div class="empty-wishlist">';
     echo '<div class="sad-face">😢</div>';
-    echo 'You are not logged in. Please log in to view your wishlist.';
+    echo '<h4>You are not logged in. Please log in to view your wishlist.</h4>';
     echo '</div>';
 }
 

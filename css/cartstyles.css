@@ -70,7 +70,8 @@ body {
 .empty-cart {
     text-align: center;
     font-size: 24px;
-    margin-top: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .sad-face {
