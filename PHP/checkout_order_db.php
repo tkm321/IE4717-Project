@@ -117,10 +117,6 @@ if (isset($member_id)) {
 
         'Your order has been confirmed. Thank you for choosing NovaTech for your consumer electronics and IT product needs.' . "\r\n\n" .
 
-        'Order Details:' . "\r\n" .
-        'Product ID' . "\t\t" . "Quantity" . "\t\t" . "Price" . "\r\n\n" . // To implement multiple products in list if got time, else just remove this section.
-        // $product_ids . "\t\t" . $quantities . "\t\t" . $total_prices . "\r\n\n" .
-
         'Your order will be processed within 3 working days and shipped with care.' . "\r\n\n" .
 
         'If you have any questions about your order, shipment, or anything else, our dedicated customer support team is ready to assist you. Feel free to reach out via email at mailto:support@novatech.com.sg or by phone at tel:+6567671314.' . "\r\n\n" .
