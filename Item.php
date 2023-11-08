@@ -205,7 +205,32 @@
 							<p>These are the specifications content.</p>
 						  </div>
 						  <div class="dropdown-content" id="askus">
-							<p>Ask us anything here.</p>
+							<div class="item-form">
+							<form method="post" action="php/item_question.php" name="itemform" class="itemform" id="itemform">
+								<div>
+								  <label for="name">*Name:</label>    
+								  <input type="text" id="name" name="name" placeholder="Enter your name here" onchange="validateName(event)" required><br><br>
+								</div>
+							  
+								<div>
+								  <label for="email">*Email:</label>
+								  <input type="email" id="email" name="email" placeholder="Enter your email here" onchange="validateEmail(event)" required><br><br>
+								</div>
+							  
+								<div>
+								  <label for="contact">*Contact Number:</label>
+								  <input type="text" id="contact" name="contact" placeholder="Enter your contact number here" onchange="validateContact(event)" required><br><br>
+								</div>
+							  
+								<div>
+								  <label for="message">*Message:</label>
+								  <textarea id="message" name="message" rows="10" cols="60" placeholder="Enter your message here" required></textarea>
+								</div>
+								
+								<button type="reset" id="resetbutton" class="resetbutton">Clear</button>
+								<button type="submit" id="submitbutton" class="submitbutton">Send Message</button>
+							</form>
+						  </div>
 						  </div>
 						  <div class="dropdown-content" id="delivery">
 							<p>All items available for online purchase are not guaranteed to be in stock at the time of order processing. If we are unable to fulfill your order, you will be offered an alternative or given a refund for the unavailable product.</p>
