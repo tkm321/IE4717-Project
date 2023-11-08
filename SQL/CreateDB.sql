@@ -66,7 +66,29 @@ DROP TABLE IF EXISTS reviews;
 CREATE TABLE IF NOT EXISTS reviews (
   product_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   reviews_total INT,
-  reviews_qty INT,
+  reviews_qty INT, 
+  reviews DECIMAL(2, 1) GENERATED ALWAYS AS (IF(reviews_qty > 0, reviews_total / reviews_qty, 0)) STORED,
+  FOREIGN KEY (product_id) REFERENCES products(product_id)
+);
+
+DROP TABLE IF EXISTS reviews_ind;
+CREATE TABLE IF NOT EXISTS reviews_ind (
+  review_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  member_id INT UNSIGNED NOT NULL,
+  product_id INT UNSIGNED NOT NULL,
+  reviews_name VARCHAR(50) NOT NULL,
+  reviews_email VARCHAR(100) NOT NULL,
+  reviews_message VARCHAR(1000) NOT NULL,
+  reviews_rating INT,
+  FOREIGN KEY (product_id) REFERENCES products(product_id),
+  FOREIGN KEY (member_id) REFERENCES members(member_id)
+);
+
+DROP TABLE IF EXISTS reviews;
+CREATE TABLE IF NOT EXISTS reviews (
+  product_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  reviews_total INT,
+  reviews_qty INT, 
   reviews DECIMAL(2, 1) GENERATED ALWAYS AS (IF(reviews_qty > 0, reviews_total / reviews_qty, 0)) STORED,
   FOREIGN KEY (product_id) REFERENCES products(product_id)
 );

@@ -576,3 +576,29 @@ button#login-button:hover, button#logout-button:hover {
 .sad-face {
     font-size: 48px;
 }
+
+
+.rating-input {
+  display: inline-block;
+}
+
+.rating-input input[type="radio"] {
+  display: none;
+}
+
+.star-label {
+  color: #FFD700; /* Yellow color for stars */
+  cursor: pointer;
+  font-size: 24px; /* Increase the font size for star labels */
+}
+
+/* Style the star symbols when they are not checked */
+.star-label:before {
+  content: "☆"; /* Empty star symbol */
+}
+
+/* Style the star symbols when they are checked */
+.rating-input input[type="radio"]:checked + .star-label:before {
+  content: "★"; /* Filled star symbol */
+}
+

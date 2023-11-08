@@ -27,10 +27,10 @@ INSERT INTO total_sales (product_id, total_price, total_qty) VALUES
     (12, 0.0, 0);
 	
 INSERT INTO reviews (product_id, reviews_total, reviews_qty) VALUES
-    (1, 5, 2),
-    (2, 41, 10),
-    (3, 15, 3),
-    (4, 3, 1),
+    (1, 0, 0),
+    (2, 0, 0),
+    (3, 0, 0),
+    (4, 0, 0),
     (5, 0, 0),
     (6, 0, 0),
     (7, 0, 0),

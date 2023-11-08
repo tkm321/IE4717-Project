@@ -153,7 +153,7 @@
 											}
 										}
 									?>
-									<a href="#" class="add-review-link">Add a Review</a>
+									<a href="review.php?product_id=<?php echo $product['product_id']; ?>" class="add-review-link">Add a Review</a>
 							</td>
 						</tr>
 						<tr>

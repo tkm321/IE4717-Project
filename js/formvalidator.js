@@ -126,3 +126,28 @@ function validateRegisterForm() {
     return false;
   }
 }
+
+function validateRating(input) {
+	if (input.value < 0) {
+		input.value = 0;
+	} else if (input.value > 5) {
+		input.value = 5;
+	}
+}
+
+function validateMessage(textarea) {
+    const message = textarea.value;
+    const words = message.split(/\s+/);
+    if (words.length > 100) {
+      // If more than 100 words, prevent additional input
+      const truncatedMessage = words.slice(0, 100).join(" ");
+      textarea.value = truncatedMessage;
+    }
+    
+    // Limit the textarea to 100 words
+    if (words.length >= 100) {
+      textarea.setAttribute('maxlength', message.length);
+    } else {
+      textarea.removeAttribute('maxlength');
+    }
+}
