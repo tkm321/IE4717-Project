@@ -93,3 +93,23 @@ CREATE TABLE IF NOT EXISTS reviews (
   FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
 
+DROP TABLE IF EXISTS product_desc;
+CREATE TABLE IF NOT EXISTS product_desc (
+  product_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  product_desc VARCHAR(500),
+
+  FOREIGN KEY (product_id) REFERENCES products(product_id)
+);
+
+DROP TABLE IF EXISTS product_specs;
+CREATE TABLE IF NOT EXISTS product_specs (
+  product_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  specs_1 VARCHAR(500),
+  specs_2 VARCHAR(500),
+  specs_3 VARCHAR(500),
+  specs_4 VARCHAR(500),
+  specs_5 VARCHAR(500),
+  FOREIGN KEY (product_id) REFERENCES products(product_id)
+);
+
+
