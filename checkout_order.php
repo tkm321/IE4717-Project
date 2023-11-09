@@ -69,7 +69,7 @@
 		<h2>Checkout Page</h2>
 	</div>	
 	<div class="checkout-container">
-		<form method="post" action="php/checkout_order_db.php" name="contactform" class="contactform" id="contactform">
+		<form method="post" action="php/checkout_order_db.php" name="checkoutform" class="checkoutform" id="checkoutform">
 			<div class="checkout-details-and-review">
 				<div class="checkout-details">
 				 <p style="font-size: 24px; padding-left: 20px; margin-top: 10px; margin-bottom: 10px;"><strong><u>Your Details</strong></u></p><br>
@@ -108,7 +108,7 @@
 				<button type="submit" id="submitbutton" class="submitbutton checkout-button" name="submit">Checkout</button>
 			</div>
 		</form>  
-		</div>
+	</div>
 
 		
 		
