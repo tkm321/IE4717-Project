@@ -75,14 +75,21 @@ if (isset($member_id)) {
 
 			echo "<tr>";
 			echo "<td class='cart-checkbox'><input type='checkbox' name='product_ids[$product_id]' class='product-checkbox' value='$product_id' data-product-id='$product_id'></td>";
-			echo "<td class='product-name-cell'>
+			echo "<td class='product-name-cell' style='text-align:center;'>
 					<a href='item.php?product_id=$product_id'>$product_name</a> <br> 
 					<img src='$product_image_url' alt='$product_name' class='item-image'>
 				</td>";
 			echo "<td class='cart-unitprice'>";
 
 			// Display the discounted price
-			echo "<span style='color: red;'>$formatted_price</span> ";
+            if ($discountedPrice < $unit_price)
+            {
+                echo "<span style='color: red;'>$formatted_price</span> ";
+            }
+            else
+            {
+                echo "<span>$formatted_price</span> ";
+            }
 
 			// Display the original price with a smaller font and dashed style when there is a discount
 			if ($discount > 0) {
@@ -96,7 +103,7 @@ if (isset($member_id)) {
 						<button class='increment-button' data-product-id='$product_id'>+</button>
 					</td>";
 			echo "<td class='cart-totalprice'><span id='total-price-for-product-$product_id'>$total_price</span></td>";
-			echo "<td class 'cart-action'>
+			echo "<td class 'cart-action' style='text-align:center;'>
 					<button type='submit' class='remove-button' data-product-id='$product_id'>Remove</button>
 					 </td>";
 			echo "</tr>";
@@ -105,8 +112,8 @@ if (isset($member_id)) {
         echo '</table>';
         echo '<div class="cart-bottom">'; // Remove the padding-bottom
         echo '<div class="checkout-total">';
-        echo '<span class="total-items">Items: <span id="total-items-count"></span></span>';
-        echo "<span class='checkout-totalprice'>Total Price: <span id='checkout-price-for-all'>$totalPriceForAll</span></span>";
+        echo '<span class="total-items"><b>Items: <span id="total-items-count"></b></span></span>';
+        echo "<span class='checkout-totalprice'><b>Total Price: <span id='checkout-price-for-all'>$totalPriceForAll</b></span></span>";
         echo '<button class="checkout-button" id="checkout-button" type="submit" name="submit">Checkout</button>';
         echo '</div>';
         echo '</div>';

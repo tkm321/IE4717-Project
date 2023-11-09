@@ -73,7 +73,7 @@ if (isset($_SESSION['valid_user']) && $_SESSION['valid_user'] === 'admin') {
     <!-- END OF HEADER -->
 
 	<!-- Main Body -->
-	<div class = "Content_Wrapper">
+	<div class = "Inventory_Content_Wrapper">
 	
 		<!-- START OF NAVBAR -->
 		<div id="navbar">
@@ -87,9 +87,9 @@ if (isset($_SESSION['valid_user']) && $_SESSION['valid_user'] === 'admin') {
 		  </nav>
 		</div>
 		<!-- END OF NAVBAR -->
-		<div id="main_body">
-			<form action="php/admin_inventory_db.php" method="post">
-				<table>
+		<div class="inventoryform-container">
+			<form action="php/admin_inventory_db.php" id="inventoryform" method="post">
+				<table id="inventorytable">
 					<tr>
 						<th>Select</th>
 						<th>Product ID</th>
@@ -120,7 +120,7 @@ if (isset($_SESSION['valid_user']) && $_SESSION['valid_user'] === 'admin') {
 					}
 					?>
 				</table>
-				<input type="submit" value="Update">
+				<input type="submit" class="update-button" id="update-button" value="Update">
 			</form>
 		</div>
 
