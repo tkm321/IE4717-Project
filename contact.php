@@ -66,7 +66,7 @@
 
         <!-- START OF CONTACT FORM -->
         <div class="contactus">
-          <img src="images/contactus.png" width="80%" style="display:block; margin-left:auto; margin-right:auto; width:100%; margin-bottom: 50px;">
+          <img src="images/contactus.png" width="80%" height="350px" style="display:block; margin-left:auto; margin-right:auto; width:100%; margin-bottom: 50px;">
         </div>
         
         <div class="contentform-wrapper">

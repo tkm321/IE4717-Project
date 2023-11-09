@@ -64,7 +64,7 @@
       </div>
       <!-- END OF NAVBAR -->
       <div class="aboutus">
-        <img src="images/aboutus.jpg" width="80%" style="display:block; margin-left:auto; margin-right:auto; width:100%;">
+        <img src="images/aboutus.jpg" width="80%" height="350px" style="display:block; margin-left:auto; margin-right:auto; width:100%;">
       </div> 
       <div id="bodytext">
         <h1>Welcome to NovaTech - Your Ultimate Electronics Store</h1>
