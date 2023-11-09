@@ -174,13 +174,8 @@
 .star-empty {
     font-size: 24px; /* Adjust the font size to make the stars bigger */
 }
-.star-filled {
+.star-filled, .star-half {
     color: orange; /* Set the color of filled stars to yellow */
-}
-
-.star-half {
-    color: yellow; /* Set the color of half-filled stars to yellow */
-    width: 0.5em; /* Adjust the width to control how much of the star is filled */
 }
 
 .star-empty {

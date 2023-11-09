@@ -148,7 +148,7 @@
 											if ($i <= $numFilledStars) {
 												echo '<span class="star-filled">★</span>';
 											} elseif ($i == $numFilledStars + 1 && $hasHalfStar) {
-												echo '<span class="star-half">★</span>';
+												echo '<span class="star-half">✭</span>';
 											} else {
 												echo '<span class="star-empty">☆</span>';
 											}
