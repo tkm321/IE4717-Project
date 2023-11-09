@@ -444,6 +444,14 @@ h1#callus, h1#emailus {
   margin-bottom: 10px;
 }
 
+h1#callus, div#leftbanner {
+  border-top-left-radius: 10px;
+}
+
+h1#emailus, div#rightbanner{
+  border-top-right-radius: 10px;
+}
+
 /* ---END OF BANNER--- */
 
 
@@ -546,7 +554,7 @@ h1#callus, h1#emailus {
 }
 
 .registerform #name, #email, #contact, #password, #confirmpassword {
-  PADDING: 10pX;
+  padding: 10pX;
   width: 400px;
   border:none;
   border-radius: 10px;
