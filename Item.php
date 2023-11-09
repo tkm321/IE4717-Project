@@ -17,6 +17,7 @@
   <script src="https://kit.fontawesome.com/66341603a8.js" crossorigin="anonymous"></script>  
   <script type="text/javascript" src="js/slideshow.js"></script>
   <script type="text/javascript" src="js/item_script.js"></script>
+  <script type="text/javascript" src="js/formvalidator.js"></script>
 </head>
 
 <body>
@@ -199,14 +200,38 @@
 					  <tr>
 						<td colspan="4">
 						  <div class="dropdown-content" id="description">
-							<p>This is the description content.</p>
+							<p><?php echo "<p>$productDesc</p>"; ?></p>
 						  </div>
 						  <div class="dropdown-content" id="specifications">
-							<p>These are the specifications content.</p>
+							<ul style="padding-left: 20px;">
+								<?php
+								// Split the product name into words
+								$productNameWords = explode(' ', $product['product_name']);
+
+								// Get the first word of the product name
+								$productbrand = !empty($productNameWords) ? $productNameWords[0] : '';
+
+								// Display the first word of the product name in the first <li>
+								echo "<li>Brand: $productbrand</li>";
+
+								// Display other specifications
+								if (!empty($specs1)) echo "<li>$specs1</li>";
+								if (!empty($specs2)) echo "<li>$specs2</li>";
+								if (!empty($specs3)) echo "<li>$specs3</li>";
+								if (!empty($specs4)) echo "<li>$specs4</li>";
+								if (!empty($specs5)) echo "<li>$specs5</li>";
+								?>
+							</ul>
 						  </div>
 						  <div class="dropdown-content" id="askus">
 							<div class="item-form">
-							<form method="post" action="php/item_question.php" name="itemform" class="itemform" id="itemform">
+							<form method="post" action="php/item_enquiry_email.php" name="itemform" class="itemform" id="itemform">
+								<div>
+								<input type="hidden" name="product_id" value="<?php echo $requestedProductId; ?>">
+								<input type="hidden" name="product_name" value="<?php echo $product['product_name']; ?>">
+								<p>Product ID: <?php echo $requestedProductId; ?></p>
+								<p>Product Name: <?php echo $product['product_name']; ?></p>
+								</div>
 								<div>
 								  <label for="name">*Name:</label>    
 								  <input type="text" id="name" name="name" placeholder="Enter your name here" onchange="validateName(event)" required><br><br>

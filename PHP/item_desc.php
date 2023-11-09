@@ -25,25 +25,50 @@ if (isset($_GET['product_id'])) {
     } else {
         echo "Product not found.";
     }
-	// Fetch the review for the product
-	$productId = $product['product_id'];
-	$sql = "SELECT reviews FROM reviews WHERE product_id = $productId";
-	$result = mysqli_query($conn, $sql);
+    // Fetch the review for the product
+    $productId = $product['product_id'];
+    $sql = "SELECT reviews FROM reviews WHERE product_id = $productId";
+    $result = mysqli_query($conn, $sql);
 
-	if ($result) {
-		$row = mysqli_fetch_assoc($result);
-		$review = $row['reviews'];
+    if ($result) {
+        $row = mysqli_fetch_assoc($result);
+        $review = $row['reviews'];
+    } else {
+        $review = "No reviews available"; // Display a message if there are no reviews
+    }
+
+    // Fetch the product description
+    $sql = "SELECT product_desc FROM product_desc WHERE product_id = ?";
+	$stmt = $conn->prepare($sql);
+
+	if ($stmt) {
+		$stmt->bind_param("i", $productId);
+		$stmt->execute();
+		$stmt->bind_result($productDesc);
+		$stmt->fetch();
+		$stmt->close();
 	} else {
-		$review = "No reviews available"; // Display a message if there are no reviews
+		echo "Error in preparing statement: " . $conn->error;
 	}
 	
-	// Check if the product is in the wishlist
-    $product_id = $product['product_id'];
+	$sql = "SELECT specs_1, specs_2, specs_3, specs_4, specs_5 FROM product_specs WHERE product_id = ?";
+	$stmt = $conn->prepare($sql);
+
+	if ($stmt) {
+		$stmt->bind_param("i", $productId);
+		$stmt->execute();
+		$stmt->bind_result($specs1, $specs2, $specs3, $specs4, $specs5);
+		$stmt->fetch();
+		$stmt->close();
+	} else {
+		echo "Error in preparing statement: " . $conn->error;
+	}
+    // Check if the product is in the wishlist
     $isInWishlist = false;
 
     // Query the wishlist table to check if the product is already in the wishlist
     $wishlistCheckStmt = $conn->prepare("SELECT COUNT(*) FROM wishlist WHERE product_id = ?");
-    $wishlistCheckStmt->bind_param("i", $product_id);
+    $wishlistCheckStmt->bind_param("i", $productId); // Fix variable name here
     $wishlistCheckStmt->execute();
     $wishlistCheckStmt->bind_result($wishlistCount);
     $wishlistCheckStmt->fetch();
@@ -52,7 +77,6 @@ if (isset($_GET['product_id'])) {
     if ($wishlistCount > 0) {
         $isInWishlist = true;
     }
-
 
     // Close the database connection
     $conn->close();
