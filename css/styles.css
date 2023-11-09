@@ -78,7 +78,7 @@ div #logo img {
 }
 
 #searchbar input[type="text"]:focus {
-  background-color: #bffffa;
+  background-color: #cafffb;
   outline: none;
 }
 

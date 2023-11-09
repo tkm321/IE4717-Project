@@ -25,11 +25,11 @@ body {
     height: 150px; /* Adjust the height as needed */
 }
 
-
 .styled-input {
     width: 50%; /* Adjust the width to your desired size */
     text-align: center; /* Center the text inside the input */
     padding: 5px 0; /* Add some padding to vertically center the text */
+    font-size: 20px;
 }
 .styled-input::-webkit-inner-spin-button,
 .styled-input::-webkit-outer-spin-button {
@@ -42,6 +42,8 @@ body {
     background-color: #eee;
     border: none;
     cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .quantity-input button {
@@ -60,7 +62,6 @@ body {
 .cart-action {
         text-align: center;
 }
-
 
 .product-name-cell {
     white-space: normal; /* Allow text to wrap */
@@ -133,7 +134,6 @@ body {
     transition: background-color 0.3s;
 	font-size: 24px;
 	width:150px;
-	
 }
 
 .checkout-button:hover {
@@ -152,4 +152,37 @@ body {
 .product-name-cell a:hover {
     color: red; /* Change the color to dark red on hover */
 	text-decoration: underline;
+}
+
+input.product-checkbox {
+    height: 40px;
+    width: 40px;
+}
+
+button.remove-button {
+    background-color: darkred;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+	font-size: 16px;
+}
+
+button.remove-button:hover {
+    background-color: red;
+}
+
+
+button.remove-all-button {
+    background-color: darkred;
+    color: white;
+    font-size: 18px; /* Increase font size for buttons */
+	padding: 10px 20px; /* Increase padding for buttons */
+    transition: all 0.3s;
+}
+
+button.remove-all-button:hover {
+    background-color: red;
+    transform: scale(1.05, 1.05);
 }

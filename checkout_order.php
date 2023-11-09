@@ -66,7 +66,7 @@
     <!-- END OF NAVBAR -->        
 	
 	<div class="page-header">
-		<h2>Checkout Page</h2>
+		<h1>Checkout Page</h1>
 	</div>	
 	<div class="checkout-container">
 		<form method="post" action="php/checkout_order_db.php" name="checkoutform" class="checkoutform" id="checkoutform">
