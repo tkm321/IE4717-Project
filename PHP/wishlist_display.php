@@ -64,6 +64,11 @@ if (isset($_SESSION['valid_user'])) {
 			
 			echo '<div class="button-container">';
 			echo '<form action="PHP/product_add_db.php" method="get">';
+			echo '<input type="hidden" name="action" value="remove_wishlist">';
+			echo '<input type="hidden" name="product_id" value="' . $product["product_id"] . '">';
+			echo '<button class="add-action" type="submit">Remove Wishlist</button>';
+			echo '</form>';
+			echo '<form action="PHP/product_add_db.php" method="get">';
 			echo '<input type="hidden" name="action" value="cart">';
 			echo '<input type="hidden" name="product_id" value="' . $product["product_id"] . '">';
 			echo '<button class="add-action" type="submit">Add to Cart</button>';
