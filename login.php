@@ -56,7 +56,7 @@
       <div id="navbar">
           <nav>
           <ul>
-              <li><a href="index.php">HOME</a></li> | 
+              <li><a href="index.php">HOME</a></li> |
               <li><a href="products.php">PRODUCTS</a></li> |
               <li><a href="aboutus.php">ABOUT US</a></li> |
               <li><a href="contact.php">CONTACT US</a></li>
