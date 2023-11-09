@@ -157,7 +157,6 @@
 .price-cell {
     font-size: 30px; /* Adjust the font size to make the text bigger */
 	font-weight: bold;
-    color: red; /* Set the text color to red */
     display: flex; /* Use flexbox to control the layout */
     align-items: baseline; /* Align text baselines (top of text) */
 	border: none;
