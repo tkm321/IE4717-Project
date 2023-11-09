@@ -100,14 +100,14 @@
         <div class="banner">
           <div id="bannercontact">
             <div>
-              <figcaption>Call Us</figcaption>
+              <h1 id="callus">Call Us</h1>
               <a href="tel:6567671314"><img src="images/call_icon.png" style="width:100px;">
-              <p><b>+65-67671314</b><br><br>Mon - Fri: 10:00am - 10:00pm<br>Sat, Sun & Public Holidays: Closed</p></a>
+              <p><b>+65-67671314</b></a><br><br>Mon - Fri: 10:00am - 10:00pm<br>Sat, Sun & Public Holidays: Closed</p>
             </div>
             <div>
-              <figcaption>Email Us</figcaption>
+              <h1 id="emailus">Email Us</h1>
               <a href="mailto:f32ee@localhost"><img src="images/email_icon.png" style="width:100px;">
-              <p><b>support@novatech.com.sg</b><br><br>We will be guaranteed to get back with yo<br>within 2 working days<br></p></a>
+              <p><b>support@novatech.com.sg</b></a><br><br>We will be guaranteed to get back with yo<br>within 2 working days<br></p>
             </div>
           </div>
         </div>

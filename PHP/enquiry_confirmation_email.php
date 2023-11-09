@@ -32,6 +32,5 @@ $headers = 'From: noreply@novatech.com.sg' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 
 mail($to, $subject, $message, $headers,'-ff32ee@localhost');
-echo '<script> alert("Your enquiry has been sent! We get back to you as soon as possible."); </script>';
 header("Location: ../contact.php");
 ?>

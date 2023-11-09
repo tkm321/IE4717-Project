@@ -116,6 +116,7 @@
   margin: 0 10px; /* 0 top/bottom margin, 5px left/right margin */
   display: inline-block;
   font-size: 18px; /* Adjust the font size as needed */
+  border-radius: 5px;
 }
 
 /* Styles for dropdown content (initially hidden) */
@@ -218,9 +219,6 @@
 .addcart-button:hover {
 	background-color: #005F77; /* Button background color on hover */
 }
-
-
-
 
 .itemform-wrapper {
   width: 100%;

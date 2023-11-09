@@ -438,6 +438,12 @@ button#login-button:hover, button#logout-button:hover {
   text-decoration: none;
   color:black;
 }
+
+h1#callus, h1#emailus {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
 /* ---END OF BANNER--- */
 
 

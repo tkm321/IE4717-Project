@@ -136,18 +136,34 @@ function validateRating(input) {
 }
 
 function validateMessage(textarea) {
-    const message = textarea.value;
-    const words = message.split(/\s+/);
-    if (words.length > 100) {
-      // If more than 100 words, prevent additional input
-      const truncatedMessage = words.slice(0, 100).join(" ");
-      textarea.value = truncatedMessage;
-    }
-    
-    // Limit the textarea to 100 words
-    if (words.length >= 100) {
-      textarea.setAttribute('maxlength', message.length);
-    } else {
-      textarea.removeAttribute('maxlength');
-    }
+  const message = textarea.value;
+  const words = message.split(/\s+/);
+  if (words.length > 100) {
+    // If more than 100 words, prevent additional input
+    const truncatedMessage = words.slice(0, 100).join(" ");
+    textarea.value = truncatedMessage;
+  }
+  
+  // Limit the textarea to 100 words
+  if (words.length >= 100) {
+    textarea.setAttribute('maxlength', message.length);
+  } else {
+    textarea.removeAttribute('maxlength');
+  }
+}
+
+function validateitemForm() {
+  var confirmName = validateName();
+  var confirmEmail = validateEmail();
+  var confirmContact = validateContact();
+  
+  if (confirmName && confirmEmail && confirmContact)
+  {
+    alert("We have received your inquiry and will get back to you as soon as possible.");
+    return true;
+  }
+  else
+  {
+    return false;
+  }
 }

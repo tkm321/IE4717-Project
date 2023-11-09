@@ -289,6 +289,12 @@
     </div>
     <!-- END OF FOOTER -->
 
+	<script type="text/javascript">
+		var itemform = document.getElementById("itemform");
+		itemform.addEventListener('submit', (event) => {
+			if (!validateitemForm()) event.preventDefault()
+		})
+	</script>
   </div>
 </body>
 </html>
