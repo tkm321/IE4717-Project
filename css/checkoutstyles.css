@@ -84,11 +84,28 @@
     color:white;
 }
 
-#submitbutton {
-    margin-left: 10px;
-} 
-
 .checkoutform button:hover {
     transform: scale(1.05, 1.05);
     background-color: #005F77;
+}
+
+input[type="radio"] { 
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+input[type="radio"], img {
+    cursor: pointer;
+    width: 150px;
+    height: 120px;
+}
+
+input[type="radio"]:checked+img {
+    outline: 3px solid black;
+}
+
+.payment-options {
+    display: flex;
 }

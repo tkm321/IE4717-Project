@@ -167,3 +167,32 @@ function validateitemForm() {
     return false;
   }
 }
+
+function validatePayment() {
+  var paymentButtons = document.getElementsByName("payment");
+  len = paymentButtons.length;
+
+  for (var i = 0 ; i < len ; i++) {
+    if (paymentButtons[i].checked) {
+        return true;
+    }
+  }
+  alert("Please select a payment method.");
+  return false;
+}
+
+function validateCheckoutForm() {
+  var confirmName = validateName();
+  var confirmEmail = validateEmail();
+  var confirmContact = validateContact();
+  var confirmPayment = validatePayment();
+  
+  if (confirmName && confirmEmail && confirmContact && confirmPayment)
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+}
