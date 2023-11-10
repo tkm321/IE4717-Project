@@ -115,7 +115,7 @@
 								$discountedPrice = $product['product_price'] * (1 - $product['product_discount'] / 100);
 
 								if ($product['product_discount'] > 0) {
-									echo '<span style="color: red;">$' . number_format($discountedPrice, 2) . '</span>';
+									echo '<span style="color: red;">$' . number_format($discountedPrice, 2) . '&nbsp</span>';
 									echo ' <span style="text-decoration: line-through; font-size: 80%; color: black;">$' . number_format($product['product_price'], 2) . '</span>';
 								} else {
 									echo '$' . number_format($product['product_price'], 2);

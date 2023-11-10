@@ -124,7 +124,7 @@
   display: none;
   background-color: #f9f9f9;
   padding: 10px;
-  max-width: 625px;
+  max-width: 755px;
   text-align: left;
   vertical-align: top;
   margin: 0 auto; /* Center the content horizontally */
@@ -160,6 +160,10 @@
     display: flex; /* Use flexbox to control the layout */
     align-items: baseline; /* Align text baselines (top of text) */
 	border: none;
+}
+
+td.price-cell {
+    justify-content: center;
 }
 
 .cents {
