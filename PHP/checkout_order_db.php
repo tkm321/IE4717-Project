@@ -115,7 +115,7 @@ if (isset($member_id)) {
         // START OF EMAIL MESSAGE STRUCTURE
         'Dear ' . $name . ",\r\n\n" .
 
-        'Your order has been confirmed. Thank you for choosing NovaTech for your consumer electronics and IT product needs.' . "\r\n\n" .
+        'We are pleased to inform that your order has been confirmed. Thank you for choosing NovaTech for your consumer electronics and IT product needs.' . "\r\n\n" .
 
         'Your order will be processed within 3 working days and shipped with care.' . "\r\n\n" .
 
