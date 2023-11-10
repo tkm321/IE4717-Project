@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>NovaTech - Your Ultimate Electronics Store</title>
+  <title>NovaTech - Cart</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/cartstyles.css">

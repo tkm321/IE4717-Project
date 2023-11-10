@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>NovaTech - Your Ultimate Electronics Store</title>
+  <title>NovaTech - Wishlist</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">

@@ -6,7 +6,7 @@ session_start();
 <html lang="en">
 
 <head>
-  <title>NovaTech - Your Ultimate Electronics Store</title>
+  <title>NovaTech - Checkout</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/checkoutstyles.css">

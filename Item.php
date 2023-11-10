@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>NovaTech - Your Ultimate Electronics Store</title>
+  <title>NovaTech - <?php echo $product['product_name']; ?></title>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/itemstyles.css">
