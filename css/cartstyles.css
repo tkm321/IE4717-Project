@@ -160,29 +160,25 @@ input.product-checkbox {
 }
 
 button.remove-button {
-    background-color: darkred;
-    color: white;
     padding: 10px 20px;
-    border: none;
+    border: 1px solid black;
     border-radius: 4px;
     cursor: pointer;
 	font-size: 16px;
 }
 
 button.remove-button:hover {
-    background-color: red;
+    background-color: darkred;
+    color:white;
 }
-
 
 button.remove-all-button {
     background-color: darkred;
     color: white;
     font-size: 18px; /* Increase font size for buttons */
 	padding: 10px 20px; /* Increase padding for buttons */
-    transition: all 0.3s;
 }
 
 button.remove-all-button:hover {
     background-color: red;
-    transform: scale(1.05, 1.05);
 }
