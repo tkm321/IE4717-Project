@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Electrolize"> <!-- Subtitle font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"> <!-- Body font -->
   <script src="https://kit.fontawesome.com/66341603a8.js" crossorigin="anonymous"></script> 
+  <script src="js/bannerslider.js" defer></script>
 </head>
 
 <body>
@@ -67,10 +68,25 @@
   
 		<!-- START OF BANNER -->
 		<div class="banner">
-		  <h1 id="welcometitle">WELCOME TO NOVATECH</h1>
-		  <!-- <div class="bannerpromo"> -->
-			<img src="images/blackfriday.jpg" width="100%">
-		  <!-- </div> -->
+			<h1 id="welcometitle">WELCOME TO NOVATECH</h1>
+		
+			<section aria-label="newest photos">
+				<div class="carousel" data-carousel>
+					<button class="carousel-button prev" data-carousel-button="prev"><i class="fa-solid fa-arrow-left"></i></button>
+					<button class="carousel-button next" data-carousel-button="next"><i class="fa-solid fa-arrow-right"></i></button>
+					<ul data-slides>
+						<li class="slide" data-active>
+							<a href="products.php"><img src="images/banner1.png" alt="image #1" id="img1"></a>
+						</li>
+						<li class="slide">
+							<a href="http://localhost:8000/IE4717/F38-DG16-Project/IE4717-Project/item.php?product_id=4"><img src="images/banner2.jpg" alt="image #2" id="img2"></a>
+						</li>
+						<li class="slide">
+							<a href="products.php"><img src="images/banner3.jpg" alt="image #3" id="img3"></a>
+						</li>
+					</ul>
+				</div>				
+			</section>
 		</div>
 		
 		<div class="banner">
