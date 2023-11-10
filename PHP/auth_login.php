@@ -167,6 +167,12 @@
             </ul>
           </nav>
         </div>
+        <div class="socialmedia">
+          <a href="#.php"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#.php"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#.php"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#.php"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
         <p>&copy; 2023 NovaTech Pte Ltd. All Rights Reserved.</p>
     </footer>
   </div>
