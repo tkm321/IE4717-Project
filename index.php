@@ -82,7 +82,7 @@
 							<a href="http://localhost:8000/IE4717/F38-DG16-Project/IE4717-Project/item.php?product_id=4"><img src="images/banner2.jpg" alt="image #2" id="img2"></a>
 						</li>
 						<li class="slide">
-							<a href="products.php"><img src="images/banner3.jpg" alt="image #3" id="img3"></a>
+							<a href="register.php"><img src="images/banner3.png" alt="image #3" id="img3"></a>
 						</li>
 					</ul>
 				</div>				
@@ -112,7 +112,7 @@
 		</div>
 		
 		<div class="banner">
-		  <h1>BEST SELLER </h1>
+		  <h1>BESTSELLERS</h1>
 			<!-- Product display -->
 			  <div class="product-divider">
 					<?php

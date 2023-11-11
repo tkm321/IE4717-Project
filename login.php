@@ -71,7 +71,7 @@
       </div>
     <!-- END OF NAVBAR -->
     
-    <div class = "loginform-wrapper">
+    <div class="loginform-wrapper">
       <div class="loginform-container">
         <form action="php/auth_login.php" method="post" class="loginForm" id="loginForm">
           <h1>MEMBER LOGIN</h1>     
