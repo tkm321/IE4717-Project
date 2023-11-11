@@ -28,6 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Loop through the products to update discount and stock
     foreach ($_POST['discount'] as $product_id => $discount) {
+        $price = $_POST['price'][$product_id];
         $stock = $_POST['stock'][$product_id];
         $update = $_POST['update'][$product_id]; // Check if the checkbox is selected
 
@@ -35,9 +36,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $product_id = (int) $product_id;
             $discount = (float) $discount;
             $stock = (int) $stock;
+            $price = (float) $price;
 
             // Check if discount or stock is empty and retrieve original values
-            if (empty($discount) || empty($stock)) {
+            if (empty($discount) || empty($stock) || empty($price)) {
                 $originalValues = getOriginalValues($conn, $product_id);
                 if (empty($discount)) {
                     $discount = $originalValues['product_discount'];
@@ -45,12 +47,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if (empty($stock)) {
                     $stock = $originalValues['product_stock'];
                 }
+                if (empty($price)) {
+                    $price = $originalValues['product_price'];
+                }
             }
 
             // Update the database for each product
-            $sql = "UPDATE products SET product_discount = ?, product_stock = ? WHERE product_id = ?";
+            $sql = "UPDATE products SET product_discount = ?, product_stock = ?, product_price = ? WHERE product_id = ?";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("dii", $discount, $stock, $product_id);
+            $stmt->bind_param("didi", $discount, $stock, $price, $product_id);
             $stmt->execute();
             $stmt->close();
         }

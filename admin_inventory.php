@@ -97,6 +97,7 @@ if (isset($_SESSION['valid_user']) && $_SESSION['valid_user'] === 'admin') {
 						<th>Price</th>
 						<th>Discount</th>
 						<th>Stock</th>
+						<th>Update Price</th>
 						<th>Update Discount</th>
 						<th>Update Stock</th>
 					</tr>
@@ -110,9 +111,9 @@ if (isset($_SESSION['valid_user']) && $_SESSION['valid_user'] === 'admin') {
 							echo "<td>" . $row["product_price"] . "</td>";
 							echo "<td>" . $row["product_discount"] . "</td>";
 							echo "<td>" . $row["product_stock"] . "</td>";
+							echo "<td><input type='text' name='price[" . $row['product_id'] . "]'></td>";
 							echo "<td><input type='text' name='discount[" . $row['product_id'] . "]'></td>";
 							echo "<td><input type='text' name='stock[" . $row['product_id'] . "]'></td>";
-							
 							echo "</tr>";
 						}
 					} else {
@@ -120,7 +121,9 @@ if (isset($_SESSION['valid_user']) && $_SESSION['valid_user'] === 'admin') {
 					}
 					?>
 				</table>
-				<input type="submit" class="update-button" id="update-button" value="Update">
+				<div id="update-button-container">
+					<input type="submit" class="update-button" id="update-button" value="Update">
+				</div>
 			</form>
 		</div>
 
