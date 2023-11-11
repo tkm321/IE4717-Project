@@ -2,15 +2,15 @@
 
 // Function to retrieve original values from the database
 function getOriginalValues($conn, $product_id) {
-    $sql = "SELECT product_discount, product_stock FROM products WHERE product_id = ?";
+    $sql = "SELECT product_discount, product_stock, product_price FROM products WHERE product_id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $product_id);
     $stmt->execute();
-    $stmt->bind_result($originalDiscount, $originalStock);
+    $stmt->bind_result($originalDiscount, $originalStock, $originalPrice);
     $stmt->fetch();
     $stmt->close();
 
-    return ['product_discount' => $originalDiscount, 'product_stock' => $originalStock];
+    return ['product_discount' => $originalDiscount, 'product_stock' => $originalStock, 'product_price' => $originalPrice];
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
