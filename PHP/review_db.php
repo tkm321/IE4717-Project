@@ -36,33 +36,43 @@ if (isset($_SESSION['valid_user'])) {
     if (isset($_POST['product_id'])) {
         $product_id = $_POST['product_id'];
         // Retrieve other form fields (name, email, message, rating) here
-
-        // For example, retrieve name, email, message, and rating from the form
         $name = $_POST['name'];
         $email = $_POST['email'];
         $message = $_POST['message'];
         $rating = $_POST['rating'];
-
-        // Then insert the review data into the reviews_ind table
-        $insertReviewStmt = $conn->prepare("INSERT INTO reviews_ind (product_id, member_id, reviews_name, reviews_email, reviews_message, reviews_rating) VALUES (?, ?, ?, ?, ?, ?)");
-        $insertReviewStmt->bind_param("iisssi", $product_id, $member_id, $name, $email, $message, $rating);
-
-        if ($insertReviewStmt->execute()) {
-            // Update the reviews table
-            $updateReviewsStmt = $conn->prepare("UPDATE reviews SET reviews_total = (SELECT SUM(reviews_rating) FROM reviews_ind WHERE product_id = ?), reviews_qty = (SELECT COUNT(*) FROM reviews_ind WHERE product_id = ?) WHERE product_id = ?");
-            $updateReviewsStmt->bind_param("iii", $product_id, $product_id, $product_id);
-            $updateReviewsStmt->execute();
-            $updateReviewsStmt->close();
-
-            // Redirect to a success page or the original product page
-            echo "Review added!<br>";
-			
+		// Check if the user has already reviewed the product
+		$checkReviewStmt = $conn->prepare("SELECT review_id FROM reviews_ind WHERE member_id = ? AND product_id = ?");
+        $checkReviewStmt->bind_param("ii", $member_id, $product_id);
+        $checkReviewStmt->execute();
+        $checkReviewStmt->store_result();
+		
+		if ($checkReviewStmt->num_rows > 0) {
+            // User has already reviewed this product
+            echo "You have already reviewed this product.<br>";
         } else {
-            // Handle errors during the review insertion
-            echo "Error inserting review.<br>";
-        }
-        $insertReviewStmt->close();
-    } else {
+			// Then insert the review data into the reviews_ind table
+			$insertReviewStmt = $conn->prepare("INSERT INTO reviews_ind (product_id, member_id, reviews_name, reviews_email, reviews_message, reviews_rating) VALUES (?, ?, ?, ?, ?, ?)");
+			$insertReviewStmt->bind_param("iisssi", $product_id, $member_id, $name, $email, $message, $rating);
+
+			if ($insertReviewStmt->execute()) {
+				// Update the reviews table
+				$updateReviewsStmt = $conn->prepare("UPDATE reviews SET reviews_total = (SELECT SUM(reviews_rating) FROM reviews_ind WHERE product_id = ?), reviews_qty = (SELECT COUNT(*) FROM reviews_ind WHERE product_id = ?) WHERE product_id = ?");
+				$updateReviewsStmt->bind_param("iii", $product_id, $product_id, $product_id);
+				$updateReviewsStmt->execute();
+				$updateReviewsStmt->close();
+
+				// Redirect to a success page or the original product page
+				echo "Review added!<br>";
+				
+			} else {
+				// Handle errors during the review insertion
+				echo "Error inserting review.<br>";
+			}
+			$insertReviewStmt->close();
+		}
+		$checkReviewStmt->close();
+	}	
+	else {
         // Handle errors or invalid data
         // Redirect to an error page or the original product page
         echo "Error 404<br>";

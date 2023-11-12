@@ -44,7 +44,7 @@
             }
           ?>
           <a href="wishlist.php"><button class="topbuttons"><i class="fa-solid fa-heart"></i><br>Wishlist</button></a>
-          <a href="cart.php"><button class="topbuttons"><i class="fa-solid fa-cart-shopping"></i><br>Cart</button></a>
+          <?php include "php/cart_count.php"; ?>
         </div>
     </div>
     <!-- END OF HEADER -->

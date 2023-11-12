@@ -10,6 +10,41 @@
 	}
 
 	// Continue with the rest of your "review.php" page for logged-in users
+	$member_id = $_SESSION['member_id'];
+	if(isset($_GET['product_id'])){
+		$product_id = $_GET['product_id']; // Retrieving the product ID from the URL
+	} else {
+		// If the product ID is not found in the URL
+		echo '<script>alert("Product ID not found.");</script>';
+		echo '<script>window.history.back();</script>';
+		exit;
+	}
+
+	// Database connection and query to check for an existing review
+	$servername = "localhost";
+	$username = "jwongso001";
+	$password = "jwongso001";
+	$dbname = "Novatech";
+
+	$conn = new mysqli($servername, $username, $password, $dbname);
+
+	if (!$conn) {
+		die("Connection failed: " . mysqli_connect_error());
+	}
+
+	// Check for an existing review
+	$checkReviewStmt = $conn->prepare("SELECT review_id FROM reviews_ind WHERE member_id = ? AND product_id = ?");
+	$checkReviewStmt->bind_param("ii", $member_id, $product_id);
+	$checkReviewStmt->execute();
+	$checkReviewStmt->store_result();
+
+	if ($checkReviewStmt->num_rows > 0) {
+		// User has already reviewed this product
+		echo '<script>alert("You have already reviewed this product.");</script>';
+		// Redirect the user back to the previous page
+		echo '<script>window.history.back();</script>';
+		exit; // Exit to prevent further execution of the page
+	}
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +93,7 @@
             }
           ?>
           <a href="wishlist.php"><button class="topbuttons"><i class="fa-solid fa-heart"></i><br>Wishlist</button></a>
-          <a href="cart.php"><button class="topbuttons"><i class="fa-solid fa-cart-shopping"></i><br>Cart</button></a>
+          <?php include "php/cart_count.php"; ?>
         </div>
     </div>
     <!-- END OF HEADER -->
