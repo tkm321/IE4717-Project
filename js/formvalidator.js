@@ -196,3 +196,52 @@ function validateCheckoutForm() {
     return false;
   }
 }
+
+function onlyNumberAndDecimal(evt)
+{
+  var ASCIINumDec = (evt.which) ? evt.which : evt.keyCode
+  if (ASCIINumDec > 31 && (ASCIINumDec < 46 || ASCIINumDec == 47 || ASCIINumDec > 57) )
+  {
+    return false;
+  }
+  else
+  {
+    return true;
+  }
+}
+
+function onlyNumber(evt)
+{
+  var ASCIINum = (evt.which) ? evt.which : evt.keyCode
+  if (ASCIINum > 31 && (ASCIINum < 48 || ASCIINum > 57) )
+  {
+    return false;
+  }
+  else
+  {
+    return true;
+  }
+}
+
+function validateInventoryForm() {
+  // Select checkboxes with class 'checkbox'
+  var checkboxes = document.querySelectorAll('.checkbox');
+  
+  // Convert into an array
+  checkboxes = Array.from(checkboxes);
+
+  // Check if any checkbox is selected
+  var anyCheckboxSelected = checkboxes.some(function (checkbox) {
+    return checkbox.checked;
+  });
+
+  if (anyCheckboxSelected)
+  {
+    return true;
+  }
+  else
+  {
+    alert('Please select at least an item to update.');
+    return false;
+  }
+}

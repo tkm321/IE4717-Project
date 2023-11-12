@@ -35,7 +35,8 @@ if (isset($_SESSION['valid_user']) && $_SESSION['valid_user'] === 'admin') {
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron"> <!-- Title font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Electrolize"> <!-- Subtitle font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"> <!-- Body font -->
-  <script src="https://kit.fontawesome.com/66341603a8.js" crossorigin="anonymous"></script> 
+  <script src="https://kit.fontawesome.com/66341603a8.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/formvalidator.js"></script>
 </head>
 
 <body>
@@ -94,26 +95,26 @@ if (isset($_SESSION['valid_user']) && $_SESSION['valid_user'] === 'admin') {
 						<th>Select</th>
 						<th>Product ID</th>
 						<th>Product Name</th>
-						<th>Price</th>
-						<th>Discount</th>
-						<th>Stock</th>
-						<th>Update Price</th>
-						<th>Update Discount</th>
-						<th>Update Stock</th>
+						<th>Price ($)</th>
+						<th>Discount (%)</th>
+						<th>Stock (Qty)</th>
+						<th>Update Price ($)</th>
+						<th>Update Discount (%)</th>
+						<th>Update Stock (Qty)</th>
 					</tr>
 					<?php
 					if ($result->num_rows > 0) {
 						while ($row = $result->fetch_assoc()) {
 							echo "<tr>";
-							echo "<td><input type='checkbox' name='update[" . $row['product_id'] . "]' value='1'></td>";
+							echo "<td><input type='checkbox' name='update[" . $row['product_id'] . "]' class='checkbox' value='1'></td>";
 							echo "<td>" . $row["product_id"] . "</td>";
 							echo "<td>" . $row["product_name"] . "</td>";
 							echo "<td>" . $row["product_price"] . "</td>";
 							echo "<td>" . $row["product_discount"] . "</td>";
 							echo "<td>" . $row["product_stock"] . "</td>";
-							echo "<td><input type='text' name='price[" . $row['product_id'] . "]'></td>";
-							echo "<td><input type='text' name='discount[" . $row['product_id'] . "]'></td>";
-							echo "<td><input type='text' name='stock[" . $row['product_id'] . "]'></td>";
+							echo "<td><input type='number' name='price[" . $row['product_id'] . "]' class='number' min='0' onkeypress='return onlyNumberAndDecimal(event)'></td>";
+							echo "<td><input type='number' name='discount[" . $row['product_id'] . "]' class='number' min='0' onkeypress='return onlyNumberAndDecimal(event)'></td>";
+							echo "<td><input type='number' name='stock[" . $row['product_id'] . "]' class='number' min='0' onkeypress='return onlyNumber(event)'></td>";
 							echo "</tr>";
 						}
 					} else {
@@ -153,6 +154,13 @@ if (isset($_SESSION['valid_user']) && $_SESSION['valid_user'] === 'admin') {
       </footer>
     </div>
     <!-- END OF FOOTER -->	
+  
+  	<script type="text/javascript">
+		var inventoryform = document.getElementById("inventoryform");
+		inventoryform.addEventListener('submit', (event) => {
+			if (!validateInventoryForm()) event.preventDefault()
+		})
+	</script>
   </div>
 </body>
 </html>

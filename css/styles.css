@@ -753,10 +753,16 @@ img#img1, img#img2, img#img3 {
   height: 30px;
 }
 
-#inventorytable input[type="text"] {
-  width: 80px;
-  height: 20px;
+#inventorytable input[type="number"] {
+  width: 100px;
+  height: 25px;
   text-align: center;
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+#inventorytable input[type="number"]:focus {
+  background-color: #eee;
 }
