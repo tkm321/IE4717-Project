@@ -97,11 +97,18 @@ if (isset($member_id)) {
 			}
 
 			echo "</td>";
-			echo "<td class='quantity-input'>
+			if ($row['product_stock'] <= 0) {
+				echo "<td class='quantity-input'>
+						<p>Product Out of Stock</p>
+					  </td>";
+				echo "<input type='hidden' name='quantity[$product_id]' value='0'>";
+			} else {
+				echo "<td class='quantity-input'>
 						<button class='decrement-button' data-product-id='$product_id'>-</button>
 						<input type='number' name='quantity[$product_id]' class='styled-input product-quantity' value='$quantity' data-product-id='$product_id' data-unit-price='$discountedPrice' data-product-stock='{$row['product_stock']}'>
 						<button class='increment-button' data-product-id='$product_id'>+</button>
-					</td>";
+					  </td>";
+			}
 			echo "<td class='cart-totalprice'><span id='total-price-for-product-$product_id'>$total_price</span></td>";
 			echo "<td class 'cart-action' style='text-align:center;'>
 					<button type='submit' class='remove-button' data-product-id='$product_id'>Remove</button>
