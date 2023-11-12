@@ -29,7 +29,7 @@ if (isset($_SESSION['valid_user'])) {
 
 if (isset($member_id)) {
     // Check if the form has been submitted
-    if (isset($_POST['submit'])) {
+    if (isset($_POST['submit']) && isset($_POST['product_id']) && is_array($_POST['product_id']) && count($_POST['product_id']) > 0) {
         // Retrieve the values from the hidden input fields as arrays
         $quantities = $_POST['quantity'];
         $total_prices = $_POST['total_price'];
@@ -132,19 +132,24 @@ if (isset($member_id)) {
             'X-Mailer: PHP/' . phpversion();
 
         mail($to, $subject, $message, $headers,'-ff32ee@localhost');
-
+	
+	echo "Going back to Product Page in 5 seconds...<br>";
+	echo "Click <a href='../products.php'>here</a> to go back directly.";
+	header("refresh:5; url=../products.php");
 
 
     } else {
-        // No form submission
-        echo "No order has been placed.";
+        echo "No items selected for checkout.<br>";
+		echo "Going back to Cart in 5 seconds...<br>";
+		echo "Click <a href='../cart.php'>here</a> to go back directly.";
+		header("refresh:5; url=../cart.php");
     }
 } else {
-    echo 'Not logged in';
+    echo 'Not logged in<br>';
+	echo "Going back to Product Page in 5 seconds...<br>";
+	echo "Click <a href='../products.php'>here</a> to go back directly.";
+	header("refresh:5; url=../products.php");
 }
-echo "Going back to Product Page in 5 seconds...<br>";
-echo "Click <a href='../products.php'>here</a> to go back directly.";
-header("refresh:5; url=../products.php");
 
 mysqli_close($conn);
 ?>
