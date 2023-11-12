@@ -63,7 +63,7 @@
         </nav>
       </div>
       <!-- END OF NAVBAR -->
-      <div class="banner">
+      <div class="page-header">
         <h1>OUR COLLECTIONS</h1>
       </div>
       <!-- Product display -->
