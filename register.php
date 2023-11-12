@@ -1,5 +1,11 @@
 <?php
 	session_start();
+  
+  if (isset($_SESSION['valid_user'])) { // if user tries to access the login.php page after logged in 
+    // Redirect to index.php
+    header("Location: index.php");
+    exit; // Ensure that no other code is executed after the redirection
+  }
 ?>
 
 <!DOCTYPE html>
