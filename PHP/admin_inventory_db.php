@@ -32,25 +32,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stock = $_POST['stock'][$product_id];
         $update = $_POST['update'][$product_id]; // Check if the checkbox is selected
 
-        if ($update == 1) {
-            $product_id = (int) $product_id;
-            $discount = (float) $discount;
-            $stock = (int) $stock;
-            $price = (float) $price;
+		if ($update == 1) {
+			$product_id = (int) $product_id;
+			$discount = trim($_POST['discount'][$product_id]) !== '' ? (float)$_POST['discount'][$product_id] : null;
+			$stock = trim($_POST['stock'][$product_id]) !== '' ? (int)$_POST['stock'][$product_id] : null;
+			$price = trim($_POST['price'][$product_id]) !== '' ? (float)$_POST['price'][$product_id] : null;
 
-            // Check if discount or stock is empty and retrieve original values
-            if (empty($discount) || empty($stock) || empty($price)) {
-                $originalValues = getOriginalValues($conn, $product_id);
-                if (empty($discount)) {
-                    $discount = $originalValues['product_discount'];
-                }
-                if (empty($stock)) {
-                    $stock = $originalValues['product_stock'];
-                }
-                if (empty($price)) {
-                    $price = $originalValues['product_price'];
-                }
-            }
+			// Check if there's new input; if not, retain the previous values
+			if ($discount === null) {
+				$originalValues = getOriginalValues($conn, $product_id);
+				$discount = $originalValues['product_discount'];
+			}
+
+			if ($stock === null) {
+				$originalValues = getOriginalValues($conn, $product_id);
+				$stock = $originalValues['product_stock'];
+			}
+
+			if ($price === null) {
+				$originalValues = getOriginalValues($conn, $product_id);
+				$price = $originalValues['product_price'];
+			}
+
 
             // Update the database for each product
             $sql = "UPDATE products SET product_discount = ?, product_stock = ?, product_price = ? WHERE product_id = ?";
