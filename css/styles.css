@@ -8,6 +8,12 @@ body {
   background-repeat: no-repeat;
 }
 
+#container {
+  width: 100%;
+  margin: auto;
+  min-width:1200px;
+}
+
 /* FONT CUSTOMIZATION */
 h1 {
   font-family: 'Orbitron', sans-serif;
@@ -36,11 +42,6 @@ button.btn, #registerbutton {
   text-align: center;
   margin-top: 50px;
 }
-
-#container {
-  width: 100%;
-  margin: auto;
-  min-width:1200px;}
 
 #header {
   margin: auto;
@@ -501,6 +502,15 @@ h1#emailus, div#rightbanner{
   .socialmedia i {
     font-size: 30px;
   }
+
+  .fa-facebook, .fa-instagram, .fa-x-twitter, .fa-tiktok {
+    color:white;
+    padding: 10px;
+  }
+  
+  .fa-facebook:hover, .fa-instagram:hover, .fa-x-twitter:hover,  .fa-tiktok:hover {
+    color: #0CF1DE;
+  }
 /* ---END OF FOOTER--- */
 
 
@@ -664,15 +674,6 @@ h1#emailus, div#rightbanner{
 table#inventorytable th, td{
   padding: 10px;
   text-align: center;
-}
-
-.fa-facebook, .fa-instagram, .fa-x-twitter, .fa-tiktok {
-  color:white;
-  padding: 10px;
-}
-
-.fa-facebook:hover, .fa-instagram:hover, .fa-x-twitter:hover,  .fa-tiktok:hover {
-  color: #0CF1DE;
 }
 
 *, *::before *::after {
