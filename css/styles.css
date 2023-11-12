@@ -602,7 +602,7 @@ h1#emailus, div#rightbanner{
   border-radius: 10px;
 }
 
-.registerform #name:focus, #email:focus, #contact:focus, #password:focus, #confirmpassword:focus {
+.registerform #name:focus, .registerform #email:focus, .registerform #contact:focus, .registerform #password:focus, .registerform #confirmpassword:focus {
   background-color: #ddd;
   outline: none;
 }

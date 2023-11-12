@@ -168,8 +168,8 @@ if ($checkReviewStmt->num_rows > 0) {
 			</div>
 			
 			<div>
-			  <label for="rating">*Rating (1-5):</label>
-			  <input type="number" id="rating" name="rating" min="1" max="5" value="5" required oninput="validateRating(this)"
+			  <label for="rating">*Rating:</label>
+			  <input type="number" id="rating" name="rating" min="1" max="5" placeholder="1-5" required oninput="validateRating(this)"
 			  >
 			</div>
 			<input type="hidden" name="product_id" value="<?php echo $_GET['product_id']; ?>">
