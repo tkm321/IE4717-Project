@@ -1,50 +1,72 @@
 <?php
-	session_start(); 
-	
-	if (!isset($_SESSION['valid_user'])) {
-		// The user is not logged in
-		echo '<script>alert("You are not logged in.");</script>';
-		// Redirect the user back to the previous page (assuming it's the referring page)
-		echo '<script>window.history.back();</script>';
-		exit; // Exit to prevent further execution of the page
-	}
+session_start();
 
-	// Continue with the rest of your "review.php" page for logged-in users
-	$member_id = $_SESSION['member_id'];
-	if(isset($_GET['product_id'])){
-		$product_id = $_GET['product_id']; // Retrieving the product ID from the URL
-	} else {
-		// If the product ID is not found in the URL
-		echo '<script>alert("Product ID not found.");</script>';
-		echo '<script>window.history.back();</script>';
-		exit;
-	}
+// Function to establish a database connection
+function connectToDatabase() {
+    $servername = "localhost";
+    $username = "jwongso001";
+    $password = "jwongso001";
+    $dbname = "Novatech";
 
-	// Database connection and query to check for an existing review
-	$servername = "localhost";
-	$username = "jwongso001";
-	$password = "jwongso001";
-	$dbname = "Novatech";
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
-	$conn = new mysqli($servername, $username, $password, $dbname);
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
 
-	if (!$conn) {
-		die("Connection failed: " . mysqli_connect_error());
-	}
+    return $conn;
+}
 
-	// Check for an existing review
-	$checkReviewStmt = $conn->prepare("SELECT review_id FROM reviews_ind WHERE member_id = ? AND product_id = ?");
-	$checkReviewStmt->bind_param("ii", $member_id, $product_id);
-	$checkReviewStmt->execute();
-	$checkReviewStmt->store_result();
+if (!isset($_SESSION['valid_user'])) {
+    echo '<script>alert("You are not logged in.");</script>';
+    echo '<script>window.history.back();</script>';
+    exit;
+}
 
-	if ($checkReviewStmt->num_rows > 0) {
-		// User has already reviewed this product
-		echo '<script>alert("You have already reviewed this product.");</script>';
-		// Redirect the user back to the previous page
-		echo '<script>window.history.back();</script>';
-		exit; // Exit to prevent further execution of the page
-	}
+if (isset($_SESSION['member_id'])) {
+    $member_id = $_SESSION['member_id'];
+} else {
+    $valid_user = $_SESSION['valid_user'];
+
+    // Establish a connection if it's not already established
+    if (!isset($conn)) {
+        $conn = connectToDatabase();
+    }
+
+    $memberEmail = $valid_user;
+    $memberIdStmt = $conn->prepare("SELECT member_id FROM members WHERE member_email = ?");
+    $memberIdStmt->bind_param("s", $memberEmail);
+    $memberIdStmt->execute();
+    $memberIdStmt->bind_result($member_id);
+    $memberIdStmt->fetch();
+    $memberIdStmt->close();
+
+    $_SESSION['member_id'] = $member_id;
+}
+
+if (isset($_GET['product_id'])) {
+    $product_id = $_GET['product_id'];
+} else {
+    echo '<script>alert("Product ID not found.");</script>';
+    echo '<script>window.history.back();</script>';
+    exit;
+}
+
+// Check for an existing review
+if (!isset($conn)) {
+    $conn = connectToDatabase();
+}
+
+$checkReviewStmt = $conn->prepare("SELECT review_id FROM reviews_ind WHERE member_id = ? AND product_id = ?");
+$checkReviewStmt->bind_param("ii", $member_id, $product_id);
+$checkReviewStmt->execute();
+$checkReviewStmt->store_result();
+
+if ($checkReviewStmt->num_rows > 0) {
+    echo '<script>alert("You have already reviewed this product.");</script>';
+    echo '<script>window.history.back();</script>';
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
