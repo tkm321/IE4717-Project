@@ -24,11 +24,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
   // create short variable names
   $searchterm=trim($_POST['searchterm']);
-
-  // if (!$searchterm) {
-    // echo 'You have not entered search details.  Please try again.';
-    // exit;
-  // }
   $searchterm = addslashes($searchterm);
 
   $sql = "select * from products where product_name like '%".$searchterm."%'";

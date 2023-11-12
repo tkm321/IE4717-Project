@@ -20,7 +20,6 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"> <!-- Body font -->
   <script src="https://kit.fontawesome.com/66341603a8.js" crossorigin="anonymous"></script>  
   <script type="text/javascript" src="js/login.js"></script>
-  <script type="text/javascript" src="js/formvalidator.js"></script>
 </head>
 
 <body>

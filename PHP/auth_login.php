@@ -14,18 +14,15 @@
     Session_start();
 
     if (isset($_POST['loginemail']) && isset($_POST['loginpassword'])) {
-        $loginemail = $_POST['loginemail'];
+        $loginemail = trim($_POST['loginemail']);
         $loginpassword = $_POST['loginpassword'];
+
+        $loginemail = addslashes($loginemail);
+        $loginpassword = addslashes($loginpassword);
 
         if ($loginpassword != "admin") {
           $loginpassword = md5($loginpassword); // Encrypt password entered
         }
-
-        // Retrieve member_name based on the member email
-        // $fetchnamesql = "SELECT member_name FROM members WHERE member_email='$loginemail'";
-        // $nameresult = $conn->query($fetchnamesql);
-        // $name = $nameresult->fetch_assoc();
-        // $member_name = $name['member_name'];
 
         $sql = "SELECT * FROM members WHERE member_email = '$loginemail' and member_password = '$loginpassword'";
         $result = $conn->query($sql);
