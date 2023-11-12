@@ -75,17 +75,17 @@ session_start();
 
               <div>
                 <label for="name">*Name:</label>
-                <input type="text" id="name" name="name" placeholder="Enter your name here" onchange="validateName(event)" required><br><br>
+                <input type="text" id="name" name="name" placeholder="Enter your name here" required><br><br>
               </div>
 
               <div>
                 <label for="email">*Email:</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email here" onchange="validateEmail(event)" required><br><br>
+                <input type="email" id="email" name="email" placeholder="Enter your email here" required><br><br>
               </div>
 
               <div>
                 <label for="contact">*Contact Number:</label>
-                <input type="text" id="contact" name="contact" placeholder="Enter your contact number here" onchange="validateContact(event)" required><br><br>
+                <input type="text" id="contact" name="contact" placeholder="Enter your contact number here" required><br><br>
               </div>
 
               <div>
@@ -166,4 +166,5 @@ session_start();
     </script>
   </div>
 </body>
+
 </html>

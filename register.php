@@ -71,27 +71,27 @@
                 <h1>MEMBER REGISTRATION</h1>  
                 <div>
                   <label for="name">*Name:</label>    
-                  <input type="text" id="name" name="name" placeholder="Name" onchange="validateName(event)" required><br><br>
+                  <input type="text" id="name" name="name" placeholder="Name" required><br><br>
                 </div>
               
                 <div>
                   <label for="email">*Email:</label>
-                  <input type="email" id="email" name="email" placeholder="Email" onchange="validateEmail(event)" required><br><br>
+                  <input type="email" id="email" name="email" placeholder="Email" required><br><br>
                 </div>
               
                 <div>
                   <label for="contact">*Contact Number:</label>
-                  <input type="text" id="contact" name="contact" placeholder="Contact Number" onchange="validateContact(event)" required><br><br>
+                  <input type="text" id="contact" name="contact" placeholder="Contact Number" required><br><br>
                 </div>
               
                 <div>
                   <label for="password">*Password:</label>
-                  <input type="password" id="password" name="password" placeholder="Password" onchange="validatePassword(event)" required><br><br>
+                  <input type="password" id="password" name="password" placeholder="Password" required><br><br>
                 </div>
               
                 <div>
                   <label for="confirmpassword">*Confirm Password:</label>
-                  <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" onchange="validatePasswordSame(event)" required><br><br>
+                  <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" required><br><br>
                 </div>
                 
                 <button type="submit" id="registerbutton" class="registerbutton">REGISTER</button>
