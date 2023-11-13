@@ -74,8 +74,8 @@
 		
 			<section aria-label="newest photos">
 				<div class="carousel" data-carousel>
-					<button class="carousel-button prev" data-carousel-button="prev"><i class="fa-solid fa-arrow-left"></i></button>
-					<button class="carousel-button next" data-carousel-button="next"><i class="fa-solid fa-arrow-right"></i></button>
+					<button class="carousel-button prev" id="carousel-button prev" data-carousel-button="prev"><i class="fa-solid fa-arrow-left"></i></button>
+					<button class="carousel-button next" id="carousel-button next" carousel data-carousel-button="next" onload=autoPress()><i class="fa-solid fa-arrow-right"></i></button>
 					<ul data-slides>
 						<li class="slide" data-active>
 							<a href="products.php"><img src="images/banner1.png" alt="image #1" id="img1"></a>
@@ -150,6 +150,16 @@
       </footer>
     </div>
     <!-- END OF FOOTER -->	
-  </div>
+  
+	<script>
+	// Get the button element
+	var autoButton = document.getElementById("carousel-button next");
+
+	// Changes the main banner slideshow every 8 seconds
+	setInterval(function() {
+		autoButton.click();
+	}, 8000);
+	</script>
+	</div>
 </body>
 </html>
