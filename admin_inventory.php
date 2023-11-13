@@ -112,8 +112,8 @@ if (isset($_SESSION['valid_user']) && $_SESSION['valid_user'] === 'admin') {
 							echo "<td>" . $row["product_price"] . "</td>";
 							echo "<td>" . $row["product_discount"] . "</td>";
 							echo "<td>" . $row["product_stock"] . "</td>";
-							echo "<td><input type='number' name='price[" . $row['product_id'] . "]' min='0' onkeypress='return onlyNumberAndDecimal(event)'></td>";
-							echo "<td><input type='number' name='discount[" . $row['product_id'] . "]' min='0' onkeypress='return onlyNumberAndDecimal(event)'></td>";
+							echo "<td><input type='number' name='price[" . $row['product_id'] . "]' min='0' step='.01' onkeypress='return onlyNumberAndDecimal(event)'></td>";
+							echo "<td><input type='number' name='discount[" . $row['product_id'] . "]' min='0' step='.1' onkeypress='return onlyNumberAndDecimal(event)'></td>";
 							echo "<td><input type='number' name='stock[" . $row['product_id'] . "]' min='0' onkeypress='return onlyNumber(event)'></td>";
 							echo "</tr>";
 						}
