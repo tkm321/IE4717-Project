@@ -1,4 +1,10 @@
 <?php
+// to prevent bypasssing of form submit action
+if(!isset($_SERVER['HTTP_REFERER'])){
+    // redirect to desired location
+    header('location:../review.php');
+    exit;
+}
 session_start();
 
 $servername = "localhost";

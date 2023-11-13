@@ -1,5 +1,10 @@
 <?php
-
+// to prevent bypasssing of form submit action
+if(!isset($_SERVER['HTTP_REFERER'])){
+    // redirect to desired location
+    header('location:../products.php');
+    exit;
+}
 $enquirer_name = $_POST['name'];
 $enquirer_email = $_POST['email'];
 $enquirer_contact = $_POST['contact'];

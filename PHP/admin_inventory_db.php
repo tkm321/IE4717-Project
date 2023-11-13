@@ -1,5 +1,10 @@
 <?php
-
+// to prevent bypasssing of form submit action
+if(!isset($_SERVER['HTTP_REFERER'])){
+    // redirect to desired location
+    header('location:../admin_inventory.php');
+    exit;
+}
 // Function to retrieve original values from the database
 function getOriginalValues($conn, $product_id) {
     $sql = "SELECT product_discount, product_stock, product_price FROM products WHERE product_id = ?";

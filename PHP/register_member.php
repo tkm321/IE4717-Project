@@ -1,5 +1,10 @@
 <?php
-
+// to prevent bypasssing of form submit action
+if(!isset($_SERVER['HTTP_REFERER'])){
+    // redirect to desired location
+    header('location:../register.php');
+    exit;
+}
 $servername = "localhost";
 $username = "jwongso001";
 $password = "jwongso001";
