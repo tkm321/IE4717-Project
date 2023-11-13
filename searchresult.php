@@ -1,5 +1,20 @@
 <?php
 	session_start();
+
+  $servername = "localhost";
+  $username = "jwongso001";
+  $password = "jwongso001";
+  $dbname = "Novatech";
+
+  $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if (mysqli_connect_errno()) {
+      echo 'Error: Could not connect to database.  Please try again later.';
+      exit;
+    }
+
+  // create short variable names
+  $searchterm = trim($_POST['searchterm']);
 ?>
 
 <!DOCTYPE html>
@@ -64,7 +79,7 @@
       </div>
       <!-- END OF NAVBAR -->
       <div class="page-header">
-        <h1>SEARCH RESULT</h1>
+        <h1>SEARCH RESULT: <?php echo $searchterm; ?> </h1>
       </div>
       <!-- Product display -->
       <div class="product-divider">
