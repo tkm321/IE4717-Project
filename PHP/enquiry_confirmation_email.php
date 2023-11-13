@@ -12,7 +12,7 @@ $enquirer_message = $_POST['message'];
 
 // Send Enquiry Confirmation email 
 $to      = 'f32ee@localhost';
-$subject = 'Contact Form Enquiry Confirmation';
+$subject = 'Confirmation of Contact Form Enquiry';
 $message = 
 // START OF EMAIL MESSAGE STRUCTURE
 'Dear ' . $enquirer_name . ",\r\n\n" .
