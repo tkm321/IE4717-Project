@@ -196,11 +196,11 @@ if ($checkReviewStmt->num_rows > 0) {
       </div>
       <!-- END OF FOOTER -->
       <script type="text/javascript">
-      var reviewform = document.getElementById("reviewform");
-      reviewform.addEventListener('submit', (event) => {
+        var reviewform = document.getElementById("reviewform");
+        reviewform.addEventListener('submit', (event) => {
           if (!validateReviewForm()) event.preventDefault()
-      })
-    </script>
+        })
+      </script>
     </div>
 </body>
 
